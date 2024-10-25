@@ -1,0 +1,1927 @@
+[
+  {
+    "type": 0,
+    "content": "**blue and orange tweed pattern** - <@981209633890922577> (fast)",
+    "mentions": [
+      {
+        "id": "981209633890922577",
+        "username": "lubayfiasco.",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295785881369710674",
+        "filename": "lubayfiasco._blue_and_orange_tweed_pattern_de273824-280b-4828-8fc7-f58815945b17.png",
+        "size": 10080924,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295785881369710674/lubayfiasco._blue_and_orange_tweed_pattern_de273824-280b-4828-8fc7-f58815945b17.png?ex=670fea24&is=670e98a4&hm=1ed52f9a6289796dbf1878b599298d418d6efb11c0d06b12321b5d52a7d531d1&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295785881369710674/lubayfiasco._blue_and_orange_tweed_pattern_de273824-280b-4828-8fc7-f58815945b17.png?ex=670fea24&is=670e98a4&hm=1ed52f9a6289796dbf1878b599298d418d6efb11c0d06b12321b5d52a7d531d1&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "FggGDwBwnHcWZnd4eJdrZ3hndwqMu8AI",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:30:28.820000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::de273824-280b-4828-8fc7-f58815945b17::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::de273824-280b-4828-8fc7-f58815945b17",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/de273824-280b-4828-8fc7-f58815945b17"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295785882057707561",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "**blue and orange tweed** - <@981209633890922577> (fast)",
+    "mentions": [
+      {
+        "id": "981209633890922577",
+        "username": "lubayfiasco.",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295785718131458138",
+        "filename": "lubayfiasco._blue_and_orange_tweed_ea4bbe90-f054-49fb-907f-251d3dfa6c4f.png",
+        "size": 7688709,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295785718131458138/lubayfiasco._blue_and_orange_tweed_ea4bbe90-f054-49fb-907f-251d3dfa6c4f.png?ex=670fe9fd&is=670e987d&hm=f372bede83f527100be1c0da9c639dd7a97067b351a60dda5791336c94ac5a57&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295785718131458138/lubayfiasco._blue_and_orange_tweed_ea4bbe90-f054-49fb-907f-251d3dfa6c4f.png?ex=670fe9fd&is=670e987d&hm=f372bede83f527100be1c0da9c639dd7a97067b351a60dda5791336c94ac5a57&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "0wcGDwJmQo/Zt3SJavaJh5uSJQmsk8AL",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:29:49.879000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::ea4bbe90-f054-49fb-907f-251d3dfa6c4f::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::ea4bbe90-f054-49fb-907f-251d3dfa6c4f",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/ea4bbe90-f054-49fb-907f-251d3dfa6c4f"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295785718727315579",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "**<https://s.mj.run/itzmNy6wh_4> make me 4 diffrent photo like that --niji 5** - <@937715069922467921> (fast)",
+    "mentions": [
+      {
+        "id": "937715069922467921",
+        "username": "mk1122qqww",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "MK1122qqww",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295784994551234781",
+        "filename": "mk1122qqww_make_me_4_diffrent_photo_like_that_a78091d5-c03c-4b8b-ba3f-3d89864e98b7.png",
+        "size": 5792026,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295784994551234781/mk1122qqww_make_me_4_diffrent_photo_like_that_a78091d5-c03c-4b8b-ba3f-3d89864e98b7.png?ex=670fe951&is=670e97d1&hm=8531dbf957d1825b0667001be7e7ad07c0c3f77fc0a1eec485e3dd8bcb971e00&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295784994551234781/mk1122qqww_make_me_4_diffrent_photo_like_that_a78091d5-c03c-4b8b-ba3f-3d89864e98b7.png?ex=670fe951&is=670e97d1&hm=8531dbf957d1825b0667001be7e7ad07c0c3f77fc0a1eec485e3dd8bcb971e00&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "nVgGDwLLto2qKq93eNmIa3dqOwpWo6AI",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:26:57.347000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::a78091d5-c03c-4b8b-ba3f-3d89864e98b7::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::a78091d5-c03c-4b8b-ba3f-3d89864e98b7",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/a78091d5-c03c-4b8b-ba3f-3d89864e98b7"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295784995075395624",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "show a person, with his identity in formation, from his relationship with many other people",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:24:44.962000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "1295784439812587552",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "761042041508986920",
+      "username": "je3351",
+      "avatar": "6782bdb76b76932eab4d2f5f28eb8b5b",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 19,
+    "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect --v 6.1** - Upscaled (Subtle) by <@1248365783801794653> (fast)",
+    "mentions": [
+      {
+        "id": "1248365783801794653",
+        "username": "ismitex_ia",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Ismitex_IA",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295784128876118037",
+        "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_46efb4a1-960f-4471-8f5b-f563c24455fc.png",
+        "size": 4271125,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295784128876118037/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_46efb4a1-960f-4471-8f5b-f563c24455fc.png?ex=670fe882&is=670e9702&hm=a4047a29ee6412b3f7abd1d9025ab2c3540a39b125b71680e8a76e64f4aa5ddc&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295784128876118037/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_46efb4a1-960f-4471-8f5b-f563c24455fc.png?ex=670fe882&is=670e9702&hm=a4047a29ee6412b3f7abd1d9025ab2c3540a39b125b71680e8a76e64f4aa5ddc&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "iygGHwIIl4iKhnhwjEeYh3d4mKAIL6wG",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:23:30.989000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample_v6r1_2x_subtle::1::46efb4a1-960f-4471-8f5b-f563c24455fc::SOLO",
+            "style": 2,
+            "label": "Redo Upscale (Subtle)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample_v6r1_2x_creative::1::46efb4a1-960f-4471-8f5b-f563c24455fc::SOLO",
+            "style": 2,
+            "label": "Redo Upscale (Creative)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 4,
+        "components": [
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::low_variation::1::46efb4a1-960f-4471-8f5b-f563c24455fc::SOLO",
+            "style": 2,
+            "label": "Vary (Subtle)",
+            "emoji": {
+              "name": "🪄"
+            }
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::high_variation::1::46efb4a1-960f-4471-8f5b-f563c24455fc::SOLO",
+            "style": 2,
+            "label": "Vary (Strong)",
+            "emoji": {
+              "name": "🪄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::BOOKMARK::46efb4a1-960f-4471-8f5b-f563c24455fc",
+            "style": 2,
+            "emoji": {
+              "name": "❤️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "style": 5,
+            "label": "Web",
+            "url": "https://www.midjourney.com/jobs/46efb4a1-960f-4471-8f5b-f563c24455fc"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295784129547472906",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571027565072494",
+      "message_id": "1295783910734561433",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - Image #4 <@1248365783801794653>",
+      "mentions": [
+        {
+          "id": "1248365783801794653",
+          "username": "ismitex_ia",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Ismitex_IA",
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295783910445420544",
+          "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png",
+          "size": 1166417,
+          "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783910445420544/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png?ex=670fe84e&is=670e96ce&hm=0e9db9b330f9a1d4066160e8fbec6a12e44bf2fd911aa293c9086437266deeaf&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783910445420544/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png?ex=670fe84e&is=670e96ce&hm=0e9db9b330f9a1d4066160e8fbec6a12e44bf2fd911aa293c9086437266deeaf&",
+          "width": 1024,
+          "height": 1024,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "iygGHwIIl4iKhnhwjEeol3d4mKAIP6wH",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-15T16:22:38.820000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample_v6r1_2x_subtle::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 1,
+              "label": "Upscale (Subtle)",
+              "emoji": {
+                "id": "940147353879478324",
+                "name": "upscale_1"
+              }
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample_v6r1_2x_creative::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Upscale (Creative)",
+              "emoji": {
+                "id": "940147353879478324",
+                "name": "upscale_1"
+              }
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::low_variation::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Vary (Subtle)",
+              "emoji": {
+                "name": "🪄"
+              }
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::high_variation::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Vary (Strong)",
+              "emoji": {
+                "name": "🪄"
+              }
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::Inpaint::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Vary (Region)",
+              "emoji": {
+                "name": "🖌️"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::Outpaint::50::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Zoom Out 2x",
+              "emoji": {
+                "name": "🔍"
+              }
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::Outpaint::75::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "label": "Zoom Out 1.5x",
+              "emoji": {
+                "name": "🔍"
+              }
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::CustomZoom::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5",
+              "style": 2,
+              "label": "Custom Zoom",
+              "emoji": {
+                "name": "🔍"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 11,
+          "components": [
+            {
+              "type": 2,
+              "id": 12,
+              "custom_id": "MJ::JOB::pan_left::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬅️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 13,
+              "custom_id": "MJ::JOB::pan_right::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "➡️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 14,
+              "custom_id": "MJ::JOB::pan_up::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬆️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 15,
+              "custom_id": "MJ::JOB::pan_down::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬇️"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 16,
+          "components": [
+            {
+              "type": 2,
+              "id": 17,
+              "custom_id": "MJ::BOOKMARK::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5",
+              "style": 2,
+              "emoji": {
+                "name": "❤️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 18,
+              "style": 5,
+              "label": "Web",
+              "url": "https://www.midjourney.com/jobs/14ffad55-e2fb-4e2e-8e4f-49c419b48ea5"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295783910734561433",
+      "channel_id": "1008571027565072494",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571027565072494",
+        "message_id": "1295783832254939177",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  },
+  {
+    "type": 0,
+    "content": "show a person, with his identity in formation, from his relationship with many other people",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:23:19.347000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "1295784080717119498",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "761042041508986920",
+      "username": "je3351",
+      "avatar": "6782bdb76b76932eab4d2f5f28eb8b5b",
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 19,
+    "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - Image #4 <@1248365783801794653>",
+    "mentions": [
+      {
+        "id": "1248365783801794653",
+        "username": "ismitex_ia",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Ismitex_IA",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295783910445420544",
+        "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png",
+        "size": 1166417,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783910445420544/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png?ex=670fe84e&is=670e96ce&hm=0e9db9b330f9a1d4066160e8fbec6a12e44bf2fd911aa293c9086437266deeaf&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783910445420544/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_14ffad55-e2fb-4e2e-8e4f-49c419b48ea5.png?ex=670fe84e&is=670e96ce&hm=0e9db9b330f9a1d4066160e8fbec6a12e44bf2fd911aa293c9086437266deeaf&",
+        "width": 1024,
+        "height": 1024,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "iygGHwIIl4iKhnhwjEeol3d4mKAIP6wH",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:22:38.820000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample_v6r1_2x_subtle::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 1,
+            "label": "Upscale (Subtle)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample_v6r1_2x_creative::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Upscale (Creative)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::low_variation::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Vary (Subtle)",
+            "emoji": {
+              "name": "🪄"
+            }
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::high_variation::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Vary (Strong)",
+            "emoji": {
+              "name": "🪄"
+            }
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::Inpaint::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Vary (Region)",
+            "emoji": {
+              "name": "🖌️"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::Outpaint::50::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Zoom Out 2x",
+            "emoji": {
+              "name": "🔍"
+            }
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::Outpaint::75::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "label": "Zoom Out 1.5x",
+            "emoji": {
+              "name": "🔍"
+            }
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::CustomZoom::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5",
+            "style": 2,
+            "label": "Custom Zoom",
+            "emoji": {
+              "name": "🔍"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 11,
+        "components": [
+          {
+            "type": 2,
+            "id": 12,
+            "custom_id": "MJ::JOB::pan_left::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬅️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 13,
+            "custom_id": "MJ::JOB::pan_right::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "➡️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 14,
+            "custom_id": "MJ::JOB::pan_up::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬆️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 15,
+            "custom_id": "MJ::JOB::pan_down::1::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬇️"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 16,
+        "components": [
+          {
+            "type": 2,
+            "id": 17,
+            "custom_id": "MJ::BOOKMARK::14ffad55-e2fb-4e2e-8e4f-49c419b48ea5",
+            "style": 2,
+            "emoji": {
+              "name": "❤️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 18,
+            "style": 5,
+            "label": "Web",
+            "url": "https://www.midjourney.com/jobs/14ffad55-e2fb-4e2e-8e4f-49c419b48ea5"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295783910734561433",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571027565072494",
+      "message_id": "1295783832254939177",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - Variations (Strong) by <@1248365783801794653> (fast)",
+      "mentions": [
+        {
+          "id": "1248365783801794653",
+          "username": "ismitex_ia",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Ismitex_IA",
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295783831684775946",
+          "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png",
+          "size": 5271198,
+          "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783831684775946/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png?ex=670fe83b&is=670e96bb&hm=b80b47d8c6ad35726937362eb9271dc0cbe86774477e27660d2e3a816f233cb7&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783831684775946/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png?ex=670fe83b&is=670e96bb&hm=b80b47d8c6ad35726937362eb9271dc0cbe86774477e27660d2e3a816f233cb7&",
+          "width": 2048,
+          "height": 2048,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "ixgGBwCICXZ4h2eId7eZCXh1d/uKJvkI",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [
+        {
+          "type": "rich",
+          "url": "https://discord.com/channels/662267976984297473/1008571027565072494/1295784377157943306",
+          "description": "Hey <@761042041508986920>\nDue to extreme demand we can't provide a free trial right now. Please </subscribe:987795925764280351> to create images with Midjourney.\n*[Please check the bottom of the channel for more information.](https://discord.com/channels/662267976984297473/1008571027565072494/1295784377157943306)*",
+          "color": 16711680,
+          "content_scan_version": 1
+        }
+      ],
+      "timestamp": "2024-10-15T16:22:20.109000+00:00",
+      "edited_timestamp": "2024-10-15T16:24:30.681000+00:00",
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 4,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 4,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 2,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 1,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::168f01f8-a242-4c4f-8d34-c3b248c8eb7a::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 2,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/168f01f8-a242-4c4f-8d34-c3b248c8eb7a"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295783832254939177",
+      "channel_id": "1008571027565072494",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571027565072494",
+        "message_id": "1295783638100606977",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  },
+  {
+    "type": 19,
+    "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - Variations (Strong) by <@1248365783801794653> (fast)",
+    "mentions": [
+      {
+        "id": "1248365783801794653",
+        "username": "ismitex_ia",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Ismitex_IA",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295783831684775946",
+        "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png",
+        "size": 5271198,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783831684775946/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png?ex=670fe83b&is=670e96bb&hm=b80b47d8c6ad35726937362eb9271dc0cbe86774477e27660d2e3a816f233cb7&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783831684775946/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_168f01f8-a242-4c4f-8d34-c3b248c8eb7a.png?ex=670fe83b&is=670e96bb&hm=b80b47d8c6ad35726937362eb9271dc0cbe86774477e27660d2e3a816f233cb7&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "ixgGBwCICXZ4h2eId7eZCXh1d/uKJvkI",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [
+      {
+        "type": "rich",
+        "url": "https://discord.com/channels/662267976984297473/1008571027565072494/1295784377157943306",
+        "description": "Hey <@761042041508986920>\nDue to extreme demand we can't provide a free trial right now. Please </subscribe:987795925764280351> to create images with Midjourney.\n*[Please check the bottom of the channel for more information.](https://discord.com/channels/662267976984297473/1008571027565072494/1295784377157943306)*",
+        "color": 16711680,
+        "content_scan_version": 1
+      }
+    ],
+    "timestamp": "2024-10-15T16:22:20.109000+00:00",
+    "edited_timestamp": "2024-10-15T16:24:30.681000+00:00",
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 4,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 4,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 1,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::168f01f8-a242-4c4f-8d34-c3b248c8eb7a::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::168f01f8-a242-4c4f-8d34-c3b248c8eb7a",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/168f01f8-a242-4c4f-8d34-c3b248c8eb7a"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295783832254939177",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571027565072494",
+      "message_id": "1295783638100606977",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 0,
+      "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - <@1248365783801794653> (fast)",
+      "mentions": [
+        {
+          "id": "1248365783801794653",
+          "username": "ismitex_ia",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": "Ismitex_IA",
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295783637681438832",
+          "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png",
+          "size": 7462378,
+          "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783637681438832/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png?ex=670fe80d&is=670e968d&hm=486e6d377bace4c1b5db0932b8beaa6926b9085063fe399432993c8fc6d164ba&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783637681438832/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png?ex=670fe80d&is=670e968d&hm=486e6d377bace4c1b5db0932b8beaa6926b9085063fe399432993c8fc6d164ba&",
+          "width": 2048,
+          "height": 2048,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "YSkOFwKAu2TOmJqah3d5lnWJmfhv/akG",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-15T16:21:33.819000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::7e30b8da-8026-4376-8959-e8f60a23fab5::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 1,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::7e30b8da-8026-4376-8959-e8f60a23fab5",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/7e30b8da-8026-4376-8959-e8f60a23fab5"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295783638100606977",
+      "channel_id": "1008571027565072494",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false
+    }
+  },
+  {
+    "type": 0,
+    "content": "**I want a soccer design green, yellow and red, with a soccer ball on the left side or in the upper left corner, I want everything with red, greend and a little yellow, be creative, dynamic and make the design perfect** - <@1248365783801794653> (fast)",
+    "mentions": [
+      {
+        "id": "1248365783801794653",
+        "username": "ismitex_ia",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Ismitex_IA",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295783637681438832",
+        "filename": "ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png",
+        "size": 7462378,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295783637681438832/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png?ex=670fe80d&is=670e968d&hm=486e6d377bace4c1b5db0932b8beaa6926b9085063fe399432993c8fc6d164ba&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295783637681438832/ismitex_ia_I_want_a_soccer_design_green_yellow_and_red_with_a_s_7e30b8da-8026-4376-8959-e8f60a23fab5.png?ex=670fe80d&is=670e968d&hm=486e6d377bace4c1b5db0932b8beaa6926b9085063fe399432993c8fc6d164ba&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "YSkOFwKAu2TOmJqah3d5lnWJmfhv/akG",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:21:33.819000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::7e30b8da-8026-4376-8959-e8f60a23fab5::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 1,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::7e30b8da-8026-4376-8959-e8f60a23fab5",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/7e30b8da-8026-4376-8959-e8f60a23fab5"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295783638100606977",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "**make a simple logo without text for a vector-like lepton** - <@1181878967549046797> (fast)",
+    "mentions": [
+      {
+        "id": "1181878967549046797",
+        "username": "hooberman100",
+        "avatar": "f7f2e9361e8a54ce6e72580ac7b967af",
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": "Ben",
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295782890361065546",
+        "filename": "hooberman100_make_a_simple_logo_without_text_for_a_vector-like__c656d3cb-fc34-41b6-bf93-7251f01510fa.png",
+        "size": 2191768,
+        "url": "https://cdn.discordapp.com/attachments/1008571027565072494/1295782890361065546/hooberman100_make_a_simple_logo_without_text_for_a_vector-like__c656d3cb-fc34-41b6-bf93-7251f01510fa.png?ex=670fe75b&is=670e95db&hm=c89acecfe8d08c3be0c1e8a28b23af68987330f451b96e4874cca2c1c94dfbd4&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571027565072494/1295782890361065546/hooberman100_make_a_simple_logo_without_text_for_a_vector-like__c656d3cb-fc34-41b6-bf93-7251f01510fa.png?ex=670fe75b&is=670e95db&hm=c89acecfe8d08c3be0c1e8a28b23af68987330f451b96e4874cca2c1c94dfbd4&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "zRcODwRxeXVPl2iHd1iId4dpeGAoRm8G",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-15T16:18:35.638000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::c656d3cb-fc34-41b6-bf93-7251f01510fa::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::c656d3cb-fc34-41b6-bf93-7251f01510fa",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/c656d3cb-fc34-41b6-bf93-7251f01510fa"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295782890755461161",
+    "channel_id": "1008571027565072494",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  }
+]

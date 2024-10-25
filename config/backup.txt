@@ -1,0 +1,3 @@
+file=01.txt
+line=260
+previousfile=00.txt,test.txt

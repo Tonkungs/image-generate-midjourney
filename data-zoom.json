@@ -1,0 +1,1124 @@
+[
+  {
+    "type": 19,
+    "content": "**a costume designer with short black hair and big blue eyes looking at her costume projects at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - Zoom Out by <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295404903199543296",
+        "filename": "pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_bf91a209-c832-47e3-b6de-c1541f9919cb.png",
+        "size": 6118486,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295404903199543296/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_bf91a209-c832-47e3-b6de-c1541f9919cb.png?ex=670e8754&is=670d35d4&hm=b320aa7b134274ceaabf04ff53163997ffe5f4aa1cd8ced3142346b26471dff2&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295404903199543296/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_bf91a209-c832-47e3-b6de-c1541f9919cb.png?ex=670e8754&is=670d35d4&hm=b320aa7b134274ceaabf04ff53163997ffe5f4aa1cd8ced3142346b26471dff2&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "G/gFDICLX4N6h2d4eHyvgPgMlw==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:16:36.520000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::bf91a209-c832-47e3-b6de-c1541f9919cb::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::bf91a209-c832-47e3-b6de-c1541f9919cb",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/bf91a209-c832-47e3-b6de-c1541f9919cb"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295404903778226258",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295404720894251008",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**a costume designer with short black hair and big blue eyes looking at her costume projects at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - Image #3 <@1047955146509914234>",
+      "mentions": [
+        {
+          "id": "1047955146509914234",
+          "username": "pancstv",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": null,
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295404720545861724",
+          "filename": "pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png",
+          "size": 1764706,
+          "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295404720545861724/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png?ex=670e8728&is=670d35a8&hm=bfa791b458132744a1336d9e1d647b3f936eb505d9c8e85cf61d5c6367abc5ea&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295404720545861724/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png?ex=670e8728&is=670d35a8&hm=bfa791b458132744a1336d9e1d647b3f936eb505d9c8e85cf61d5c6367abc5ea&",
+          "width": 1456,
+          "height": 816,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "GQgKDIIOzNaZRnijVpeYMHMJEQ==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-14T15:15:52.917000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample_v6_2x_subtle::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Upscale (Subtle)",
+              "emoji": {
+                "id": "940147353879478324",
+                "name": "upscale_1"
+              }
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample_v6_2x_creative::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Upscale (Creative)",
+              "emoji": {
+                "id": "940147353879478324",
+                "name": "upscale_1"
+              }
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::low_variation::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Vary (Subtle)",
+              "emoji": {
+                "name": "🪄"
+              }
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::high_variation::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Vary (Strong)",
+              "emoji": {
+                "name": "🪄"
+              }
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::Inpaint::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Vary (Region)",
+              "emoji": {
+                "name": "🖌️"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::Outpaint::50::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Zoom Out 2x",
+              "emoji": {
+                "name": "🔍"
+              }
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::Outpaint::75::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 1,
+              "label": "Zoom Out 1.5x",
+              "emoji": {
+                "name": "🔍"
+              }
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::CustomZoom::958e3dc1-4f3c-426b-b538-df30985a8dfa",
+              "style": 2,
+              "label": "Custom Zoom",
+              "emoji": {
+                "name": "🔍"
+              }
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::Outpaint::100::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "label": "Make Square",
+              "emoji": {
+                "name": "↕️"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 12,
+          "components": [
+            {
+              "type": 2,
+              "id": 13,
+              "custom_id": "MJ::JOB::pan_left::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬅️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 14,
+              "custom_id": "MJ::JOB::pan_right::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "➡️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 15,
+              "custom_id": "MJ::JOB::pan_up::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬆️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 16,
+              "custom_id": "MJ::JOB::pan_down::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "⬇️"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 17,
+          "components": [
+            {
+              "type": 2,
+              "id": 18,
+              "custom_id": "MJ::BOOKMARK::958e3dc1-4f3c-426b-b538-df30985a8dfa",
+              "style": 2,
+              "emoji": {
+                "name": "❤️"
+              }
+            },
+            {
+              "type": 2,
+              "id": 19,
+              "style": 5,
+              "label": "Web",
+              "url": "https://www.midjourney.com/jobs/958e3dc1-4f3c-426b-b538-df30985a8dfa"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295404720894251008",
+      "channel_id": "1008571239570341938",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571239570341938",
+        "message_id": "1295404289036124274",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  },
+  {
+    "type": 19,
+    "content": "**a costume designer with short black hair and big blue eyes looking at her costume projects at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - Image #3 <@1047955146509914234>",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295404720545861724",
+        "filename": "pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png",
+        "size": 1764706,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295404720545861724/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png?ex=670e8728&is=670d35a8&hm=bfa791b458132744a1336d9e1d647b3f936eb505d9c8e85cf61d5c6367abc5ea&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295404720545861724/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_958e3dc1-4f3c-426b-b538-df30985a8dfa.png?ex=670e8728&is=670d35a8&hm=bfa791b458132744a1336d9e1d647b3f936eb505d9c8e85cf61d5c6367abc5ea&",
+        "width": 1456,
+        "height": 816,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "GQgKDIIOzNaZRnijVpeYMHMJEQ==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:15:52.917000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample_v6_2x_subtle::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Upscale (Subtle)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample_v6_2x_creative::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Upscale (Creative)",
+            "emoji": {
+              "id": "940147353879478324",
+              "name": "upscale_1"
+            }
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::low_variation::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Vary (Subtle)",
+            "emoji": {
+              "name": "🪄"
+            }
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::high_variation::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Vary (Strong)",
+            "emoji": {
+              "name": "🪄"
+            }
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::Inpaint::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Vary (Region)",
+            "emoji": {
+              "name": "🖌️"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::Outpaint::50::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Zoom Out 2x",
+            "emoji": {
+              "name": "🔍"
+            }
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::Outpaint::75::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 1,
+            "label": "Zoom Out 1.5x",
+            "emoji": {
+              "name": "🔍"
+            }
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::CustomZoom::958e3dc1-4f3c-426b-b538-df30985a8dfa",
+            "style": 2,
+            "label": "Custom Zoom",
+            "emoji": {
+              "name": "🔍"
+            }
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::Outpaint::100::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "label": "Make Square",
+            "emoji": {
+              "name": "↕️"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 12,
+        "components": [
+          {
+            "type": 2,
+            "id": 13,
+            "custom_id": "MJ::JOB::pan_left::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬅️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 14,
+            "custom_id": "MJ::JOB::pan_right::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "➡️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 15,
+            "custom_id": "MJ::JOB::pan_up::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬆️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 16,
+            "custom_id": "MJ::JOB::pan_down::1::958e3dc1-4f3c-426b-b538-df30985a8dfa::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "⬇️"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 17,
+        "components": [
+          {
+            "type": 2,
+            "id": 18,
+            "custom_id": "MJ::BOOKMARK::958e3dc1-4f3c-426b-b538-df30985a8dfa",
+            "style": 2,
+            "emoji": {
+              "name": "❤️"
+            }
+          },
+          {
+            "type": 2,
+            "id": 19,
+            "style": 5,
+            "label": "Web",
+            "url": "https://www.midjourney.com/jobs/958e3dc1-4f3c-426b-b538-df30985a8dfa"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295404720894251008",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295404289036124274",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**a costume designer with short black hair and big blue eyes looking at her costume projects at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+      "mentions": [
+        {
+          "id": "1047955146509914234",
+          "username": "pancstv",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": null,
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295404288373161994",
+          "filename": "pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png",
+          "size": 7875681,
+          "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295404288373161994/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png?ex=670e86c1&is=670d3541&hm=291610e07bbe10e8720f22c67fc2662c35392f5c4155267fd85cdc20186426e4&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295404288373161994/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png?ex=670e86c1&is=670d3541&hm=291610e07bbe10e8720f22c67fc2662c35392f5c4155267fd85cdc20186426e4&",
+          "width": 2912,
+          "height": 1632,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "1/cFDIK/IkppVptah5SvTvi5cg==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-14T15:14:09.954000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 1,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/e2cb059f-9b0e-4f71-b43d-72feedfc1eb0"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295404289036124274",
+      "channel_id": "1008571239570341938",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571239570341938",
+        "message_id": "1295403950681358448",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  },
+  {
+    "type": 19,
+    "content": "**a costume designer with short black hair and big blue eyes looking at her costume projects at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295404288373161994",
+        "filename": "pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png",
+        "size": 7875681,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295404288373161994/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png?ex=670e86c1&is=670d3541&hm=291610e07bbe10e8720f22c67fc2662c35392f5c4155267fd85cdc20186426e4&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295404288373161994/pancstv_a_costume_designer_with_short_black_hair_and_big_blue_e_e2cb059f-9b0e-4f71-b43d-72feedfc1eb0.png?ex=670e86c1&is=670d3541&hm=291610e07bbe10e8720f22c67fc2662c35392f5c4155267fd85cdc20186426e4&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "1/cFDIK/IkppVptah5SvTvi5cg==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:14:09.954000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 1,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::e2cb059f-9b0e-4f71-b43d-72feedfc1eb0",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/e2cb059f-9b0e-4f71-b43d-72feedfc1eb0"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295404289036124274",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295403950681358448",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**a costume designer with shot black hair and big blue eyes at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+      "mentions": [
+        {
+          "id": "1047955146509914234",
+          "username": "pancstv",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": null,
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295403950094159932",
+          "filename": "pancstv_a_costume_designer_with_shot_black_hair_and_big_blue_ey_dfc9f602-c626-48e4-8b28-53e594ace4a9.png",
+          "size": 7438681,
+          "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295403950094159932/pancstv_a_costume_designer_with_shot_black_hair_and_big_blue_ey_dfc9f602-c626-48e4-8b28-53e594ace4a9.png?ex=670e8671&is=670d34f1&hm=72b2781972eaafb4d61f1e5021713ffb019824fa42509034f424db77650869e6&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295403950094159932/pancstv_a_costume_designer_with_shot_black_hair_and_big_blue_ey_dfc9f602-c626-48e4-8b28-53e594ace4a9.png?ex=670e8671&is=670d34f1&hm=72b2781972eaafb4d61f1e5021713ffb019824fa42509034f424db77650869e6&",
+          "width": 2912,
+          "height": 1632,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "EwgGBIKXipBmOHl2t5JLwJUFfA==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-14T15:12:49.284000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::dfc9f602-c626-48e4-8b28-53e594ace4a9::SOLO",
+              "style": 3,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::dfc9f602-c626-48e4-8b28-53e594ace4a9",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/dfc9f602-c626-48e4-8b28-53e594ace4a9"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295403950681358448",
+      "channel_id": "1008571239570341938",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571239570341938",
+        "message_id": "1295403598292717699",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  }
+]

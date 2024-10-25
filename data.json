@@ -1,0 +1,1158 @@
+[
+  {
+    "type": 0,
+    "content": "**A young neurosurgeon is consulting patients, while answering the phone. His prgenant wife and 1-year old daughter is in the same room. Realistic. 8k.** - <@362265101564116993> (fast)",
+    "mentions": [
+      {
+        "id": "362265101564116993",
+        "username": "globuspallidus.",
+        "avatar": "cdda45376387191295f213dec19bf8fd",
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295410471884558406",
+        "filename": "globuspallidus._A_young_neurosurgeon_is_consulting_patients_whi_f33343f1-6a83-41ce-b348-ae7380f6cf16.png",
+        "size": 6037613,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295410471884558406/globuspallidus._A_young_neurosurgeon_is_consulting_patients_whi_f33343f1-6a83-41ce-b348-ae7380f6cf16.png?ex=670e8c84&is=670d3b04&hm=b15268452f4848b00796785143d3d4769f2bdba371974ca3a842ea3cc0418c7f&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295410471884558406/globuspallidus._A_young_neurosurgeon_is_consulting_patients_whi_f33343f1-6a83-41ce-b348-ae7380f6cf16.png?ex=670e8c84&is=670d3b04&hm=b15268452f4848b00796785143d3d4769f2bdba371974ca3a842ea3cc0418c7f&",
+        "width": 2048,
+        "height": 2048,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "j+cFDwSleZebmIyZl5h4CGdpZQeId5AH",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:38:44.191000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::f33343f1-6a83-41ce-b348-ae7380f6cf16::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::f33343f1-6a83-41ce-b348-ae7380f6cf16",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/f33343f1-6a83-41ce-b348-ae7380f6cf16"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295410472434274304",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 19,
+    "content": "**minimalist fashion background for keynote presentation --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295408045991661638",
+        "filename": "pancstv_minimalist_fashion_background_for_keynote_presentation_9c776a8c-eae0-4aa0-98ef-540e4bf013ac.png",
+        "size": 7126551,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295408045991661638/pancstv_minimalist_fashion_background_for_keynote_presentation_9c776a8c-eae0-4aa0-98ef-540e4bf013ac.png?ex=670e8a41&is=670d38c1&hm=a52d852255609133eb758548810bf4b506848d3f9dacae91d3f7e43baa983d87&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295408045991661638/pancstv_minimalist_fashion_background_for_keynote_presentation_9c776a8c-eae0-4aa0-98ef-540e4bf013ac.png?ex=670e8a41&is=670d38c1&hm=a52d852255609133eb758548810bf4b506848d3f9dacae91d3f7e43baa983d87&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "Z1kKLJTXW4ZQlYh4l4ueX7f6hw==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:29:05.893000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::9c776a8c-eae0-4aa0-98ef-540e4bf013ac::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::9c776a8c-eae0-4aa0-98ef-540e4bf013ac",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/9c776a8c-eae0-4aa0-98ef-540e4bf013ac"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295408046876524715",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295407786146136086",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 0,
+      "content": "**fashion background for keynote presentation --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+      "mentions": [
+        {
+          "id": "1047955146509914234",
+          "username": "pancstv",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": null,
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295407785772716032",
+          "filename": "pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png",
+          "size": 7381325,
+          "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295407785772716032/pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png?ex=670e8a03&is=670d3883&hm=f8bb1ebefb10699f6a55fcc98573464c9ac9bac619e6c7e6e11be0464f5844bf&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295407785772716032/pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png?ex=670e8a03&is=670d3883&hm=f8bb1ebefb10699f6a55fcc98573464c9ac9bac619e6c7e6e11be0464f5844bf&",
+          "width": 2912,
+          "height": 1632,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "6GgKHIaWqpVAG7d5mK2Ub7n1nA==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-14T15:28:03.730000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::859b857a-0e67-47e2-845f-8f8d32bef1d7::SOLO",
+              "style": 3,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/859b857a-0e67-47e2-845f-8f8d32bef1d7"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295407786146136086",
+      "channel_id": "1008571239570341938",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false
+    }
+  },
+  {
+    "type": 0,
+    "content": "**fashion background for keynote presentation --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295407785772716032",
+        "filename": "pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png",
+        "size": 7381325,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295407785772716032/pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png?ex=670e8a03&is=670d3883&hm=f8bb1ebefb10699f6a55fcc98573464c9ac9bac619e6c7e6e11be0464f5844bf&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295407785772716032/pancstv_fashion_background_for_keynote_presentation_859b857a-0e67-47e2-845f-8f8d32bef1d7.png?ex=670e8a03&is=670d3883&hm=f8bb1ebefb10699f6a55fcc98573464c9ac9bac619e6c7e6e11be0464f5844bf&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "6GgKHIaWqpVAG7d5mK2Ub7n1nA==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:28:03.730000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::859b857a-0e67-47e2-845f-8f8d32bef1d7::SOLO",
+            "style": 3,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::859b857a-0e67-47e2-845f-8f8d32bef1d7",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/859b857a-0e67-47e2-845f-8f8d32bef1d7"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295407786146136086",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false
+  },
+  {
+    "type": 0,
+    "content": "",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295406090514726985",
+        "filename": "WhatsApp_Image_2024-10-14_at_12.20.51.jpeg",
+        "size": 236573,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295406090514726985/WhatsApp_Image_2024-10-14_at_12.20.51.jpeg?ex=670e886f&is=670d36ef&hm=4e23e5325f93d700a789b90c1fc74fe49a6d3253819d56a4766da58ff7b39893&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295406090514726985/WhatsApp_Image_2024-10-14_at_12.20.51.jpeg?ex=670e886f&is=670d36ef&hm=4e23e5325f93d700a789b90c1fc74fe49a6d3253819d56a4766da58ff7b39893&",
+        "width": 1200,
+        "height": 1600,
+        "content_type": "image/jpeg",
+        "content_scan_version": 1,
+        "placeholder": "migOFQQJpoCImKl5hpenlyaQeAJ5",
+        "placeholder_version": 1,
+        "title": "WhatsApp Image 2024-10-14 at 12.20.51"
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:21:19.510000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [],
+    "id": "1295406090724311140",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "1047955146509914234",
+      "username": "pancstv",
+      "avatar": null,
+      "discriminator": "0",
+      "public_flags": 0,
+      "flags": 0,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "reactions": [
+      {
+        "emoji": {
+          "id": null,
+          "name": "❌"
+        },
+        "count": 1,
+        "count_details": {
+          "burst": 0,
+          "normal": 1
+        },
+        "burst_colors": [],
+        "me_burst": false,
+        "burst_me": false,
+        "me": false,
+        "burst_count": 0
+      }
+    ]
+  },
+  {
+    "type": 19,
+    "content": "**create a template image that represents a costume designer working behind the camera, in an aesthetic and elegant way --ar 16:9 --v 6.0 --style raw --s 250** - Variations (Strong) by <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295405378040758443",
+        "filename": "pancstv_create_a_template_image_that_represents_a_costume_desig_76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc.png",
+        "size": 8634532,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295405378040758443/pancstv_create_a_template_image_that_represents_a_costume_desig_76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc.png?ex=670e87c5&is=670d3645&hm=e8c5636a19bd81e46be6ef15dbd6dd444a462e5587f15ae94f939c4afea43092&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295405378040758443/pancstv_create_a_template_image_that_represents_a_costume_desig_76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc.png?ex=670e87c5&is=670d3645&hm=e8c5636a19bd81e46be6ef15dbd6dd444a462e5587f15ae94f939c4afea43092&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "1igODICXBnmHh3h5d3hFoGwC2g==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:18:29.727000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/76ea0ff4-f2f7-4a0f-aae6-52e7495f6fdc"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295405378602799175",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295403270721765431",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0,
+    "referenced_message": {
+      "type": 19,
+      "content": "**create a template image that represents a costume designer working behind the camera, in an aesthetic and elegant way --ar 16:9 --v 6.0 --style raw --s 250** - <@1047955146509914234> (fast, stealth)",
+      "mentions": [
+        {
+          "id": "1047955146509914234",
+          "username": "pancstv",
+          "avatar": null,
+          "discriminator": "0",
+          "public_flags": 0,
+          "flags": 0,
+          "banner": null,
+          "accent_color": null,
+          "global_name": null,
+          "avatar_decoration_data": null,
+          "banner_color": null,
+          "clan": null
+        }
+      ],
+      "mention_roles": [],
+      "attachments": [
+        {
+          "id": "1295403270348738712",
+          "filename": "pancstv_create_a_template_image_that_represents_a_costume_desig_99a6f252-e431-415c-ae21-afea2091c64b.png",
+          "size": 8216958,
+          "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295403270348738712/pancstv_create_a_template_image_that_represents_a_costume_desig_99a6f252-e431-415c-ae21-afea2091c64b.png?ex=670e85cf&is=670d344f&hm=485c0556e41a1bab8d82d9bdc7e299696c8948ec14ad6f315d47cc14cfd30ca7&",
+          "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295403270348738712/pancstv_create_a_template_image_that_represents_a_costume_desig_99a6f252-e431-415c-ae21-afea2091c64b.png?ex=670e85cf&is=670d344f&hm=485c0556e41a1bab8d82d9bdc7e299696c8948ec14ad6f315d47cc14cfd30ca7&",
+          "width": 2912,
+          "height": 1632,
+          "content_type": "image/png",
+          "content_scan_version": 1,
+          "placeholder": "1igKFIJnAop7p5h5dnuALgnYgg==",
+          "placeholder_version": 1
+        }
+      ],
+      "embeds": [],
+      "timestamp": "2024-10-14T15:10:07.169000+00:00",
+      "edited_timestamp": null,
+      "flags": 0,
+      "components": [
+        {
+          "type": 1,
+          "id": 1,
+          "components": [
+            {
+              "type": 2,
+              "id": 2,
+              "custom_id": "MJ::JOB::upsample::1::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "U1"
+            },
+            {
+              "type": 2,
+              "id": 3,
+              "custom_id": "MJ::JOB::upsample::2::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "U2"
+            },
+            {
+              "type": 2,
+              "id": 4,
+              "custom_id": "MJ::JOB::upsample::3::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "U3"
+            },
+            {
+              "type": 2,
+              "id": 5,
+              "custom_id": "MJ::JOB::upsample::4::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "U4"
+            },
+            {
+              "type": 2,
+              "id": 6,
+              "custom_id": "MJ::JOB::reroll::0::99a6f252-e431-415c-ae21-afea2091c64b::SOLO",
+              "style": 2,
+              "emoji": {
+                "name": "🔄"
+              }
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "id": 7,
+          "components": [
+            {
+              "type": 2,
+              "id": 8,
+              "custom_id": "MJ::JOB::variation::1::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "V1"
+            },
+            {
+              "type": 2,
+              "id": 9,
+              "custom_id": "MJ::JOB::variation::2::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "V2"
+            },
+            {
+              "type": 2,
+              "id": 10,
+              "custom_id": "MJ::JOB::variation::3::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 3,
+              "label": "V3"
+            },
+            {
+              "type": 2,
+              "id": 11,
+              "custom_id": "MJ::JOB::variation::4::99a6f252-e431-415c-ae21-afea2091c64b",
+              "style": 2,
+              "label": "V4"
+            },
+            {
+              "type": 2,
+              "id": 12,
+              "style": 5,
+              "label": "​",
+              "url": "https://www.midjourney.com/jobs/99a6f252-e431-415c-ae21-afea2091c64b"
+            }
+          ]
+        }
+      ],
+      "resolved": {
+        "users": {},
+        "members": {},
+        "channels": {},
+        "roles": {}
+      },
+      "id": "1295403270721765431",
+      "channel_id": "1008571239570341938",
+      "author": {
+        "id": "936929561302675456",
+        "username": "Midjourney Bot",
+        "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+        "discriminator": "9282",
+        "public_flags": 589824,
+        "flags": 589824,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      },
+      "pinned": false,
+      "mention_everyone": false,
+      "tts": false,
+      "message_reference": {
+        "type": 0,
+        "channel_id": "1008571239570341938",
+        "message_id": "1295402757410390028",
+        "guild_id": "662267976984297473"
+      },
+      "position": 0
+    }
+  },
+  {
+    "type": 19,
+    "content": "**a costume designer (woman in her 50's, with short dark hair and big blue eyes) at her studio, creating modern looks for film --ar 16:9 --v 6.0 --style raw --s 250** - Remix (Strong) by <@1047955146509914234> (fast, stealth)",
+    "mentions": [
+      {
+        "id": "1047955146509914234",
+        "username": "pancstv",
+        "avatar": null,
+        "discriminator": "0",
+        "public_flags": 0,
+        "flags": 0,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+      }
+    ],
+    "mention_roles": [],
+    "attachments": [
+      {
+        "id": "1295405305748000832",
+        "filename": "pancstv_a_costume_designer_woman_in_her_50s_with_short_dark_hai_6288a0eb-ed4a-4cd9-ad14-83ab1623e229.png",
+        "size": 7533357,
+        "url": "https://cdn.discordapp.com/attachments/1008571239570341938/1295405305748000832/pancstv_a_costume_designer_woman_in_her_50s_with_short_dark_hai_6288a0eb-ed4a-4cd9-ad14-83ab1623e229.png?ex=670e87b4&is=670d3634&hm=73357959ac25cd54c07b3cd938c2124dfa5131df0a9c0e6d247630b6f9c8b4ef&",
+        "proxy_url": "https://media.discordapp.net/attachments/1008571239570341938/1295405305748000832/pancstv_a_costume_designer_woman_in_her_50s_with_short_dark_hai_6288a0eb-ed4a-4cd9-ad14-83ab1623e229.png?ex=670e87b4&is=670d3634&hm=73357959ac25cd54c07b3cd938c2124dfa5131df0a9c0e6d247630b6f9c8b4ef&",
+        "width": 2912,
+        "height": 1632,
+        "content_type": "image/png",
+        "content_scan_version": 1,
+        "placeholder": "EggGDIDxgnuGnHc8qKbQlSfPGw==",
+        "placeholder_version": 1
+      }
+    ],
+    "embeds": [],
+    "timestamp": "2024-10-14T15:18:12.522000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "components": [
+      {
+        "type": 1,
+        "id": 1,
+        "components": [
+          {
+            "type": 2,
+            "id": 2,
+            "custom_id": "MJ::JOB::upsample::1::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "U1"
+          },
+          {
+            "type": 2,
+            "id": 3,
+            "custom_id": "MJ::JOB::upsample::2::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "U2"
+          },
+          {
+            "type": 2,
+            "id": 4,
+            "custom_id": "MJ::JOB::upsample::3::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "U3"
+          },
+          {
+            "type": 2,
+            "id": 5,
+            "custom_id": "MJ::JOB::upsample::4::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "U4"
+          },
+          {
+            "type": 2,
+            "id": 6,
+            "custom_id": "MJ::JOB::reroll::0::6288a0eb-ed4a-4cd9-ad14-83ab1623e229::SOLO",
+            "style": 2,
+            "emoji": {
+              "name": "🔄"
+            }
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "components": [
+          {
+            "type": 2,
+            "id": 8,
+            "custom_id": "MJ::JOB::variation::1::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "V1"
+          },
+          {
+            "type": 2,
+            "id": 9,
+            "custom_id": "MJ::JOB::variation::2::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "V2"
+          },
+          {
+            "type": 2,
+            "id": 10,
+            "custom_id": "MJ::JOB::variation::3::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "V3"
+          },
+          {
+            "type": 2,
+            "id": 11,
+            "custom_id": "MJ::JOB::variation::4::6288a0eb-ed4a-4cd9-ad14-83ab1623e229",
+            "style": 2,
+            "label": "V4"
+          },
+          {
+            "type": 2,
+            "id": 12,
+            "style": 5,
+            "label": "​",
+            "url": "https://www.midjourney.com/jobs/6288a0eb-ed4a-4cd9-ad14-83ab1623e229"
+          }
+        ]
+      }
+    ],
+    "resolved": {
+      "users": {},
+      "members": {},
+      "channels": {},
+      "roles": {}
+    },
+    "id": "1295405306439794688",
+    "channel_id": "1008571239570341938",
+    "author": {
+      "id": "936929561302675456",
+      "username": "Midjourney Bot",
+      "avatar": "f6ce562a6b4979c4b1cbc5b436d3be76",
+      "discriminator": "9282",
+      "public_flags": 589824,
+      "flags": 589824,
+      "bot": true,
+      "banner": null,
+      "accent_color": null,
+      "global_name": null,
+      "avatar_decoration_data": null,
+      "banner_color": null,
+      "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+      "type": 0,
+      "channel_id": "1008571239570341938",
+      "message_id": "1295404207297396737",
+      "guild_id": "662267976984297473"
+    },
+    "position": 0
+  }
+]

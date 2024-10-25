@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/", 
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register/transpile-only"
+            ],
+            "args": ["src/main.ts"],
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"  // Adjust if your output directory is different
+            ],
+            "sourceMaps": true,
+            "protocol": "inspector"
+        }
+    ]
+}
