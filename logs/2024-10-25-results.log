@@ -2107,3 +2107,214 @@
 {"label":"main.ts","level":"info","message":"Starting round: 46","timestamp":"2024-10-25 22:42:40"}
 {"file":"04.txt","label":"main.ts","level":"debug","line":45,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 22:42:40"}
 {"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A Christmas stocking filled with small gifts, ample space for text in the background, soft holiday lighting, festive and cozy mood, photography, --ar 16:9","timestamp":"2024-10-25 22:42:40"}
+{"label":"main.ts","level":"info","message":"Starting round: 46","timestamp":"2024-10-25 23:10:30"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":45,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:10:30"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A Christmas stocking filled with small gifts, ample space for text in the background, soft holiday lighting, festive and cozy mood, photography, --ar 16:9","timestamp":"2024-10-25 23:10:30"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:10:33"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_Christmas_stocking_filled_with_small_gifts_ample_spac_3fa90ed4-6ddd-41dc-9bba-838fc97ebbee.png","height":1632,"id":"1299396483581349994","placeholder":"zzgGBIJ1BH2PScmpmFvxMQNeSg==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299396483581349994/kunggo._A_Christmas_stocking_filled_with_small_gifts_ample_spac_3fa90ed4-6ddd-41dc-9bba-838fc97ebbee.png?ex=671d0cc7&is=671bbb47&hm=412ac1f89cbab35cfe642948b250615c62b5b994f75f2aa97c6a3fc6869783bf&","size":6618166,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299396483581349994/kunggo._A_Christmas_stocking_filled_with_small_gifts_ample_spac_3fa90ed4-6ddd-41dc-9bba-838fc97ebbee.png?ex=671d0cc7&is=671bbb47&hm=412ac1f89cbab35cfe642948b250615c62b5b994f75f2aa97c6a3fc6869783bf&","width":2912},"id":"3fa90ed4-6ddd-41dc-9bba-838fc97ebbee","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:10:33"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"3fa90ed4-6ddd-41dc-9bba-838fc97ebbee","timestamp":"2024-10-25 23:10:33","urls":["https://cdn.midjourney.com/3fa90ed4-6ddd-41dc-9bba-838fc97ebbee/0_0.jpeg","https://cdn.midjourney.com/3fa90ed4-6ddd-41dc-9bba-838fc97ebbee/0_1.jpeg","https://cdn.midjourney.com/3fa90ed4-6ddd-41dc-9bba-838fc97ebbee/0_2.jpeg","https://cdn.midjourney.com/3fa90ed4-6ddd-41dc-9bba-838fc97ebbee/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:11:07"}
+{"label":"main.ts","level":"info","message":"Round completed","round":46,"timestamp":"2024-10-25 23:11:10"}
+{"label":"main.ts","level":"info","message":"Starting round: 47","timestamp":"2024-10-25 23:11:10"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":46,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:11:10"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A close-up of a hand hanging a Christmas ornament on a tree, blurred background with copy space, warm holiday colors, cozy atmosphere, photography, --ar 16:9","timestamp":"2024-10-25 23:11:10"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":47,"timestamp":"2024-10-25 23:11:13"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:11:14"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":47,"timestamp":"2024-10-25 23:11:14"}
+{"label":"main.ts","level":"info","message":"Starting round: 47","timestamp":"2024-10-25 23:11:53"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":46,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:11:53"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A close-up of a hand hanging a Christmas ornament on a tree, blurred background with copy space, warm holiday colors, cozy atmosphere, photography, --ar 16:9","timestamp":"2024-10-25 23:11:53"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:11:56"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":47,"timestamp":"2024-10-25 23:11:57"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:12:42"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":47,"timestamp":"2024-10-25 23:12:44"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:13:29"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":47,"timestamp":"2024-10-25 23:13:32"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:14:17"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":47,"timestamp":"2024-10-25 23:14:20"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:15:05"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_close-up_of_a_hand_hanging_a_Christmas_ornament_on_a__4e0a8067-1b3e-4727-9824-0f71334476ca.png","height":1632,"id":"1299405797402349630","placeholder":"0igGDICRWpWu9XeXiZfw1Ns27w==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299405797402349630/kunggo._A_close-up_of_a_hand_hanging_a_Christmas_ornament_on_a__4e0a8067-1b3e-4727-9824-0f71334476ca.png?ex=671d1573&is=671bc3f3&hm=06ab0d171b9d1133079d112a545b9d7689fcb2ce016f350f17aabb510e786478&","size":6259986,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299405797402349630/kunggo._A_close-up_of_a_hand_hanging_a_Christmas_ornament_on_a__4e0a8067-1b3e-4727-9824-0f71334476ca.png?ex=671d1573&is=671bc3f3&hm=06ab0d171b9d1133079d112a545b9d7689fcb2ce016f350f17aabb510e786478&","width":2912},"id":"4e0a8067-1b3e-4727-9824-0f71334476ca","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:15:08"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"4e0a8067-1b3e-4727-9824-0f71334476ca","timestamp":"2024-10-25 23:15:08","urls":["https://cdn.midjourney.com/4e0a8067-1b3e-4727-9824-0f71334476ca/0_0.jpeg","https://cdn.midjourney.com/4e0a8067-1b3e-4727-9824-0f71334476ca/0_1.jpeg","https://cdn.midjourney.com/4e0a8067-1b3e-4727-9824-0f71334476ca/0_2.jpeg","https://cdn.midjourney.com/4e0a8067-1b3e-4727-9824-0f71334476ca/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:15:40"}
+{"label":"main.ts","level":"info","message":"Round completed","round":47,"timestamp":"2024-10-25 23:15:43"}
+{"label":"main.ts","level":"info","message":"Starting round: 48","timestamp":"2024-10-25 23:15:43"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":47,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:15:43"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A snowy Christmas tree farm, large open space in the sky for text, peaceful winter setting, snow-covered ground reflecting sunlight, photography, --ar 16:9","timestamp":"2024-10-25 23:15:43"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":48,"timestamp":"2024-10-25 23:15:46"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:15:47"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":48,"timestamp":"2024-10-25 23:15:47"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:16:32"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":48,"timestamp":"2024-10-25 23:16:35"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:17:20"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":48,"timestamp":"2024-10-25 23:17:23"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:18:08"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":48,"timestamp":"2024-10-25 23:18:11"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:18:56"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":48,"timestamp":"2024-10-25 23:18:59"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:19:44"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_snowy_Christmas_tree_farm_large_open_space_in_the_sky_dfdd88bd-b302-4eba-863a-c77025cdcaf7.png","height":1632,"id":"1299406952081915926","placeholder":"JggKDIKJNXiJeKlZeJ+XAzt4kA==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299406952081915926/kunggo._A_snowy_Christmas_tree_farm_large_open_space_in_the_sky_dfdd88bd-b302-4eba-863a-c77025cdcaf7.png?ex=671d1687&is=671bc507&hm=b523230462259a790678654830464c4ab94e05b80e8edaabb8e2b3f8cbd8f7b3&","size":8900004,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299406952081915926/kunggo._A_snowy_Christmas_tree_farm_large_open_space_in_the_sky_dfdd88bd-b302-4eba-863a-c77025cdcaf7.png?ex=671d1687&is=671bc507&hm=b523230462259a790678654830464c4ab94e05b80e8edaabb8e2b3f8cbd8f7b3&","width":2912},"id":"dfdd88bd-b302-4eba-863a-c77025cdcaf7","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:19:47"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"dfdd88bd-b302-4eba-863a-c77025cdcaf7","timestamp":"2024-10-25 23:19:47","urls":["https://cdn.midjourney.com/dfdd88bd-b302-4eba-863a-c77025cdcaf7/0_0.jpeg","https://cdn.midjourney.com/dfdd88bd-b302-4eba-863a-c77025cdcaf7/0_1.jpeg","https://cdn.midjourney.com/dfdd88bd-b302-4eba-863a-c77025cdcaf7/0_2.jpeg","https://cdn.midjourney.com/dfdd88bd-b302-4eba-863a-c77025cdcaf7/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:20:18"}
+{"label":"main.ts","level":"info","message":"Round completed","round":48,"timestamp":"2024-10-25 23:20:21"}
+{"label":"main.ts","level":"info","message":"Starting round: 49","timestamp":"2024-10-25 23:20:21"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":48,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:20:21"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A Christmas wreath on a red door, ample space for text on the side, soft natural lighting, festive holiday setting, photography, --ar 16:9","timestamp":"2024-10-25 23:20:21"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":49,"timestamp":"2024-10-25 23:20:24"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:20:25"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":49,"timestamp":"2024-10-25 23:20:25"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:21:10"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":49,"timestamp":"2024-10-25 23:21:13"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:21:58"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":49,"timestamp":"2024-10-25 23:22:01"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:22:46"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":49,"timestamp":"2024-10-25 23:22:49"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:23:34"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":49,"timestamp":"2024-10-25 23:23:37"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:24:22"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_Christmas_wreath_on_a_red_door_ample_space_for_text_o_c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd.png","height":1632,"id":"1299408108619038720","placeholder":"ELkGDIJEr6d9liaXdmovaab0Lg==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299408108619038720/kunggo._A_Christmas_wreath_on_a_red_door_ample_space_for_text_o_c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd.png?ex=671d179a&is=671bc61a&hm=4c3776f4ca0145806ced4e01afe30d789d334f3b9c54c197eb77e52170e2bda4&","size":7754941,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299408108619038720/kunggo._A_Christmas_wreath_on_a_red_door_ample_space_for_text_o_c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd.png?ex=671d179a&is=671bc61a&hm=4c3776f4ca0145806ced4e01afe30d789d334f3b9c54c197eb77e52170e2bda4&","width":2912},"id":"c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:24:25"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd","timestamp":"2024-10-25 23:24:25","urls":["https://cdn.midjourney.com/c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd/0_0.jpeg","https://cdn.midjourney.com/c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd/0_1.jpeg","https://cdn.midjourney.com/c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd/0_2.jpeg","https://cdn.midjourney.com/c91d0f5e-3a7d-443f-b8e7-d5d53093bcbd/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:24:56"}
+{"label":"main.ts","level":"info","message":"Round completed","round":49,"timestamp":"2024-10-25 23:24:59"}
+{"label":"main.ts","level":"info","message":"Starting round: 50","timestamp":"2024-10-25 23:24:59"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":49,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:24:59"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A close-up of a Christmas gift with a bow, open space on the side for text, soft holiday lights in the background, product photography, --ar 16:9 ","timestamp":"2024-10-25 23:24:59"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":50,"timestamp":"2024-10-25 23:25:03"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:25:04"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":50,"timestamp":"2024-10-25 23:25:04"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:25:49"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":50,"timestamp":"2024-10-25 23:25:52"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:26:37"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":50,"timestamp":"2024-10-25 23:26:40"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:27:25"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":50,"timestamp":"2024-10-25 23:27:28"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:28:13"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":50,"timestamp":"2024-10-25 23:28:16"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:29:01"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_close-up_of_a_Christmas_gift_with_a_bow_open_space_on_dd679668-2813-4774-a360-ff23071a50c9.png","height":1632,"id":"1299409333443891355","placeholder":"UBgGFISfVTiGd3WlV19wzijWnw==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299409333443891355/kunggo._A_close-up_of_a_Christmas_gift_with_a_bow_open_space_on_dd679668-2813-4774-a360-ff23071a50c9.png?ex=671d18be&is=671bc73e&hm=6723cab603c9f993b59c07541613fcea711d79ca3d0ea5b8ad635a2b43a5ba43&","size":6746980,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299409333443891355/kunggo._A_close-up_of_a_Christmas_gift_with_a_bow_open_space_on_dd679668-2813-4774-a360-ff23071a50c9.png?ex=671d18be&is=671bc73e&hm=6723cab603c9f993b59c07541613fcea711d79ca3d0ea5b8ad635a2b43a5ba43&","width":2912},"id":"dd679668-2813-4774-a360-ff23071a50c9","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:29:04"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"dd679668-2813-4774-a360-ff23071a50c9","timestamp":"2024-10-25 23:29:04","urls":["https://cdn.midjourney.com/dd679668-2813-4774-a360-ff23071a50c9/0_0.jpeg","https://cdn.midjourney.com/dd679668-2813-4774-a360-ff23071a50c9/0_1.jpeg","https://cdn.midjourney.com/dd679668-2813-4774-a360-ff23071a50c9/0_2.jpeg","https://cdn.midjourney.com/dd679668-2813-4774-a360-ff23071a50c9/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:29:35"}
+{"label":"main.ts","level":"info","message":"Round completed","round":50,"timestamp":"2024-10-25 23:29:38"}
+{"label":"main.ts","level":"info","message":"Starting round: 51","timestamp":"2024-10-25 23:29:38"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":50,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:29:38"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A decorated Christmas tree with glowing lights, large copy space to the side, wrapped gifts underneath, soft holiday glow, cozy indoor setting, photography, --ar 16:9","timestamp":"2024-10-25 23:29:38"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":51,"timestamp":"2024-10-25 23:29:41"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:29:42"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":51,"timestamp":"2024-10-25 23:29:42"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:30:28"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":51,"timestamp":"2024-10-25 23:30:30"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:31:15"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":51,"timestamp":"2024-10-25 23:31:18"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:32:03"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":51,"timestamp":"2024-10-25 23:32:06"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:32:51"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":51,"timestamp":"2024-10-25 23:32:54"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:33:39"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_decorated_Christmas_tree_with_glowing_lights_large_co_84c669c7-7a72-457f-b264-93c025ba7212.png","height":1632,"id":"1299410438899109888","placeholder":"kygGFIR6B7Z7dIlnh336c5cvdw==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299410438899109888/kunggo._A_decorated_Christmas_tree_with_glowing_lights_large_co_84c669c7-7a72-457f-b264-93c025ba7212.png?ex=671d19c6&is=671bc846&hm=3e745f72363445e9676c9c7068bcd772cc37da4a45643ea5fd6efe11148488c6&","size":7178969,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299410438899109888/kunggo._A_decorated_Christmas_tree_with_glowing_lights_large_co_84c669c7-7a72-457f-b264-93c025ba7212.png?ex=671d19c6&is=671bc846&hm=3e745f72363445e9676c9c7068bcd772cc37da4a45643ea5fd6efe11148488c6&","width":2912},"id":"84c669c7-7a72-457f-b264-93c025ba7212","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:33:42"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"84c669c7-7a72-457f-b264-93c025ba7212","timestamp":"2024-10-25 23:33:42","urls":["https://cdn.midjourney.com/84c669c7-7a72-457f-b264-93c025ba7212/0_0.jpeg","https://cdn.midjourney.com/84c669c7-7a72-457f-b264-93c025ba7212/0_1.jpeg","https://cdn.midjourney.com/84c669c7-7a72-457f-b264-93c025ba7212/0_2.jpeg","https://cdn.midjourney.com/84c669c7-7a72-457f-b264-93c025ba7212/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:34:15"}
+{"label":"main.ts","level":"info","message":"Round completed","round":51,"timestamp":"2024-10-25 23:34:18"}
+{"label":"main.ts","level":"info","message":"Starting round: 52","timestamp":"2024-10-25 23:34:18"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":51,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:34:18"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A close-up of Christmas stockings hanging by the fireplace, ample empty space above for text, warm and inviting atmosphere, photography, --ar 16:9","timestamp":"2024-10-25 23:34:18"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":52,"timestamp":"2024-10-25 23:34:21"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:34:22"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":52,"timestamp":"2024-10-25 23:34:22"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:35:07"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":52,"timestamp":"2024-10-25 23:35:10"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:35:55"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":52,"timestamp":"2024-10-25 23:35:58"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:36:43"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":52,"timestamp":"2024-10-25 23:36:46"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:37:31"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":52,"timestamp":"2024-10-25 23:37:34"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:38:19"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_close-up_of_Christmas_stockings_hanging_by_the_firepl_2637abd6-de05-49b2-b218-61d3a9914749.png","height":1632,"id":"1299411615988580363","placeholder":"zjgGDIJjVNmFu3WJyn8VB1xh0A==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299411615988580363/kunggo._A_close-up_of_Christmas_stockings_hanging_by_the_firepl_2637abd6-de05-49b2-b218-61d3a9914749.png?ex=671d1adf&is=671bc95f&hm=1d06121af22aff303258eabd692054709a7380cd5ad6a882a4bdcfdb4b36d465&","size":6194381,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299411615988580363/kunggo._A_close-up_of_Christmas_stockings_hanging_by_the_firepl_2637abd6-de05-49b2-b218-61d3a9914749.png?ex=671d1adf&is=671bc95f&hm=1d06121af22aff303258eabd692054709a7380cd5ad6a882a4bdcfdb4b36d465&","width":2912},"id":"2637abd6-de05-49b2-b218-61d3a9914749","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:38:22"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"2637abd6-de05-49b2-b218-61d3a9914749","timestamp":"2024-10-25 23:38:22","urls":["https://cdn.midjourney.com/2637abd6-de05-49b2-b218-61d3a9914749/0_0.jpeg","https://cdn.midjourney.com/2637abd6-de05-49b2-b218-61d3a9914749/0_1.jpeg","https://cdn.midjourney.com/2637abd6-de05-49b2-b218-61d3a9914749/0_2.jpeg","https://cdn.midjourney.com/2637abd6-de05-49b2-b218-61d3a9914749/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:38:53"}
+{"label":"main.ts","level":"info","message":"Round completed","round":52,"timestamp":"2024-10-25 23:38:56"}
+{"label":"main.ts","level":"info","message":"Starting round: 53","timestamp":"2024-10-25 23:38:56"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":52,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:38:56"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"Santa Claus holding a gift with a wide snowy landscape behind him, open sky for copy space, festive and magical setting, photography, --ar 16:9","timestamp":"2024-10-25 23:38:56"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":53,"timestamp":"2024-10-25 23:38:59"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:39:00"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":53,"timestamp":"2024-10-25 23:39:00"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:39:45"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":53,"timestamp":"2024-10-25 23:39:48"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:40:33"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":53,"timestamp":"2024-10-25 23:40:37"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:41:22"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":53,"timestamp":"2024-10-25 23:41:25"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:42:10"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":53,"timestamp":"2024-10-25 23:42:13"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:42:58"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._Santa_Claus_holding_a_gift_with_a_wide_snowy_landscape__929a1a9d-5972-4050-9a59-47e152586ae7.png","height":1632,"id":"1299412791102279690","placeholder":"qQgGDIBXgKidS8Zjh30wF0UAcA==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299412791102279690/kunggo._Santa_Claus_holding_a_gift_with_a_wide_snowy_landscape__929a1a9d-5972-4050-9a59-47e152586ae7.png?ex=671d1bf7&is=671bca77&hm=f61cf4a986a4607a4de59fa9799ba03d0fe7e1686cbf9d3dd329ccb6f23cc7c4&","size":6640386,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299412791102279690/kunggo._Santa_Claus_holding_a_gift_with_a_wide_snowy_landscape__929a1a9d-5972-4050-9a59-47e152586ae7.png?ex=671d1bf7&is=671bca77&hm=f61cf4a986a4607a4de59fa9799ba03d0fe7e1686cbf9d3dd329ccb6f23cc7c4&","width":2912},"id":"929a1a9d-5972-4050-9a59-47e152586ae7","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:43:01"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"929a1a9d-5972-4050-9a59-47e152586ae7","timestamp":"2024-10-25 23:43:01","urls":["https://cdn.midjourney.com/929a1a9d-5972-4050-9a59-47e152586ae7/0_0.jpeg","https://cdn.midjourney.com/929a1a9d-5972-4050-9a59-47e152586ae7/0_1.jpeg","https://cdn.midjourney.com/929a1a9d-5972-4050-9a59-47e152586ae7/0_2.jpeg","https://cdn.midjourney.com/929a1a9d-5972-4050-9a59-47e152586ae7/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:43:35"}
+{"label":"main.ts","level":"info","message":"Round completed","round":53,"timestamp":"2024-10-25 23:43:38"}
+{"label":"main.ts","level":"info","message":"Starting round: 54","timestamp":"2024-10-25 23:43:38"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":53,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:43:38"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A Christmas wreath hanging on a rustic wooden door, large open space on the right for text, soft natural lighting, festive feeling, photography, --ar 16:9","timestamp":"2024-10-25 23:43:38"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":54,"timestamp":"2024-10-25 23:43:41"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:43:42"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":54,"timestamp":"2024-10-25 23:43:42"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:44:27"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":54,"timestamp":"2024-10-25 23:44:30"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:45:15"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":54,"timestamp":"2024-10-25 23:45:18"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:46:03"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":54,"timestamp":"2024-10-25 23:46:07"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:46:52"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":54,"timestamp":"2024-10-25 23:46:54"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:47:39"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_Christmas_wreath_hanging_on_a_rustic_wooden_door_larg_6eb4e1a5-3c71-4c35-bc97-f4796e1389ec.png","height":1632,"id":"1299414011972026450","placeholder":"D/gFDIJ0mNWpKVeXOW+cAstZsA==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299414011972026450/kunggo._A_Christmas_wreath_hanging_on_a_rustic_wooden_door_larg_6eb4e1a5-3c71-4c35-bc97-f4796e1389ec.png?ex=671d1d1a&is=671bcb9a&hm=08c44cced3b893b099954afb9a572e536d938da5360efd4a2987c1068c03b621&","size":7975430,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299414011972026450/kunggo._A_Christmas_wreath_hanging_on_a_rustic_wooden_door_larg_6eb4e1a5-3c71-4c35-bc97-f4796e1389ec.png?ex=671d1d1a&is=671bcb9a&hm=08c44cced3b893b099954afb9a572e536d938da5360efd4a2987c1068c03b621&","width":2912},"id":"6eb4e1a5-3c71-4c35-bc97-f4796e1389ec","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:47:42"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"6eb4e1a5-3c71-4c35-bc97-f4796e1389ec","timestamp":"2024-10-25 23:47:42","urls":["https://cdn.midjourney.com/6eb4e1a5-3c71-4c35-bc97-f4796e1389ec/0_0.jpeg","https://cdn.midjourney.com/6eb4e1a5-3c71-4c35-bc97-f4796e1389ec/0_1.jpeg","https://cdn.midjourney.com/6eb4e1a5-3c71-4c35-bc97-f4796e1389ec/0_2.jpeg","https://cdn.midjourney.com/6eb4e1a5-3c71-4c35-bc97-f4796e1389ec/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:48:15"}
+{"label":"main.ts","level":"info","message":"Round completed","round":54,"timestamp":"2024-10-25 23:48:18"}
+{"label":"main.ts","level":"info","message":"Starting round: 55","timestamp":"2024-10-25 23:48:18"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":54,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:48:18"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A plate of decorated gingerbread cookies on a wooden table, ample copy space on the side for text, soft holiday lights in the background, product photography, --ar 16:9","timestamp":"2024-10-25 23:48:18"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":55,"timestamp":"2024-10-25 23:48:21"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:48:22"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":55,"timestamp":"2024-10-25 23:48:22"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:49:07"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":55,"timestamp":"2024-10-25 23:49:10"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:49:55"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":55,"timestamp":"2024-10-25 23:49:58"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:50:43"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":55,"timestamp":"2024-10-25 23:50:46"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:51:31"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":55,"timestamp":"2024-10-25 23:51:34"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:52:19"}
+{"attachment":{"content_type":"image/png","filename":"kunggo._A_plate_of_decorated_gingerbread_cookies_on_a_wooden_ta_cf22f89d-a6b3-4c68-a869-abc5e9ab4839.png","height":1632,"id":"1299415135932252200","placeholder":"FDkGFIJTBZfahENdV48IfFigeQ==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299415135932252200/kunggo._A_plate_of_decorated_gingerbread_cookies_on_a_wooden_ta_cf22f89d-a6b3-4c68-a869-abc5e9ab4839.png?ex=671d1e26&is=671bcca6&hm=e3e1c166622ea751d6b23c0f7002eee8682859d5c8c32518e3047aab9c289b6a&","size":6073789,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299415135932252200/kunggo._A_plate_of_decorated_gingerbread_cookies_on_a_wooden_ta_cf22f89d-a6b3-4c68-a869-abc5e9ab4839.png?ex=671d1e26&is=671bcca6&hm=e3e1c166622ea751d6b23c0f7002eee8682859d5c8c32518e3047aab9c289b6a&","width":2912},"id":"cf22f89d-a6b3-4c68-a869-abc5e9ab4839","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:52:22"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"cf22f89d-a6b3-4c68-a869-abc5e9ab4839","timestamp":"2024-10-25 23:52:22","urls":["https://cdn.midjourney.com/cf22f89d-a6b3-4c68-a869-abc5e9ab4839/0_0.jpeg","https://cdn.midjourney.com/cf22f89d-a6b3-4c68-a869-abc5e9ab4839/0_1.jpeg","https://cdn.midjourney.com/cf22f89d-a6b3-4c68-a869-abc5e9ab4839/0_2.jpeg","https://cdn.midjourney.com/cf22f89d-a6b3-4c68-a869-abc5e9ab4839/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:52:54"}
+{"label":"main.ts","level":"info","message":"Round completed","round":55,"timestamp":"2024-10-25 23:52:58"}
+{"label":"main.ts","level":"info","message":"Starting round: 56","timestamp":"2024-10-25 23:52:58"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":55,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:52:58"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A reindeer with snow-covered antlers in a winter forest, large open space in the sky for text, peaceful and festive atmosphere, photography, --ar 16:9","timestamp":"2024-10-25 23:52:58"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":56,"timestamp":"2024-10-25 23:53:01"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:53:02"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":56,"timestamp":"2024-10-25 23:53:02"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:53:48"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":56,"timestamp":"2024-10-25 23:53:50"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:54:35"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":56,"timestamp":"2024-10-25 23:54:38"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:55:23"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":56,"timestamp":"2024-10-25 23:55:26"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:56:11"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":56,"timestamp":"2024-10-25 23:56:14"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:56:59"}
+{"attachment":{"content_scan_version":1,"content_type":"image/png","filename":"kunggo._A_reindeer_with_snow-covered_antlers_in_a_winter_forest_3164866a-c839-4bce-a9af-4d90c8354284.png","height":1632,"id":"1299416322710442044","placeholder":"7PcJDIKLBXm2iZZ3d4mD85aWTw==","placeholder_version":1,"proxy_url":"https://media.discordapp.net/attachments/1291762963174129696/1299416322710442044/kunggo._A_reindeer_with_snow-covered_antlers_in_a_winter_forest_3164866a-c839-4bce-a9af-4d90c8354284.png?ex=671d1f41&is=671bcdc1&hm=7282bd665148b3d83e3296d0f1ca417e7fdf5c4ee0f28ea5e5992f795d1bf630&","size":8817426,"url":"https://cdn.discordapp.com/attachments/1291762963174129696/1299416322710442044/kunggo._A_reindeer_with_snow-covered_antlers_in_a_winter_forest_3164866a-c839-4bce-a9af-4d90c8354284.png?ex=671d1f41&is=671bcdc1&hm=7282bd665148b3d83e3296d0f1ca417e7fdf5c4ee0f28ea5e5992f795d1bf630&","width":2912},"id":"3164866a-c839-4bce-a9af-4d90c8354284","label":"main.ts","level":"debug","message":"ID found","timestamp":"2024-10-25 23:57:02"}
+{"dirImage":"/home/tonkung/work/upscayl/auto-bot-midjourney-discord/images/04","label":"main.ts","level":"info","message":"Waiting for full photo generation","seedID":"3164866a-c839-4bce-a9af-4d90c8354284","timestamp":"2024-10-25 23:57:02","urls":["https://cdn.midjourney.com/3164866a-c839-4bce-a9af-4d90c8354284/0_0.jpeg","https://cdn.midjourney.com/3164866a-c839-4bce-a9af-4d90c8354284/0_1.jpeg","https://cdn.midjourney.com/3164866a-c839-4bce-a9af-4d90c8354284/0_2.jpeg","https://cdn.midjourney.com/3164866a-c839-4bce-a9af-4d90c8354284/0_3.jpeg"]}
+{"label":"main.ts","level":"info","message":"Images downloaded successfully!","timestamp":"2024-10-25 23:57:34"}
+{"label":"main.ts","level":"info","message":"Round completed","round":56,"timestamp":"2024-10-25 23:57:37"}
+{"label":"main.ts","level":"info","message":"Starting round: 57","timestamp":"2024-10-25 23:57:37"}
+{"file":"04.txt","label":"main.ts","level":"debug","line":56,"message":"Current config","previousfile":["00.txt","test.txt","01.txt","02.txt","03.txt"],"timestamp":"2024-10-25 23:57:37"}
+{"label":"main.ts","level":"debug","message":"Current prompt","prompt":"A Santa hat resting on a pile of wrapped gifts, empty space to the side for text, warm holiday colors, soft glowing lights in the background, photography, --ar 16:9","timestamp":"2024-10-25 23:57:37"}
+{"label":"main.ts","level":"info","message":"Sending prompt","round":57,"timestamp":"2024-10-25 23:57:40"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:57:41"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":57,"timestamp":"2024-10-25 23:57:41"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:58:26"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":57,"timestamp":"2024-10-25 23:58:29"}
+{"label":"main.ts","level":"info","message":"Checking messages...","timestamp":"2024-10-25 23:59:14"}
+{"label":"main.ts","level":"info","message":"Data not ready, checking again in 45 seconds...","round":57,"timestamp":"2024-10-25 23:59:17"}

@@ -195,6 +195,7 @@ class MidjourneyController {
       await this.initialize();
       await this.processRound();
     } catch (error) {
+      await this.processRound();
       throw new Error(`Failed to start processing: ${error}`);
     }
   }
@@ -210,3 +211,5 @@ class MidjourneyController {
     process.exit(1);
   }
 })();
+
+// pm2 start main.ts --name myDiscord --interpreter ts-node --cron-restart="0 * * * *"

@@ -7,8 +7,6 @@ export default class MidjourneyDiscord extends Midjourney {
   private DisCordApi = "https://discord.com/api/v9"
   constructor (auth: string,mid :string = '1291762963174129696') {
     super()
-    console.log("authorization",auth,mid);
-    
     this.Authorization = auth
     this.MidjourneyChannelID = mid
   }

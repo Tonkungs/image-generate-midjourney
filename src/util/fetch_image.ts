@@ -54,10 +54,7 @@ export default class FetchPuppeteer {
       }
 
       if (!response.ok()) {
-        console.log("response.status() =>",response.status());
         if (this.again <= this.MaxAgain) {
-          console.log("imageUrl =>",imageUrl);
-          console.log(`Cannot Download I retive download again in 10 seconds `+ new Date().toISOString());
           await new Promise((resolve) => setTimeout(resolve, 10000));
           this.again++
           return this.lunchPuppeteer(imageUrl);
@@ -85,7 +82,8 @@ export default class FetchPuppeteer {
     }
     
     await this.browser.close();
-
+    this.browser = undefined
+    this.page = undefined
   }
 }
 
