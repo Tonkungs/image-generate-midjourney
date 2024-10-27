@@ -4,6 +4,7 @@ import Units from "./src/util/image_downloader";
 import { ConfigManager } from "./src/util/config_manager";
 import FetchPuppeteer from "./src/util/fetch_image";
 import Logs from "./src/logs";
+require("dotenv").config();
 
 const fs = require('fs').promises;
 const regexFinal = /<@\d+>/g;
@@ -102,9 +103,7 @@ async function mainTime(): Promise<void> {
     // await delay(5000)
     log.info("Start Round :" + (round + 1));
     log.debug("configManager", configManager.getConfig());
-    log.debug("promts =>", { promt: promts[round] });
-    console.log("round",round);
-    
+    log.debug("promts =>", { promt: promts[round] });    
     if (promts[round] === "" || promts[round] === undefined) {
       log.info("END");
       configManager.nextFile();
@@ -116,7 +115,7 @@ async function mainTime(): Promise<void> {
       mainTime()
     }
     // await delay(5000)
-    const checkIDRun = await checkIsGenerateing()
+    const checkIDRun = await checkIsGenerateing()    
     if (!checkIDRun) {
       log.info("Send Promt", { round: round + 1 });
       await midjourneyDis.SendPromt(promts[round]);
@@ -142,7 +141,7 @@ async function mainTime(): Promise<void> {
         log.info("Wait 20 Seconds For Generate Full Photo", {
           url_1: url_1, url_2: url_2, url_3: url_3, url_4: url_4, dirImage: dirImage, seedID: seedID
         });
-        await delay(20000)
+        // await delay(20000)
         // ต้องทำที่ละหน้าเท่านั้นเพราะ มี brower เดียว
         const img1 = await brower.lunchPuppeteer(url_1);
         const img2 = await brower.lunchPuppeteer(url_2);
@@ -203,7 +202,7 @@ async function mainTime(): Promise<void> {
 
 (async function name() {
   try {
-    midjourneyDis = new MidjourneyDiscord();
+    midjourneyDis = new MidjourneyDiscord(process?.env?.discord_token as string);
     configManager = new ConfigManager('./config/config.txt', "./promt", __dirname);
     promts = Units.readFileSync("./promt/" + configManager.getConfig().file);
     brower = new FetchPuppeteer();
@@ -228,5 +227,5 @@ async function mainTime(): Promise<void> {
 // Function to introduce a delay
 function delay(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
-
+}
 

@@ -14,8 +14,8 @@ interface FetchDataResult {
 class MidjourneyController {
   private static readonly REGEX_FINAL = /<@\d+>/g;
   private static readonly REGEX_PERCENT = /\(\d{2}%\) \((fast|turbo|relax)(, stealth)?\)/g;
-  private static readonly CHECK_INTERVAL = 45000; // 45 seconds
-  private static readonly GENERATE_WAIT_TIME = 20000; // 20 seconds
+  private static readonly CHECK_INTERVAL = 30000; // 30 seconds
+  private static readonly GENERATE_WAIT_TIME = 5000; // 5 seconds
 
   private midjourneyDis: MidjourneyDiscord;
   private configManager: ConfigManager;

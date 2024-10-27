@@ -12,8 +12,7 @@ export default class MidjourneyDiscord extends Midjourney {
   }
 
   async SendPromt(promt: string): Promise<any> {
-    try {
-
+    try {      
       const nonce = await this.getNonce()
       const bor = this.generateBoundary()
 
@@ -25,7 +24,6 @@ export default class MidjourneyDiscord extends Midjourney {
         "body": "--" + bor + "\r\nContent-Disposition: form-data; name=\"payload_json\"\r\n\r\n{\"type\":2,\"application_id\":\"936929561302675456\",\"channel_id\":\"1291762963174129696\",\"session_id\":\"bfa3890e0fa3276023e9a87e811ff667\",\"data\":{\"version\":\"1237876415471554623\",\"id\":\"938956540159881230\",\"name\":\"imagine\",\"type\":1,\"options\":[{\"type\":3,\"name\":\"prompt\",\"value\":\"" + promt + "\"}],\"application_command\":{\"id\":\"938956540159881230\",\"type\":1,\"application_id\":\"936929561302675456\",\"version\":\"1237876415471554623\",\"name\":\"imagine\",\"description\":\"Create images with Midjourney\",\"options\":[{\"type\":3,\"name\":\"prompt\",\"description\":\"The prompt to imagine\",\"required\":true,\"description_localized\":\"The prompt to imagine\",\"name_localized\":\"prompt\"}],\"dm_permission\":true,\"contexts\":[0,1,2],\"integration_types\":[0,1],\"global_popularity_rank\":1,\"description_localized\":\"Create images with Midjourney\",\"name_localized\":\"imagine\"},\"attachments\":[]},\"nonce\":\"" + nonce + "\",\"analytics_location\":\"slash_ui\"}\r\n--" + bor + "--\r\n",
         "method": "POST"
       });
-
     } catch (error) {
       throw error
     }
