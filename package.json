@@ -7,21 +7,30 @@
     "start": "pm2 start ecosystem.config.js && pm2 logs myAppDISCORD",
     "remove": "pm2 delete myAppDISCORD",
     "log": "pm2 logs myAppDISCORD",
+    "scrap_title": "ts-node ./src/adobe_stock.ts",
+    "gen_promt": "ts-node ./main-json-sender.ts",
+    "gen_saver": "ts-node ./main-json-saver.ts",
+    "gen_json": "ts-node ./src/txt_json.ts",
     "dev": "nodemon"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.46.1",
     "@types/node": "^22.7.5",
     "axios": "^1.7.7",
     "cloudscraper": "^4.6.0",
+    "dayjs": "^1.11.13",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "node-fetch": "^3.3.2",
     "puppeteer": "^23.6.0",
-    "puppeteer-core": "^23.6.0"
+    "puppeteer-core": "^23.6.0",
+    "snowyflake": "^2.0.0",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.12",
     "nodemon": "^3.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",

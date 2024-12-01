@@ -18,7 +18,7 @@ module.exports = {
         error_file: "./logspm2/err.log", // ไฟล์สำหรับเก็บ error log
         out_file: "./logspm2/out.log",   // ไฟล์สำหรับเก็บ log ปกติ
         merge_logs: true,             // รวม log ทั้งหมดในไฟล์เดียว
-        cron_restart: "0 * * * *",    // รีสตาร์ททุกๆ ชั่วโมง
+        // cron_restart: "0 * * * *",    // รีสตาร์ททุกๆ ชั่วโมง
       },
     ],
   };

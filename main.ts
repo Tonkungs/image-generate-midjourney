@@ -61,6 +61,8 @@ class MidjourneyController {
           }
 
           const message = messages[0];
+          // console.log("message", JSON.stringify(messages));
+          
           const { content: text, id: messageID, attachments } = message;
 
           const hasFinished = text.match(MidjourneyController.REGEX_FINAL);
@@ -110,22 +112,24 @@ class MidjourneyController {
       // const images = await Promise.all(
       //   urls.map(url => this.browser.lunchPuppeteer(url))
       // );
-      const img1 = await this.browser.lunchPuppeteer(urls[0]);
-      const img2 = await this.browser.lunchPuppeteer(urls[1]);
-      const img3 = await this.browser.lunchPuppeteer(urls[2]);
-      const img4 = await this.browser.lunchPuppeteer(urls[3]);
-
-      await Promise.all([
-        fs.writeFile(filePaths[0], img1),
-        fs.writeFile(filePaths[1], img2),
-        fs.writeFile(filePaths[2], img3),
-        fs.writeFile(filePaths[3], img4)
-      ]);
-      // await Promise.all(
-      //   images.map((img, i) => fs.writeFile(filePaths[i], img))
-      // );
-
+      // const img1 = await this.browser.lunchPuppeteer(urls[0]);
+      // const img2 = await this.browser.lunchPuppeteer(urls[1]);
+      // const img3 = await this.browser.lunchPuppeteer(urls[2]);
+      // const img4 = await this.browser.lunchPuppeteer(urls[3]);
+      const buffers = await this.browser.lunchPuppeteerv2(urls);
+      // console.log("buffers",buffers[0])
+      // await Promise.all([
+      //   fs.writeFile(filePaths[0], img1),
+      //   fs.writeFile(filePaths[1], img2),
+      //   fs.writeFile(filePaths[2], img3),
+      //   fs.writeFile(filePaths[3], img4)
+      // ]);
+      await Promise.all(
+        buffers.map((imgBuffer, i) => fs.writeFile(filePaths[i], imgBuffer))
+      );
+      
       this.log.info("Images downloaded successfully!");
+      // await this.delay(MidjourneyController.CHECK_INTERVAL);
     } catch (error) {
       console.log("error", error);
 

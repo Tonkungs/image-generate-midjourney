@@ -5,9 +5,10 @@ export default class FetchPuppeteer {
   private page: Page | undefined;
   private browser: Browser | undefined;
   public userAgent: string = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3';
-  private MaxAgain:number = 5
-  private again:number = 0
-  constructor (again : number = 5) {
+  private MaxAgain: number = 5
+  private again: number = 0
+  private pages: Page[] = [];
+  constructor (again: number = 5) {
     this.again = again
   }
 
@@ -28,6 +29,13 @@ export default class FetchPuppeteer {
       this.page = await this.browser.newPage() as Page
 
       await this.page.setUserAgent(this.userAgent);
+
+      for (let i = 0; i < 4; i++){
+        const page = await this.browser!.newPage();
+        page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3');
+        this.pages.push(page);
+    }
+
     } catch (error) {
       throw new Error("Error launching browser: " + error);
     }
@@ -41,7 +49,7 @@ export default class FetchPuppeteer {
    * @returns A promise that resolves with the image data as a Buffer.
    * @throws If there is an error during the image download, it throws an error with a descriptive message.
    */
-  async lunchPuppeteer(imageUrl: string) : Promise<Buffer>{
+  async lunchPuppeteer(imageUrl: string): Promise<Buffer> {
     try {
 
       if (!this.page) {
@@ -70,6 +78,36 @@ export default class FetchPuppeteer {
     }
   }
 
+  async lunchPuppeteerv2(imageUrls: string[]): Promise<Buffer[]> {
+    if (!this.browser) {
+      throw new Error('Browser is not launched. Call launchBrowser() first.');
+    }
+
+    // Open up to 4 tabs and download images as buffers
+    const buffers: Buffer[] = [];
+
+    const openPagePromises = imageUrls.slice(0, 4).map(async (imageUrl,index) => {
+      // const page = await this.browser!.newPage();
+      // this.pages.push(page);
+
+      // Navigate to the image URL and wait for the network to be idle
+      const response = await this.pages[index].goto(imageUrl, { waitUntil: 'networkidle0' });
+      if (response === null) {
+        throw new Error(`Failed to get response for ${imageUrl}`);
+      }
+      // const response: puppeteer.HTTPResponse | null = await page.goto(imageUrl, { waitUntil: 'networkidle0' });
+
+      // Get the image buffer
+      const buffer = await response.buffer();
+      buffers.push(buffer); // Store the buffer
+
+      // await page.close(); // Close the page after downloading
+    });
+
+    await Promise.all(openPagePromises); // Wait for all pages to finish
+    return buffers; // Return the array of image buffers
+  }
+
   /**
    * Closes the Puppeteer browser instance.
    * If the browser is not initialized, it throws an error with a descriptive message.
@@ -80,7 +118,7 @@ export default class FetchPuppeteer {
     if (!this.browser) {
       throw new Error("Browser is not initialized");
     }
-    
+
     await this.browser.close();
     this.browser = undefined
     this.page = undefined

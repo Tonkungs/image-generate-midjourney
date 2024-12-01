@@ -28,4 +28,6 @@
 
 14 Business & Office
 
+15 Parks/Outdoor
+
 https://chatgpt.com/g/g-IpZydVjOe-mj-stock-images-prompt-generator/c/671baf86-73f4-800e-ad6c-c228d3c2bc98
