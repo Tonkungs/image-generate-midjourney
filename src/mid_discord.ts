@@ -135,6 +135,33 @@ export default class MidjourneyDiscord extends Midjourney {
 
     }
   }
+
+  /**
+   * Sends a message to a specific Discord channel.
+   * 
+   * @param message - The content of the message to be sent.
+   * @returns A promise that resolves with the response data from the Discord API or logs an error if the request fails.
+   */
+  async SendMessage(message: string): Promise<IMessage> {
+
+    try {
+      const result = await axios.post(this.DisCordApi +'/channels/'+this.MidjourneyChannelID+'/messages', {
+        content: message,
+        nonce: Utils.nextNonce(),
+        tts: false,
+        flags: 0
+      }, {
+        headers: {
+          "authorization": this.Authorization,
+        }
+      })
+      return result.data
+    } catch (error) {
+      throw new Error("Failed to send message: " + error);
+    }
+  }
+
+
   async DeletePromt(messageID: string): Promise<any> {
     try {
       await fetch(this.DisCordApi + "/channels/" + this.MidjourneyChannelID + "/messages/" + messageID + "/reactions/%E2%9D%8C/%40me", {
