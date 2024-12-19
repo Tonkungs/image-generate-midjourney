@@ -71,7 +71,7 @@ interface IMessage {
   mentions: User[];
   mention_roles: any[];
   attachments: Attachment[];
-  embeds: any[];
+  embeds: Embed[];
   timestamp: string;
   edited_timestamp: string | null;
   flags: number;
@@ -93,6 +93,21 @@ interface IMessage {
   referenced_message?: IMessage;
   reactions?: Reaction[];
 }
+
+
+export interface Embed {
+  type:                 string;
+  title:                string;
+  footer:               Footer;
+  description:          string;
+  content_scan_version: number;
+  color:                number;
+}
+
+export interface Footer {
+  text: string;
+}
+
 
 type IMessageArray = IMessage[];
 export type { IMessage, IMessageArray };

@@ -42,6 +42,19 @@ export default class MidjourneyDiscord extends Midjourney {
     }
   }
 
+  generateRandomHash() {
+    const characters = '0123456789abcdef'; // อักษรที่ใช้ใน hash
+    const length = 32; // ความยาวที่ต้องการ
+    let result = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+    }
+  
+    return result;
+  }
+
   async SendPromtv2(promt: string): Promise<void> {
     try {
       const nonce = Utils.nextNonce();
@@ -55,7 +68,7 @@ export default class MidjourneyDiscord extends Midjourney {
         type: 2,
         application_id: "936929561302675456",
         channel_id: this.MidjourneyChannelID,
-        session_id: "bfa3890e0fa3276023e9a87e811ff667",
+        session_id: this.generateRandomHash(),
         data: {
           version: "1237876415471554623",
           id: "938956540159881230",
