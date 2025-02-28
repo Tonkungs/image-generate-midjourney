@@ -1,11 +1,20 @@
+require("dotenv").config();
 import WebSocket from 'ws';
 import axios from 'axios';
-import DataDBHandler from "./src/util/db";
-// const cliProgress = require('cli-progress');
+import DataDBHandler from "../src/util/db";
 import cliProgress from "cli-progress"; 
+import Logs from "../src/logs";
+
+interface IComfyConfig {
+  serverAddress: string;
+  // clientId: string;
+  STEP: number;
+  db: DataDBHandler;
+  logs?: Logs;
+}
 
 class ComfyUIPromptProcessor {
-  private serverAddress = 'jurisdiction-bio-delhi-alan.trycloudflare.com';
+  private serverAddress :string;
   private clientId: string;
   private WSS_URL: string;
   private STEP = 20;
@@ -14,13 +23,24 @@ class ComfyUIPromptProcessor {
   private bar: any;
   private currentPromptTextId: string | null = null;
   private currentPromptId: string | null = null;
+  private logs: Logs;
 
-  constructor() {
+  constructor(config :IComfyConfig) {
+    if (!config.serverAddress) {
+      throw new Error("Server address is required");
+    }
+    if (!config.logs) {
+      throw new Error("Logs is required");
+    }
+    this.serverAddress = config.serverAddress;
     this.clientId = this.generateClientId();
-    this.WSS_URL = `ws://${this.serverAddress}/ws?clientId=${this.clientId}`;
-    this.db = new DataDBHandler();
+    this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.clientId}`;
+    this.db = config.db;
     this.bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     this.registerShutdownHandlers();
+    this.STEP = config.STEP;
+    
+    this.logs = config.logs as Logs;
   }
 
   // สร้าง clientId แบบสุ่ม
@@ -38,7 +58,10 @@ class ComfyUIPromptProcessor {
       const response = await axios.post(`http://${this.serverAddress}/prompt`, prompt);
       return response.data;
     } catch (error) {
-      console.error('Error queuing prompt:', error);
+      this.logs.error(`Error queuing prompt`, {
+        prompt,
+        error
+      });
       throw error;
     }
   }
@@ -161,7 +184,7 @@ class ComfyUIPromptProcessor {
 
     this.ws.on('open', async () => {
       // สามารถเพิ่ม logic เมื่อต้องการทำงานตอนเปิด connection ได้
-      console.log("WebSocket connected.");
+      this.logs.info("WebSocket connected.");
     });
 
     this.ws.on('message', async (data: WebSocket.Data) => {
@@ -182,7 +205,10 @@ class ComfyUIPromptProcessor {
             );
             this.bar.stop();
           } catch (error) {
-            console.error(error);
+            this.logs.error("Error updating stage", {
+              message,
+              error
+            });
             this.ws?.close();
             throw new Error("Error updating stage");
           }
@@ -192,6 +218,9 @@ class ComfyUIPromptProcessor {
       if (message.type === "status" && message.data.status.exec_info.queue_remaining === 0) {
         const promtText = await this.db.findFirstStart();
         if (!promtText?.ID) {
+          this.logs.error("Error finding prompt text", {
+            promtText
+          });
           throw new Error("Error finding prompt text");
         }
         const noise = this.generateRandomNoise();
@@ -207,21 +236,25 @@ class ComfyUIPromptProcessor {
     });
 
     this.ws.on('error', (error) => {
-      console.error('WebSocket error:', error);
+      this.logs.error("WebSocket error", {
+        error
+      });
     });
   }
 
   // ลงทะเบียน handler สำหรับการ shutdown แบบปลอดภัย
   private registerShutdownHandlers() {
     const safeShutdown = async () => {
-      console.log("Shutting down gracefully...");
+      this.logs.info("Shutting down gracefully...");
       try {
         if (this.currentPromptTextId && this.currentPromptId) {
           // อัพเดท prompt stage ให้เป็น "START" ก่อนปิดโปรแกรม
           await this.db.updateStageByID(this.currentPromptTextId, "START", "", this.currentPromptId);
         }
       } catch (error) {
-        console.error("Error during safe shutdown:", error);
+        this.logs.error("Error during safe shutdown", {
+          error
+        });
       } finally {
         process.exit(0);
       }
@@ -234,8 +267,15 @@ class ComfyUIPromptProcessor {
   }
 }
 
+
 // สร้าง instance และเริ่มทำงาน
-const processor = new ComfyUIPromptProcessor();
+const processor = new ComfyUIPromptProcessor({
+  serverAddress: process.env.COMFYUI_SERVER_ADDRESS as string,
+  // clientId: process.env.COMFYUI_CLIENT_ID as string,
+  STEP: 20,
+  db: new DataDBHandler(),
+  logs: new Logs()
+});
 processor.start().catch((error) => {
   console.error('Error in processor:', error);
 });

@@ -2795,3 +2795,284 @@
 {"botIndex":1,"keyword":"Bandhavgarh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Bandhavgarh National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:28:03"}
 {"botIndex":0,"keyword":"Kanha National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Kanha National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:28:06"}
 {"botIndex":1,"keyword":"Bandhavgarh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Bandhavgarh National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:28:21"}
+{"botIndex":1,"keyword":"Bandhavgarh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Bandhavgarh National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:28:37"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:28:54"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 124 / 612","round":124,"timestamp":"2025-02-28 23:28:54","total":612}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:28:54"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 125 / 612","round":125,"timestamp":"2025-02-28 23:28:54","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:28:54"}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:29:08"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:29:09"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:29:23"}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:29:24"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:29:41"}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:29:41"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:29:59"}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:30:01"}
+{"botIndex":0,"keyword":"Periyar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Periyar National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:30:14"}
+{"botIndex":1,"keyword":"Gir National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gir National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:30:17"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:30:31"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 126 / 612","round":126,"timestamp":"2025-02-28 23:30:31","total":612}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:30:31"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 127 / 612","round":127,"timestamp":"2025-02-28 23:30:31","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:30:31"}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:30:44"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:30:45"}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:30:57"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:31:00"}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:31:09"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:31:18"}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:31:22"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:31:37"}
+{"botIndex":1,"keyword":"Nagarhole National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Nagarhole National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:31:38"}
+{"botIndex":0,"keyword":"Hemis National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Hemis National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:31:53"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:32:07"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 128 / 612","round":128,"timestamp":"2025-02-28 23:32:07","total":612}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:32:07"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 129 / 612","round":129,"timestamp":"2025-02-28 23:32:07","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:32:07"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:32:21"}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:32:23"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:32:39"}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:32:41"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:32:53"}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:32:56"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:33:08"}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:33:09"}
+{"botIndex":0,"keyword":"Nanda Devi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Nanda Devi National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:33:24"}
+{"botIndex":1,"keyword":"Valley of Flowers National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Valley of Flowers National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:33:24"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:33:40"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 130 / 612","round":130,"timestamp":"2025-02-28 23:33:40","total":612}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:33:40"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 131 / 612","round":131,"timestamp":"2025-02-28 23:33:40","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:33:40"}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:33:55"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:33:58"}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:34:10"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:34:11"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:34:25"}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:34:28"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:34:40"}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:34:42"}
+{"botIndex":0,"keyword":"Pench National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Pench National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:34:53"}
+{"botIndex":1,"keyword":"Sariska National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sariska National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:34:56"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:35:12"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 132 / 612","round":132,"timestamp":"2025-02-28 23:35:12","total":612}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:35:12"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 133 / 612","round":133,"timestamp":"2025-02-28 23:35:12","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:35:12"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:35:27"}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:35:28"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:35:41"}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:35:44"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:35:57"}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:35:59"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:36:10"}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:36:14"}
+{"botIndex":0,"keyword":"Tadoba Andhari National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Tadoba Andhari National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:36:24"}
+{"botIndex":1,"keyword":"Manas National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Manas National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:36:26"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:36:39"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 134 / 612","round":134,"timestamp":"2025-02-28 23:36:39","total":612}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:36:39"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 135 / 612","round":135,"timestamp":"2025-02-28 23:36:39","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:36:39"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:36:52"}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:36:54"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:37:04"}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:37:06"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:37:17"}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:37:21"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:37:32"}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:37:35"}
+{"botIndex":0,"keyword":"Silent Valley National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Silent Valley National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:37:46"}
+{"botIndex":1,"keyword":"Dudhwa National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Dudhwa National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:37:48"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:38:02"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 136 / 612","round":136,"timestamp":"2025-02-28 23:38:02","total":612}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:38:02"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 137 / 612","round":137,"timestamp":"2025-02-28 23:38:02","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:38:02"}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:38:16"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:38:16"}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:38:29"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:38:33"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:38:46"}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:38:46"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:39:02"}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:39:04"}
+{"botIndex":0,"keyword":"Rajaji National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Rajaji National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:39:16"}
+{"botIndex":1,"keyword":"Great Himalayan National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Great Himalayan National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:39:17"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:39:33"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 138 / 612","round":138,"timestamp":"2025-02-28 23:39:33","total":612}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:39:33"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 139 / 612","round":139,"timestamp":"2025-02-28 23:39:33","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:39:33"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:39:47"}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:39:49"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:40:00"}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:40:00"}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:40:14"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:40:18"}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:40:28"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:40:31"}
+{"botIndex":1,"keyword":"Simlipal National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Simlipal National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:40:42"}
+{"botIndex":0,"keyword":"Indravati National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Indravati National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:40:46"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:41:00"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 140 / 612","round":140,"timestamp":"2025-02-28 23:41:00","total":612}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:41:00"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 141 / 612","round":141,"timestamp":"2025-02-28 23:41:00","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:41:00"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:41:12"}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:41:14"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:41:27"}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:41:29"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:41:40"}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:41:43"}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:41:56"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:41:59"}
+{"botIndex":1,"keyword":"Gangotri National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Gangotri National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:42:05"}
+{"botIndex":0,"keyword":"Satpura National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Satpura National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:42:15"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:42:28"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 142 / 612","round":142,"timestamp":"2025-02-28 23:42:28","total":612}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:42:28"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 143 / 612","round":143,"timestamp":"2025-02-28 23:42:28","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:42:28"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:42:42"}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:42:42"}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:42:55"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:42:57"}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:43:08"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:43:09"}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:43:21"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:43:24"}
+{"botIndex":1,"keyword":"Sanjay National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Sanjay National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:43:37"}
+{"botIndex":0,"keyword":"Panna National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Panna National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:43:41"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:43:51"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 144 / 612","round":144,"timestamp":"2025-02-28 23:43:51","total":612}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:43:51"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 145 / 612","round":145,"timestamp":"2025-02-28 23:43:51","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:43:51"}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:44:04"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:44:07"}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:44:18"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:44:21"}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:44:32"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:44:34"}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:44:47"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:44:51"}
+{"botIndex":1,"keyword":"Kudremukh National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Kudremukh National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:45:02"}
+{"botIndex":0,"keyword":"Blackbuck National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Blackbuck National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:45:05"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:45:21"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 146 / 612","round":146,"timestamp":"2025-02-28 23:45:21","total":612}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:45:21"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 147 / 612","round":147,"timestamp":"2025-02-28 23:45:21","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:45:21"}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:45:35"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:45:36"}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:45:46"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:45:49"}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:46:03"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:46:07"}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:46:18"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:46:20"}
+{"botIndex":0,"keyword":"Vansda National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Vansda National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:46:34"}
+{"botIndex":1,"keyword":"Chandoli National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Chandoli National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:46:37"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:46:53"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 148 / 612","round":148,"timestamp":"2025-02-28 23:46:53","total":612}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:46:53"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 149 / 612","round":149,"timestamp":"2025-02-28 23:46:53","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:46:53"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:47:06"}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:47:07"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:47:20"}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:47:24"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:47:35"}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:47:37"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:47:52"}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:47:53"}
+{"botIndex":1,"keyword":"Mudumalai National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Mudumalai National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:48:03"}
+{"botIndex":0,"keyword":"Govind National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Govind National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:48:08"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:48:19"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 150 / 612","round":150,"timestamp":"2025-02-28 23:48:19","total":612}
+{"botIndex":1,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Anshi National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:48:19"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 151 / 612","round":151,"timestamp":"2025-02-28 23:48:19","total":612}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:48:19"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:48:33"}
+{"botIndex":1,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Anshi National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:48:36"}
+{"botIndex":1,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Anshi National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:48:48"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:48:49"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:49:03"}
+{"botIndex":1,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Anshi National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:49:03"}
+{"botIndex":0,"error":{"status":429,"statusText":"Too Many Requests"},"keyword":"Eravikulam National Park","label":"gen.ts","level":"error","message":"Error in processData","round":4,"timestamp":"2025-02-28 23:49:04"}
+{"label":"gen.ts","level":"info","message":"Start running","timestamp":"2025-02-28 23:49:53"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 1 / 463","round":1,"timestamp":"2025-02-28 23:49:53","total":463}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:49:53"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 2 / 463","round":2,"timestamp":"2025-02-28 23:49:53","total":463}
+{"botIndex":1,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 1 processing keyword \"Anshi National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:49:53"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 3 / 463","round":3,"timestamp":"2025-02-28 23:49:53","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:49:53"}
+{"botIndex":0,"error":{"status":429,"statusText":"Too Many Requests"},"keyword":"Eravikulam National Park","label":"gen.ts","level":"error","message":"Error in processData","round":1,"timestamp":"2025-02-28 23:49:54"}
+{"label":"gen.ts","level":"info","message":"Start running","timestamp":"2025-02-28 23:50:08"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 1 / 463","round":1,"timestamp":"2025-02-28 23:50:08","total":463}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:50:08"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 2 / 463","round":2,"timestamp":"2025-02-28 23:50:08","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:50:08"}
+{"label":"gen.ts","level":"info","message":"Start running","timestamp":"2025-02-28 23:50:42"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 1 / 463","round":1,"timestamp":"2025-02-28 23:50:42","total":463}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:50:42"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 2 / 463","round":2,"timestamp":"2025-02-28 23:50:42","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:50:42"}
+{"label":"gen.ts","level":"info","message":"Start running","timestamp":"2025-02-28 23:50:50"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 1 / 463","round":1,"timestamp":"2025-02-28 23:50:50","total":463}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:50:50"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 2 / 463","round":2,"timestamp":"2025-02-28 23:50:50","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:50:50"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:51:04"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:51:17"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:51:36"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:51:50"}
+{"botIndex":0,"keyword":"Eravikulam National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Eravikulam National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:52:03"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:52:16"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 3 / 463","round":3,"timestamp":"2025-02-28 23:52:16","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:52:16"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:52:28"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:52:43"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:52:55"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:53:12"}
+{"botIndex":0,"keyword":"Anshi National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Anshi National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:53:22"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:53:37"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 4 / 463","round":4,"timestamp":"2025-02-28 23:53:37","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:53:37"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:53:50"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:54:03"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:54:16"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:54:31"}
+{"botIndex":0,"keyword":"Van Vihar National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Van Vihar National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:54:44"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:54:57"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 5 / 463","round":5,"timestamp":"2025-02-28 23:54:57","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:54:57"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:55:09"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:55:25"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:55:38"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:55:52"}
+{"botIndex":0,"keyword":"Desert National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Desert National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:56:05"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:56:24"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 6 / 463","round":6,"timestamp":"2025-02-28 23:56:24","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:56:24"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:56:39"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:56:51"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:57:05"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:57:18"}
+{"botIndex":0,"keyword":"Mrugavani National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mrugavani National Park\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:57:39"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:57:52"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 7 / 463","round":7,"timestamp":"2025-02-28 23:57:52","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:57:52"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:58:09"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:58:24"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 4/ 6","round":4,"timestamp":"2025-02-28 23:58:38"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 5/ 6","round":5,"timestamp":"2025-02-28 23:58:52"}
+{"botIndex":0,"keyword":"Mount Abu Wildlife Sanctuary","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Mount Abu Wildlife Sanctuary\" round 6/ 6","round":6,"timestamp":"2025-02-28 23:59:05"}
+{"botIndex":0,"keyword":"Keoladeo Ghana National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Keoladeo Ghana National Park\" round 1/ 6","round":1,"timestamp":"2025-02-28 23:59:19"}
+{"label":"gen.ts","level":"info","message":"รอบที่ 8 / 463","round":8,"timestamp":"2025-02-28 23:59:19","total":463}
+{"label":"gen.ts","level":"info","message":"รอ  Bot ว่าง","timestamp":"2025-02-28 23:59:19"}
+{"botIndex":0,"keyword":"Keoladeo Ghana National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Keoladeo Ghana National Park\" round 2/ 6","round":2,"timestamp":"2025-02-28 23:59:36"}
+{"botIndex":0,"keyword":"Keoladeo Ghana National Park","label":"gen.ts","level":"info","message":"Bot 0 processing keyword \"Keoladeo Ghana National Park\" round 3/ 6","round":3,"timestamp":"2025-02-28 23:59:49"}

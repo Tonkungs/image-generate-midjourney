@@ -1,7 +1,6 @@
 require("dotenv").config();
 import PromtGenerater from "../src/promt/promt";
 import { IAiAdaterConfig, Models } from "../src/interface/promt";
-require("dotenv").config();
 import DataDBHandler, { IDataPromt } from "../src/util/db";
 import Logs from "../src/logs";
 const fs = require('fs');
@@ -68,8 +67,7 @@ class PromtGen {
                     promtGen: new PromtGenerater(config)
                 })
             }
-        }
-
+        }        
     }
 
 
@@ -200,7 +198,7 @@ loveSymbols = loveSymbols.filter(keyword => !completedKeywords.has(keyword));
 
 const promt = new PromtGen({
     api_keys: [
-        process.env.GEMINI_KEY as string,
+        // process.env.GEMINI_KEY as string,
         // process.env.GEMINI_KEY_2 as string,
         process.env.GEMINI_KEY_3 as string
     ],

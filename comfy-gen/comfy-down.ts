@@ -1,16 +1,40 @@
-import DataDBHandler, { IDataPromt } from "./src/util/db";
+require("dotenv").config();
+import DataDBHandler, { IDataPromt } from "../src/util/db";
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import axios from 'axios';
-import Ut, { Utils } from "./src/util/util";
+import Ut, { Utils } from "../src/util/util";
+import Logs from "../src/logs";
+
+interface IImageDownloader{
+  db: DataDBHandler;
+  logs?: Logs;
+  serverAddress: string;
+}
 
 class ImageDownloader {
   private db: DataDBHandler;
   private serverAddress: string;
+  private logs: Logs;
 
-  constructor() {
-    this.db = new DataDBHandler();
-    this.serverAddress = 'jurisdiction-bio-delhi-alan.trycloudflare.com';
+  constructor(config:IImageDownloader) {
+    if (!config.db) {
+      throw new Error("db is required");
+    }
+
+    this.db = config.db;
+
+    if (!config.logs) {
+      throw new Error("logs is required");
+    }
+
+    this.logs = config.logs;
+
+    if (!config.serverAddress) {
+      throw new Error("serverAddress is required");
+    }
+
+    this.serverAddress = config.serverAddress;
   }
 
   public async start(): Promise<void> {
@@ -20,7 +44,7 @@ class ImageDownloader {
 
       if (promptId && promptId !== '') {
         try {
-          console.log("เริ่มดาวโหลด");
+          this.logs?.info("เริ่มดาวโหลด");
           const outputPath = path.join(__dirname, 'comfy', `${promttext?.ID}_${promttext?.PromtId}.jpg`);
           const outputImages: { [nodeId: string]: Buffer[] } = {};
 
@@ -42,16 +66,17 @@ class ImageDownloader {
            if (outputImages['10'] && outputImages['10'].length > 0) {
             await this.bufferToJpgImage(outputImages['10'][0], outputPath);
           } else {
+            this.logs.error("ไม่มีข้อมูลรูปภาพใน node 10");
             throw new Error("ไม่มีข้อมูลรูปภาพใน node 10");
           }
           
           await this.db.updateStageByID(promttext?.ID as string, "DONE", "", promptId);
         } catch (error) {
-          console.error("Error:", error);
+          this.logs.error("Error downloading image", { error });
           throw new Error("Error downloading image");
         }
       } else {
-        console.log("promptId is empty Next time in 5 seconds :", new Date().toISOString());
+        this.logs.info(`"promptId is empty Next time in 5 seconds :", ${new Date().toISOString()}`);
         await Ut.Delay(5000);
       }
     }
@@ -60,9 +85,9 @@ class ImageDownloader {
   private async bufferToJpgImage(buffer: Buffer, outputPath: string): Promise<void> {
     try {
       await fs.writeFile(outputPath, buffer);
-      console.log(`บันทึกรูปภาพเรียบร้อยแล้วที่: ${outputPath}`);
+      this.logs.info(`บันทึกรูปภาพเรียบร้อยแล้วที่: ${outputPath}`);
     } catch (error) {
-      console.error('เกิดข้อผิดพลาดในการบันทึกรูปภาพ:', error);
+      this.logs.error(`เกิดข้อผิดพลาดในการบันทึกรูปภาพ: ${error}`,error);
       throw error;
     }
   }
@@ -75,7 +100,7 @@ class ImageDownloader {
       });
       return Buffer.from(response.data);
     } catch (error) {
-      console.error('Error fetching image:', error);
+      this.logs.error(`เกิดข้อผิดพลาดในการดาวน์โหลดรูปภาพ: ${error}`,error);
       throw error;
     }
   }
@@ -85,13 +110,17 @@ class ImageDownloader {
       const response = await axios.get(`http://${this.serverAddress}/history/${promptId}`);
       return response.data;
     } catch (error) {
-      console.error('Error fetching history:', error);
+      this.logs.error(`เกิดข้อผิดพลาดในการดึงประวัติการสร้างภาพ: ${error}`,error);
       throw error;
     }
   }
 }
 
 (async () => {
-  const downloader = new ImageDownloader();
+  const downloader = new ImageDownloader({
+    db: new DataDBHandler(),
+    serverAddress: process.env.COMFYUI_SERVER_ADDRESS as string,
+    logs: new Logs()
+  });
   await downloader.start();
 })();
