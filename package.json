@@ -12,6 +12,7 @@
     "gen_saver": "ts-node ./main-json-saver.ts",
     "gen_json": "ts-node ./src/txt_json.ts",
     "gen_saver2": "npx tsc ./src/worker.ts && ts-node ./new-worker.ts",
+    "gen_key": "ts-node ./promt-gen/gen.ts",
     "dev": "nodemon"
   },
   "dependencies": {
