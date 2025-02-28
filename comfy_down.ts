@@ -10,7 +10,7 @@ class ImageDownloader {
 
   constructor() {
     this.db = new DataDBHandler();
-    this.serverAddress = 'invisible-rural-investors-randy.trycloudflare.com';
+    this.serverAddress = 'jurisdiction-bio-delhi-alan.trycloudflare.com';
   }
 
   public async start(): Promise<void> {

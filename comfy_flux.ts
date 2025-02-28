@@ -5,7 +5,7 @@ import DataDBHandler from "./src/util/db";
 import cliProgress from "cli-progress"; 
 
 class ComfyUIPromptProcessor {
-  private serverAddress = 'invisible-rural-investors-randy.trycloudflare.com';
+  private serverAddress = 'jurisdiction-bio-delhi-alan.trycloudflare.com';
   private clientId: string;
   private WSS_URL: string;
   private STEP = 20;

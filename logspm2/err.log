@@ -1,0 +1,76 @@
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11576:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MidjourneyDiscord.GetPromts (/home/tonkung/work/upscayl/auto-bot-midjourney-discord/src/mid_discord.ts:42:23)
+    at async /home/tonkung/work/upscayl/auto-bot-midjourney-discord/main.ts:58:28

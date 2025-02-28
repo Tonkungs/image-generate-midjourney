@@ -124,7 +124,8 @@ export default class MidjourneyDiscord extends Midjourney {
           },
         }
       );
-
+      console.log("response", response.data);
+      
       // return response.data; // ส่งกลับข้อมูล response
     } catch (error) {
       console.log("error inside", error);
