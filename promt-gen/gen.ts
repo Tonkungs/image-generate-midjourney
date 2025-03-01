@@ -200,7 +200,10 @@ const promt = new PromtGen({
     api_keys: [
         // process.env.GEMINI_KEY as string,
         // process.env.GEMINI_KEY_2 as string,
-        process.env.GEMINI_KEY_3 as string
+        // process.env.GEMINI_KEY_3 as string
+        process.env.GEMINI_KEY_4 as string,
+        process.env.GEMINI_KEY_5 as string,
+        process.env.GEMINI_KEY_6 as string,
     ],
     keywords: loveSymbols,
     db: db,

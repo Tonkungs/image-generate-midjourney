@@ -4,10 +4,12 @@ import * as fs from 'fs';
 const supabaseUrl = 'https://pemswohgxrbawcfbwmhe.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbXN3b2hneHJiYXdjZmJ3bWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDA4NTcsImV4cCI6MjA0Nzc3Njg1N30.L64EovTXadW_XRc4oy7vZ3VRMNPHnm8Bgn3VlIlGWbw';
 
+export type StageType = 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL';
+
 export interface IDataPromt {
   ID?: string;
   Title: string;
-  Stage: 'START' | 'WAITING' | 'DONE' | 'FAIL';
+  Stage: StageType;
   SeedID: string;
   Round: number;
   ImageUrl: string;
@@ -22,6 +24,7 @@ interface IPromt {
   round?: number;
   created_at?: string;
   updated_at?: string
+  promt_id?: string
 }
 export default class DataDBHandler {
   private supabase;
@@ -29,7 +32,7 @@ export default class DataDBHandler {
   private category = "00"
   private URL = "https://pemswohgxrbawcfbwmhe.supabase.co";
   private KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbXN3b2hneHJiYXdjZmJ3bWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDA4NTcsImV4cCI6MjA0Nzc3Njg1N30.L64EovTXadW_XRc4oy7vZ3VRMNPHnm8Bgn3VlIlGWbw";
-
+  private CODE_EMPTY = 'PGRST116'
   // constructor (supabaseUrl: string = this.URL, supabaseKey: string = this.KEY) {
   //   this.supabase = createClient(supabaseUrl, supabaseKey);
   // }
@@ -41,25 +44,11 @@ export default class DataDBHandler {
   public async findByTitle(title: string): Promise<IDataPromt | null> {
     const { data, error } = await this.supabase
       .from(this.tableName)
-      .select('id,image_url,title,stage,seed_id,round,created_at,updated_at')
+      .select('id,image_url,title,stage,seed_id,round,created_at,updated_at,promt_id')
       .eq('title', title)
       .single();
 
-    if (error) {
-      console.error('Error finding by title:', error);
-      return null;
-    }
-
-    let promtTitle: IDataPromt = {
-      ID: data.id,
-      Title: data.title,
-      Stage: data.stage,
-      SeedID: data.seed_id,
-      Round: data.round,
-      ImageUrl: data.image_url,
-    }
-
-    return promtTitle;
+    return await this.outputResut(data as IPromt || null, error);
   }
 
   public async findByID(id: string): Promise<IDataPromt | null> {
@@ -69,22 +58,7 @@ export default class DataDBHandler {
       .eq('id', id)
       .single();
 
-    if (error) {
-      console.error('Error finding by title:', error);
-      return null;
-    }
-
-    let promtTitle: IDataPromt = {
-      ID: data.id,
-      Title: data.title,
-      Stage: data.stage,
-      SeedID: data.seed_id,
-      Round: data.round,
-      ImageUrl: data.image_url,
-      PromtId: data.promt_id
-    }
-
-    return promtTitle;
+    return await this.outputResut(data as IPromt || null, error);
   }
 
   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
@@ -97,22 +71,7 @@ export default class DataDBHandler {
       .limit(1)
       .single()
 
-    if (error) {
-      console.error('Error finding first START:', error);
-      return null;
-    }
-
-    let promtTitle: IDataPromt = {
-      ID: data.id,
-      Title: data.title,
-      Stage: data.stage,
-      SeedID: data.seed_id,
-      Round: data.round,
-      ImageUrl: data.image_url,
-      PromtId: data.promt_id
-    }
-    
-    return promtTitle;
+    return await this.outputResut(data as IPromt || null, error);
   }
 
   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
@@ -125,26 +84,11 @@ export default class DataDBHandler {
       .limit(1)
       .single()
 
-    if (error) {
-      console.error('Error finding first START:', error);
-      return null;
-    }
-
-    let promtTitle: IDataPromt = {
-      ID: data.id,
-      Title: data.title,
-      Stage: data.stage,
-      SeedID: data.seed_id,
-      Round: data.round,
-      ImageUrl: data.image_url,
-      PromtId: data.promt_id
-    }
-    
-    return promtTitle;
+    return await this.outputResut(data as IPromt || null, error);
   }
 
-   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
-   public async findByPromtID(promtID :String): Promise<IDataPromt | null> {
+  // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
+  public async findByPromtID(promtID: String): Promise<IDataPromt | null> {
     const { data, error } = await this.supabase
       .from(this.tableName)
       .select('id,image_url,title,stage,seed_id,round,created_at,updated_at,promt_id')
@@ -153,21 +97,28 @@ export default class DataDBHandler {
       .limit(1)
       .single()
 
-    if (error) {
-      console.error('Error finding first START:', error);
+    return await this.outputResut(data as IPromt || null, error);
+  }
+
+  private async outputResut(data: IPromt, error: any): Promise<IDataPromt | null | any> {
+    if (error !== null && error?.code === this.CODE_EMPTY) {
       return null;
     }
 
-    let promtTitle: IDataPromt = {
-      ID: data.id,
-      Title: data.title,
-      Stage: data.stage,
-      SeedID: data.seed_id,
-      Round: data.round,
-      ImageUrl: data.image_url,
-      PromtId: data.promt_id
+    if (error !== null) {
+      throw error
     }
-    
+
+    let promtTitle: IDataPromt = {
+      ID: data?.id,
+      Title: data?.title,
+      Stage: data?.stage as StageType,
+      SeedID: data?.seed_id as string,
+      Round: data?.round as number,
+      ImageUrl: data?.image_url,
+      PromtId: data?.promt_id as string,
+    }
+
     return promtTitle;
   }
 
@@ -192,7 +143,7 @@ export default class DataDBHandler {
   // ฟังก์ชันในการอัพเดท stage โดยค้นหาจาก title
   public async updateStageByTitle(
     title: string,
-    newStage: 'START' | 'WAITING'|'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
+    newStage: 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
     seedID: string = '',
     imageStart: string = '',
     imageEnd: string = ''
@@ -215,14 +166,15 @@ export default class DataDBHandler {
 
   public async updateStageByTitleStart(
     title: string,
-    newStage: 'START' | 'WAITING' |'WAITING_DOWNLOAD'| 'DONE' | 'FAIL' = 'DONE',
+    newStage: 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
     seedID: string = '',
   ): Promise<boolean> {
     const { data, error } = await this.supabase
       .from(this.tableName)
-      .update({ stage: newStage, seed_id: seedID,
+      .update({
+        stage: newStage, seed_id: seedID,
         image_start: new Date().toISOString(),
-       })
+      })
       .eq('title', title);
 
     if (error) {
@@ -237,18 +189,18 @@ export default class DataDBHandler {
 
   public async updateStageByTitleEnd(
     title: string,
-    newStage: 'START' | 'WAITING'|'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
+    newStage: 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
     seedID: string = '',
   ): Promise<boolean> {
     const { data, error } = await this.supabase
       .from(this.tableName)
-      .update({ 
-        stage: newStage, 
+      .update({
+        stage: newStage,
         seed_id: seedID,
         image_end: new Date().toISOString(),
-       })
+      })
       .eq('title', title);
-   
+
     if (error) {
       console.error('Error updating stage by title:', error);
       return false;
@@ -261,20 +213,20 @@ export default class DataDBHandler {
 
   public async updateStageByID(
     id: string,
-    newStage: 'START' | 'WAITING' |'WAITING_DOWNLOAD'| 'DONE' | 'FAIL' = 'DONE',
+    newStage: 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL' = 'DONE',
     seedID: string = '',
     promptId: string = ''
   ): Promise<boolean> {
     const { data, error } = await this.supabase
       .from(this.tableName)
-      .update({ 
-        stage: newStage, 
+      .update({
+        stage: newStage,
         seed_id: seedID,
         promt_id: promptId,
         image_end: new Date().toISOString(),
-       })
+      })
       .eq('id', id);
-   
+
     if (error) {
       console.error('Error updating stage by title:', error);
       return false;
@@ -284,7 +236,7 @@ export default class DataDBHandler {
     }
     return (data as any[]).length > 0;
   }
-  
+
 
   // ฟังก์ชันในการบันทึกข้อมูลใหม่
   public async insertData(data: IDataPromt): Promise<boolean> {
@@ -359,7 +311,7 @@ export default class DataDBHandler {
         console.error(`Error inserting record with title "${record.Title}":`, error);
         // errorCon.push(record)
         throw new Error("Error inserting record with title");
-        
+
       } else {
         // console.log(`Inserted record with title "${record.Title}" successfully.`);
       }

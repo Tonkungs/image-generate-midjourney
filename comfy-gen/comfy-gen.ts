@@ -270,7 +270,7 @@ class ComfyUIPromptProcessor {
 
 // สร้าง instance และเริ่มทำงาน
 const processor = new ComfyUIPromptProcessor({
-  serverAddress: process.env.COMFYUI_SERVER_ADDRESS as string,
+  serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
   // clientId: process.env.COMFYUI_CLIENT_ID as string,
   STEP: 20,
   db: new DataDBHandler(),

@@ -13,6 +13,8 @@
     "gen_json": "ts-node ./src/txt_json.ts",
     "gen_saver2": "npx tsc ./src/worker.ts && ts-node ./new-worker.ts",
     "gen_key": "ts-node ./promt-gen/gen.ts",
+    "gen_comfy": "ts-node ./comfy-gen/comfy-gen.ts",
+    "down_comfy": "ts-node ./comfy-gen/comfy-down.ts",
     "dev": "nodemon"
   },
   "dependencies": {
