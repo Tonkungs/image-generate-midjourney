@@ -2,7 +2,7 @@ require("dotenv").config();
 import WebSocket from 'ws';
 import axios from 'axios';
 import DataDBHandler from "../src/util/db";
-import cliProgress from "cli-progress"; 
+import cliProgress from "cli-progress";
 import Logs from "../src/logs";
 
 interface IComfyConfig {
@@ -11,36 +11,56 @@ interface IComfyConfig {
   STEP: number;
   db: DataDBHandler;
   logs?: Logs;
+  serverAddressList?: string[];
+}
+
+interface IWS {
+  ws?: WebSocket;
+  url: string;
+  isAvailable: boolean
+  promtID: string
+  hashImageID: string
 }
 
 class ComfyUIPromptProcessor {
-  private serverAddress :string;
-  private clientId: string;
+  private serverAddress: string;
   private WSS_URL: string;
   private STEP = 20;
   private db: DataDBHandler;
   private ws?: WebSocket;
+  private wsList: IWS[] = []
   private bar: any;
   private currentPromptTextId: string | null = null;
   private currentPromptId: string | null = null;
   private logs: Logs;
 
-  constructor(config :IComfyConfig) {
+  constructor (config: IComfyConfig) {
     if (!config.serverAddress) {
       throw new Error("Server address is required");
     }
     if (!config.logs) {
       throw new Error("Logs is required");
     }
+
     this.serverAddress = config.serverAddress;
-    this.clientId = this.generateClientId();
-    this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.clientId}`;
+    this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.generateClientId()}`;
     this.db = config.db;
     this.bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     this.registerShutdownHandlers();
     this.STEP = config.STEP;
-    
     this.logs = config.logs as Logs;
+
+    if (config.serverAddressList) {
+      config.serverAddressList.map(url => {
+        this.wsList.push({
+          // ws: new WebSocket(`ws://${url}/ws?clientId=${this.generateClientId()}`),
+          url: url,
+          isAvailable: true,
+          promtID: "",
+          hashImageID: ""
+        });
+      })
+    }
   }
 
   // สร้าง clientId แบบสุ่ม
@@ -53,9 +73,9 @@ class ComfyUIPromptProcessor {
   }
 
   // ส่ง prompt ไปยัง ComfyUI
-  private async queuePrompt(prompt: object): Promise<any> {
+  private async queuePrompt(serverAddress: string, prompt: object): Promise<any> {
     try {
-      const response = await axios.post(`http://${this.serverAddress}/prompt`, prompt);
+      const response = await axios.post(`http://${serverAddress}/prompt`, prompt);
       return response.data;
     } catch (error) {
       this.logs.error(`Error queuing prompt`, {
@@ -86,19 +106,19 @@ class ComfyUIPromptProcessor {
         },
         "2": {
           "inputs": {
-            "model": [ "1", 0 ],
-            "conditioning": [ "11", 0 ]
+            "model": ["1", 0],
+            "conditioning": ["11", 0]
           },
           "class_type": "BasicGuider",
           "_meta": { "title": "BasicGuider" }
         },
         "3": {
           "inputs": {
-            "noise": [ "4", 0 ],
-            "guider": [ "2", 0 ],
-            "sampler": [ "5", 0 ],
-            "sigmas": [ "6", 0 ],
-            "latent_image": [ "7", 0 ]
+            "noise": ["4", 0],
+            "guider": ["2", 0],
+            "sampler": ["5", 0],
+            "sigmas": ["6", 0],
+            "latent_image": ["7", 0]
           },
           "class_type": "SamplerCustomAdvanced",
           "_meta": { "title": "SamplerCustomAdvanced" }
@@ -118,7 +138,7 @@ class ComfyUIPromptProcessor {
             "scheduler": "simple",
             "steps": this.STEP,
             "denoise": 1,
-            "model": [ "1", 0 ]
+            "model": ["1", 0]
           },
           "class_type": "BasicScheduler",
           "_meta": { "title": "BasicScheduler" }
@@ -130,8 +150,8 @@ class ComfyUIPromptProcessor {
         },
         "8": {
           "inputs": {
-            "samples": [ "3", 0 ],
-            "vae": [ "9", 0 ]
+            "samples": ["3", 0],
+            "vae": ["9", 0]
           },
           "class_type": "VAEDecode",
           "_meta": { "title": "VAE Decode" }
@@ -144,7 +164,7 @@ class ComfyUIPromptProcessor {
         "10": {
           "inputs": {
             "filename_prefix": "api_v2_",
-            "images": [ "8", 0 ]
+            "images": ["8", 0]
           },
           "class_type": "SaveImage",
           "_meta": { "title": "Save Image" }
@@ -152,7 +172,7 @@ class ComfyUIPromptProcessor {
         "11": {
           "inputs": {
             "guidance": 3.5,
-            "conditioning": [ "12", 0 ]
+            "conditioning": ["12", 0]
           },
           "class_type": "FluxGuidance",
           "_meta": { "title": "FluxGuidance" }
@@ -160,7 +180,7 @@ class ComfyUIPromptProcessor {
         "12": {
           "inputs": {
             "text": params,
-            "clip": [ "13", 0 ]
+            "clip": ["13", 0]
           },
           "class_type": "CLIPTextEncode",
           "_meta": { "title": "CLIP Text Encode (Prompt)" }
@@ -226,17 +246,100 @@ class ComfyUIPromptProcessor {
         const noise = this.generateRandomNoise();
         const promptText = this.getPrompt(`${promtText.Title} high detail 8k `, noise);
         this.currentPromptTextId = promtText.ID;
-        const promptResponse = await this.queuePrompt(promptText);
+        const promptResponse = await this.queuePrompt(this.serverAddress, promptText);
         const promptId = promptResponse.prompt_id;
         this.currentPromptId = promptId;
         await this.db.updateStageByID(promtText.ID, "WAITING", "", promptId);
         console.log("เริ่มรอบใหม่", promtText.ID, "PROMPT ID", promptId);
+        // this.logs.info(`เริ่มรอบใหม่ ${promtText.ID} PROMPT ID ${promptId}`, {
+        //   promtText,
+        //   promptId
+        // });
         this.bar.start(this.STEP, 0);
       }
     });
 
     this.ws.on('error', (error) => {
       this.logs.error("WebSocket error", {
+        error
+      });
+    });
+  }
+
+  public async starts() {
+    for (let index = 0; index < this.wsList.length; index++) {
+      const service = this.wsList[index]
+      this.wsList[index].ws = new WebSocket(`ws://${service.url}/ws?clientId=${this.generateClientId()}`) as WebSocket
+      if (!this.wsList[index].ws) {
+        return;
+      }
+
+      const ws = this.wsList[index].ws as WebSocket
+      this.processWS(ws,index)
+    }
+  }
+
+
+  public async processWS(ws: WebSocket,serverNo:number): Promise<void> {
+
+    ws.on('open', async () => {
+      // สามารถเพิ่ม logic เมื่อต้องการทำงานตอนเปิด connection ได้
+      this.logs.info("WebSocket connected from server no " + serverNo );
+    });
+
+    ws.on('message', async (data: WebSocket.Data) => {
+      const message = JSON.parse(data.toString());
+
+      if (message.type === "progress") {
+        this.logs.info(`Progress: ${message.data.value}/${message.data.max} from server no ${serverNo}`);
+        if (message.data.value === message.data.max) {
+          try {
+            if (!this.wsList[serverNo].promtID) {
+              throw new Error(`currentPromptTextId is empty from server no ${serverNo}`);
+            }
+            await this.db.updateStageByID(
+              this.wsList[serverNo].promtID,
+              "WAITING_DOWNLOAD",
+              "",
+              message.data.prompt_id
+            );
+            this.logs.info(
+              `Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD จาก server no ${serverNo}`
+            )
+          } catch (error) {
+            this.logs.error(`Error updating stagefrom server no ${serverNo}`, {
+              message,
+              error
+            });
+            ws.close();
+            throw new Error(`Error updating stage from server no ${serverNo}`);
+          }
+        }
+      }
+
+      if (message.type === "status" && message.data.status.exec_info.queue_remaining === 0) {
+        const promtText = await this.db.findFirstStart();
+        if (!promtText?.ID) {
+          this.logs.error(`Error finding prompt text from server no ${serverNo}`, {
+            promtText
+          });
+          throw new Error(`Error finding prompt text from server no ${serverNo}`);
+        }
+        const noise = this.generateRandomNoise();
+        const promptText = this.getPrompt(`${promtText.Title} high detail 8k `, noise);
+        this.wsList[serverNo].promtID = promtText.ID;
+        this.logs.info(`เริ่มรอบใหม่ ${promtText.ID} จาก server no ${serverNo}` , {
+          promtText
+        });
+        const promptResponse = await this.queuePrompt(this.wsList[serverNo].url, promptText);
+        const promptId = promptResponse.prompt_id;
+        this.wsList[serverNo].hashImageID = promptId;
+        await this.db.updateStageByID(promtText.ID, "WAITING", "", promptId);
+      }
+    });
+
+    ws.on('error', (error) => {
+      this.logs.error("WebSocket error " + ws.url, {
         error
       });
     });
@@ -249,8 +352,19 @@ class ComfyUIPromptProcessor {
       try {
         if (this.currentPromptTextId && this.currentPromptId) {
           // อัพเดท prompt stage ให้เป็น "START" ก่อนปิดโปรแกรม
+          this.logs.info(`Updating prompt ${this.currentPromptTextId} to START`);
           await this.db.updateStageByID(this.currentPromptTextId, "START", "", this.currentPromptId);
         }
+
+        for (let index = 0; index < this.wsList.length; index++) {
+          const server = this.wsList[index];
+          this.logs.info(`Updating prompt ${this.currentPromptTextId} to START`);
+          await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
+          
+          this.logs.info("Closing connection to server " + server.url);
+          server.ws?.close();
+        }
+
       } catch (error) {
         this.logs.error("Error during safe shutdown", {
           error
@@ -271,11 +385,16 @@ class ComfyUIPromptProcessor {
 // สร้าง instance และเริ่มทำงาน
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
+  serverAddressList:[ process.env.COMFY_SERVER_ADDRESS as string],
   // clientId: process.env.COMFYUI_CLIENT_ID as string,
   STEP: 20,
   db: new DataDBHandler(),
   logs: new Logs()
 });
-processor.start().catch((error) => {
+// processor.start().catch((error) => {
+//   console.error('Error in processor:', error);
+// });
+
+processor.starts().catch((error) => {
   console.error('Error in processor:', error);
 });
