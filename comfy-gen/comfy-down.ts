@@ -70,7 +70,7 @@ class ImageDownloader {
 
           for (let index = 0; index < this.serverAddressList.length; index++) {
             const serverUrl = this.serverAddressList[index];
-            this.logs?.info("เริ่มดาวโหลดรูปภาพจาก server no " + index);
+            
             if (!serverUrl.isAvailable) {
               continue;
             }
@@ -82,7 +82,7 @@ class ImageDownloader {
               this.logs.info(`Server Address: ${serverUrl.serverAddress} is error`)
               continue;
             }
-
+            this.logs?.info("เริ่มดาวโหลดรูปภาพจาก server no " + index);
             if (history[promptId] === undefined) {
               continue;
             }
