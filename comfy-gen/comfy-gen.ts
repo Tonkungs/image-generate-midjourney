@@ -4,6 +4,7 @@ import axios from 'axios';
 import DataDBHandler from "../src/util/db";
 import cliProgress from "cli-progress";
 import Logs from "../src/logs";
+import Ut, { Utils } from "../src/util/util";
 
 interface IComfyConfig {
   serverAddress: string;
@@ -33,6 +34,8 @@ class ComfyUIPromptProcessor {
   private currentPromptTextId: string | null = null;
   private currentPromptId: string | null = null;
   private logs: Logs;
+  private isWait: boolean = false;
+
 
   constructor (config: IComfyConfig) {
     if (!config.serverAddress) {
@@ -45,7 +48,7 @@ class ComfyUIPromptProcessor {
     this.serverAddress = config.serverAddress;
     this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.generateClientId()}`;
     this.db = config.db;
-    this.bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+    // this.bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     this.registerShutdownHandlers();
     this.STEP = config.STEP;
     this.logs = config.logs as Logs;
@@ -267,13 +270,13 @@ class ComfyUIPromptProcessor {
   }
 
   public async starts() {
+
     for (let index = 0; index < this.wsList.length; index++) {
       const service = this.wsList[index]
       this.wsList[index].ws = new WebSocket(`ws://${service.url}/ws?clientId=${this.generateClientId()}`) as WebSocket
       if (!this.wsList[index].ws) {
         return;
       }
-
       const ws = this.wsList[index].ws as WebSocket
       this.processWS(ws,index)
     }
@@ -283,7 +286,7 @@ class ComfyUIPromptProcessor {
   public async processWS(ws: WebSocket,serverNo:number): Promise<void> {
 
     ws.on('open', async () => {
-      // สามารถเพิ่ม logic เมื่อต้องการทำงานตอนเปิด connection ได้
+      // this.isWait = true;
       this.logs.info("WebSocket connected from server no " + serverNo );
     });
 
@@ -307,6 +310,8 @@ class ComfyUIPromptProcessor {
               `Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD จาก server no ${serverNo}`
             )
           } catch (error) {
+            console.log('error',error);
+            
             this.logs.error(`Error updating stagefrom server no ${serverNo}`, {
               message,
               error
@@ -318,10 +323,16 @@ class ComfyUIPromptProcessor {
       }
 
       if (message.type === "status" && message.data.status.exec_info.queue_remaining === 0) {
+        while (this.isWait) {
+          this.logs.info(`Waiting from server no ${serverNo} 1 second`);
+          await Ut.Delay(1000);
+        }
+        this.isWait = true;
         const promtText = await this.db.findFirstStart();
         if (!promtText?.ID) {
           this.logs.error(`Error finding prompt text from server no ${serverNo}`, {
-            promtText
+            promtText,
+            serverNo
           });
           throw new Error(`Error finding prompt text from server no ${serverNo}`);
         }
@@ -335,6 +346,7 @@ class ComfyUIPromptProcessor {
         const promptId = promptResponse.prompt_id;
         this.wsList[serverNo].hashImageID = promptId;
         await this.db.updateStageByID(promtText.ID, "WAITING", "", promptId);
+        this.isWait = false;
       }
     });
 
@@ -350,19 +362,16 @@ class ComfyUIPromptProcessor {
     const safeShutdown = async () => {
       this.logs.info("Shutting down gracefully...");
       try {
-        if (this.currentPromptTextId && this.currentPromptId) {
-          // อัพเดท prompt stage ให้เป็น "START" ก่อนปิดโปรแกรม
-          this.logs.info(`Updating prompt ${this.currentPromptTextId} to START`);
-          await this.db.updateStageByID(this.currentPromptTextId, "START", "", this.currentPromptId);
-        }
-
+        // ยังไม่ยอมกลับไปเป็น START หาสาเตุด้วย
         for (let index = 0; index < this.wsList.length; index++) {
           const server = this.wsList[index];
-          this.logs.info(`Updating prompt ${this.currentPromptTextId} to START`);
+          server.ws?.close();
+          
+          this.logs.info(`Updating prompt ${server.promtID} to START`);
           await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
           
           this.logs.info("Closing connection to server " + server.url);
-          server.ws?.close();
+          
         }
 
       } catch (error) {
@@ -370,6 +379,7 @@ class ComfyUIPromptProcessor {
           error
         });
       } finally {
+        this.logs.info("Safe shutdown completed.");
         process.exit(0);
       }
     };
@@ -385,7 +395,10 @@ class ComfyUIPromptProcessor {
 // สร้าง instance และเริ่มทำงาน
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
-  serverAddressList:[ process.env.COMFY_SERVER_ADDRESS as string],
+  serverAddressList:[ 
+    process.env.COMFY_SERVER_ADDRESS as string,
+    process.env.COMFY_SERVER_ADDRESS_2 as string
+  ],
   // clientId: process.env.COMFYUI_CLIENT_ID as string,
   STEP: 20,
   db: new DataDBHandler(),
