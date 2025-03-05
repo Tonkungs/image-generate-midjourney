@@ -1,9 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import * as fs from 'fs';
 
-const supabaseUrl = 'https://pemswohgxrbawcfbwmhe.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbXN3b2hneHJiYXdjZmJ3bWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDA4NTcsImV4cCI6MjA0Nzc3Njg1N30.L64EovTXadW_XRc4oy7vZ3VRMNPHnm8Bgn3VlIlGWbw';
-
 export type StageType = 'START' | 'WAITING' | 'WAITING_DOWNLOAD' | 'DONE' | 'FAIL';
 
 export interface IDataPromt {
@@ -26,9 +23,26 @@ interface IPromt {
   updated_at?: string
   promt_id?: string
 }
+
+export interface ContentImage {
+  content_id: number;
+  title: string;
+  thumbnail_url?: string;
+  keywords: string[]; // หรือใช้ string ถ้าเก็บเป็น JSON string
+  content_url: string;
+  category?: string;
+  category_id?: number;
+  sub_category?: string; // อันเดียวกัน media_type_label
+  author?: string;
+  author_id?: number;
+  media_type_label?: string;
+}
+
+
 export default class DataDBHandler {
   private supabase;
   private tableName = 'images';
+  private tableContent = 'content';
   private category = "00"
   private URL = "https://pemswohgxrbawcfbwmhe.supabase.co";
   private KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbXN3b2hneHJiYXdjZmJ3bWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDA4NTcsImV4cCI6MjA0Nzc3Njg1N30.L64EovTXadW_XRc4oy7vZ3VRMNPHnm8Bgn3VlIlGWbw";
@@ -318,6 +332,22 @@ export default class DataDBHandler {
     }
 
     return errorCon
+  }
+
+  public async bulkInsertContent(data: ContentImage[]): Promise<void | Error> {
+    try {
+        const { error } = await this.supabase
+          .from(this.tableContent)
+          .insert(data);
+        
+        if (error) {
+          console.error('Error inserting content:', error);
+          return error;
+        }
+      } catch (error) {
+        console.error('Error bulk inserting content:', error);
+        throw error
+      }
   }
 }
 
