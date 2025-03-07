@@ -3,7 +3,7 @@ import DataDBHandler, { ContentImage } from "../src/util/db";
 import Logs from '../src/logs';
 import { IContentImageByIdResponse, IContentImageResponse } from "./interface";
 import axios from "axios";
-
+import Ut, { Utils } from "../src/util/util";
 
 
 interface IScrapImageConfig {
@@ -15,8 +15,9 @@ class ScrapImage {
     private DB: DataDBHandler;
     private URL_ADOBE = "https://stock.adobe.com"
     private MAX_PAGE = 100
+    private MAX_PER_PAGE = 100
     private HEADER = {
-        'Cookie': 'Variant_flex=1; datadome=OKsSBK8iRGMfFjai0JBrPmsBxpC~wG3f4JzO9027lnlqKEEIDSgollOwMhpku7eu1V~hTkSQOBgUEVBCsjpkr59wy08hbEKUy6189fTt1WsOLVv8eUpOz0zbEUgeMmSk; AdobeStock=4d40209d1066f102dc377e018dcbef45; _fs_ch_st_FSBmUei20MqUiJb9=AepKxvgnZn87Qk1rb5t8JGCzORjCBp8opsrm_J9D4rZQzfNorkQL5ix-zUbbAMWXA6Loxf5ogaAigeno8G455NIRsVcgmHcaF47TDa73DzA9Tv23FMlHDLUwoa_tsDL5Hj-Tfu4MrESZwI1DstCdgIPQcQktTVJGIgProVZnwKwWBX1F1i0F8uXg3TM5VMnv-g2VWzR1GZcXpAJ6JNSoWvG_WAS7dw==; asui=7745b7667a2a542dafa6d6055f797c8f; ffuuid=SVyhPDtbkmkA1eleHPEsVg%3D%3D; gabt=595155%3AFreeBB_Test%2C599653%3AAffinity_2%2C598798%3AUpgradePP_test2%2C595368%3AUnifiedCTA_Test%2C78873790900000%3A0%2C1680740330%3A0%2C8512479036%3A1%2Cchecksum; isVisitorScriptAloneHosted=1; isid=a155e36d3cb52a49c61df36bd54a67f128a4daae; mboxDisable=true; mf=stk; visp=searchPg%3A1740900600%3BlandingPg%3A1740414300000%3BcontributorPg%3A1740414300%3BplansPg%3A1738512300',
+        'Cookie': 'Variant_flex=1; "datadome=jOS~b8OnZNVvVzSUb~Bes6nFmrMXnW~yiLFbk1GvaW3EZGfWOtdyOjNH104mrAK_d31wel0LKMJi69M2d_dSSKqPQ84PDwkO~NO_eWi2J4Iu4VW2~cCtHVgfeUHjlTsR; Max-Age=31536000; Domain=.adobe.com; Path=/; Secure; SameSite=Lax"',
     }
     constructor (config: IScrapImageConfig) {
         this.log = config.log;
@@ -27,30 +28,55 @@ class ScrapImage {
      * start
      */
     public async start() {
-        const res = await this.retiveData('people', 1)
-        const images: ContentImage[] = []
-        const imageByID = await this.getByID('259728248')
-        console.log("imageByID",imageByID);
-        
-        // for (const key in res.items) {
-        //     images.push({
-        //         content_id: res.items[key].content_id,
-        //         title: res.items[key].title,
-        //         thumbnail_url: res.items[key].thumbnail_url,
-        //         keywords: [], //res.items[key].keywords,
-        //         content_url: res.items[key].content_url,
-        //         category: res.items[key].category.name,
-        //         category_id: res.items[key].category.id,
-        //         author: res.items[key].author,
-        //         author_id: res.items[key].creator_id,
-        //         media_type_label: res.items[key].media_type_label,
-        //     })
-        // }
+
+        for (let index = 1; index <= this.MAX_PAGE; index++) {
+
+            this.HEADER['Cookie'] = `'Variant_flex=1; ${await this.getCookie()}; Max-Age=31536000; Domain=.adobe.com; Path=/; Secure; SameSite=Lax"`
+            const res = await this.retiveData('people',index)
+            const images: ContentImage[] = []
+
+            this.log.info(`Start Page: ${index}`);
+            const keyLength = Object.keys(res.items).length
+            let round = 1
+            for (const key in res.items) {
+                this.HEADER['Cookie'] = `'Variant_flex=1; ${await this.getCookie()}; Max-Age=31536000; Domain=.adobe.com; Path=/; Secure; SameSite=Lax"`
+
+                const imageContent = await this.getByID(String(res.items[key].content_id))
+                const keywords = this.perpareDataImageById(imageContent)
+                this.log.info(`Round: ${round}/ ${keyLength}`);
+
+                images.push({
+                    content_id: res.items[key].content_id,
+                    title: res.items[key].title,
+                    thumbnail_url: res.items[key].thumbnail_url,
+                    keywords: keywords,
+                    // keywords: [s],
+                    content_url: res.items[key].content_url,
+                    category: res.items[key].category.name,
+                    category_id: res.items[key].category.id,
+                    author: res.items[key].author,
+                    author_id: res.items[key].creator_id,
+                    media_type_label: res.items[key].media_type_label,
+                })
+
+                await Ut.Delay(500)
+                round++
+            }
+            // await Ut.Delay(3000)
+            try {
+                await this.DB.bulkInsertContent(images)
+                console.log("images =>", images.length);
+            } catch (error) {
+                console.log("error");
+                console.log(error);
+            }
+
+        }
     }
 
     private async retiveData(keyword: string, page: number = 1): Promise<IContentImageResponse> {
         try {
-            const response = await axios.get(this.URL_ADOBE+'/Ajax/Search', {
+            const response = await axios.get(this.URL_ADOBE + '/Ajax/Search', {
                 headers: {
                     ...this.HEADER
                 },
@@ -68,7 +94,7 @@ class ScrapImage {
                     'filters[content_type:image]': 1,
                     k: keyword,
                     order: 'nb_downloads',
-                    limit: 100,
+                    limit: this.MAX_PER_PAGE,
                     search_page: page,
                     'get_facets': 0
                 }
@@ -81,14 +107,14 @@ class ScrapImage {
         }
     }
 
-    private async getByID(id: string):Promise<IContentImageByIdResponse> {
+    private async getByID(id: string): Promise<IContentImageByIdResponse> {
         try {
-            
-            const response = await axios.get(this.URL_ADOBE+`/Ajax/MediaData/${id}?full=1`, {
+
+            const response = await axios.get(this.URL_ADOBE + `/Ajax/MediaData/${id}?full=1`, {
                 headers: {
                     ...this.HEADER,
                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
-                   ,'accept-language': 'en-US,en;q=0.9'
+                    , 'accept-language': 'en-US,en;q=0.9'
                 }
             });
             const data = response.data as IContentImageByIdResponse;
@@ -96,6 +122,34 @@ class ScrapImage {
         } catch (error) {
             this.log.error(`Error getting data getByID: ${error}`, error);
             throw error
+        }
+    }
+
+    private perpareDataImageById(data: IContentImageByIdResponse): string[] {
+        return data.keywords
+    }
+
+    private async getCookie(): Promise<string> {
+        try {
+            var qs = require('qs');
+            var data = qs.stringify({
+                'ddk': '444CF1A5D883126219A5CD03952C24'
+            });
+            var config = {
+                method: 'post',
+                url: 'https://dd.astockcdn.net/js/',
+                headers: {
+                    'referer': 'https://stock.adobe.com/',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: data
+            };
+            const result = await axios(config);
+            return result.data.cookie
+        } catch (error) {
+            this.log.error(`Error get cookie: ${error}`, error);
+            throw new Error("Error get cookie");
+
         }
     }
 

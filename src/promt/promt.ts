@@ -42,7 +42,7 @@ export default class PromtGenerater {
     The output must be in English only and must not contain any NSFW content, watermarks, or trademarks in the sentences. 
     Photo realistic,
     The resuslts should be displayed in a code block for easy copying, and there should be no empty lines between lines of text.
-    ไม่ต้องมีตัวเลขนำหน้าและ"ไม่ต้องมีบรรทัดว่าง",อยู่ใน code block เดียวกัน,ไม่มีคนในภาพ และแต่ละ promt ต้องมีความแตกต่างกันอย่างน้อย 30 % ของข้อความ
+    ไม่ต้องมีตัวเลขนำหน้าและ"ไม่ต้องมีบรรทัดว่าง",อยู่ใน code block เดียวกัน,ไม่มีคนในภาพ และแต่ละ promt ต้องมีความแตกต่างกันอย่างน้อย 30 % ของข้อความ อธิบายโดยละเลียดทุกอย่าง
     Please help think of a style that will definitely sell well. Images that bloggers can use or that major publications must buy to use in their presentations. They must have beautiful and complete elements.
      I want more ${this.config.promtPerRound || 3} Promt for this keyword
     Output pattern : [WHO WHAT WHERE] [This is the section where we will add details of the Subject that we previously included in the Archetypal Scene. In this section, we will discuss the characteristics of the Subject in more detail. There will be a template as follows] [The section where we will add details about the background of the image we want to create] [Describing the Mood & Tone and presentation style of the image] 8K, high resolution, sharp and detailed

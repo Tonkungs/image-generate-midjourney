@@ -82,11 +82,11 @@ class ImageDownloader {
               this.logs.info(`Server Address: ${serverUrl.serverAddress} is error`)
               continue;
             }
-            this.logs?.info("เริ่มดาวโหลดรูปภาพจาก server no " + index);
+            
             if (history[promptId] === undefined) {
               continue;
             }
-
+            this.logs?.info("เริ่มดาวโหลดรูปภาพจาก server no " + index);
             for (const nodeId in history[promptId].outputs) {
               const nodeOutput = history[promptId].outputs[nodeId];
               if (nodeOutput.images) {
@@ -109,7 +109,10 @@ class ImageDownloader {
             }
           }
           // console.log("outputImages",outputImages);
-
+          if (!outputImages[this.NODE_IMAGE_PATH]) {
+            this.logs.info(`ไม่มีข้อมูลรูปภาพใน node ${this.NODE_IMAGE_PATH}`)
+            continue
+          }
           // เลือกใช้ Buffer ตัวแรกจาก outputImages[this.NODE_IMAGE_PATH]
           if (outputImages[this.NODE_IMAGE_PATH] && outputImages[this.NODE_IMAGE_PATH].length > 0) {
             await this.bufferToJpgImage(outputImages[this.NODE_IMAGE_PATH][0], outputPath);

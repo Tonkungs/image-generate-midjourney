@@ -103,7 +103,6 @@ class PromtGen {
 
 
                 if (isWaitBot) {
-                    // console.log("Promise Task =>",runningTasks.length);
                     this.log.silly("Promise Task =>",{
                         taskRunning: runningTasks.length
                     });
@@ -140,7 +139,6 @@ class PromtGen {
                 this.log.info(`Bot ${botIndex} processing keyword "${keyword}" round ${subIndex + 1}/ ${this.MAX_ROUND_PER_KEYWORD}`,
                     { botIndex, keyword, round: subIndex + 1 }
                 );
-                // console.log("botIndex = > ", botIndex, ' keyword = "', keyword, '"Round = ', subIndex + 1);
                 // ดึงข้อมูล
                 const promts: string[] = await bot.promtGen.Generate(keyword);
 
@@ -151,6 +149,7 @@ class PromtGen {
                     SeedID: '', // ค่าเริ่มต้น          
                     Round: index + 1, // ค่าเริ่มต้น
                     ImageUrl: '', // ค่าเริ่มต้น
+                    Category: 'business',
                 }));
                 await this.DB.bulkInsertWithConflictHandling(promtsToInsert)
                 // await this.delay(1000);
@@ -198,9 +197,9 @@ loveSymbols = loveSymbols.filter(keyword => !completedKeywords.has(keyword));
 
 const promt = new PromtGen({
     api_keys: [
-        // process.env.GEMINI_KEY as string,
-        // process.env.GEMINI_KEY_2 as string,
-        // process.env.GEMINI_KEY_3 as string
+        process.env.GEMINI_KEY as string,
+        process.env.GEMINI_KEY_2 as string,
+        process.env.GEMINI_KEY_3 as string,
         process.env.GEMINI_KEY_4 as string,
         process.env.GEMINI_KEY_5 as string,
         process.env.GEMINI_KEY_6 as string,
