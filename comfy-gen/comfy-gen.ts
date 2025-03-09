@@ -1,14 +1,13 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
 import WebSocket from 'ws';
 import axios from 'axios';
 import DataDBHandler from "../src/util/db";
-import cliProgress from "cli-progress";
 import Logs from "../src/logs";
-import Ut, { Utils } from "../src/util/util";
+import Ut from "../src/util/util";
 
 interface IComfyConfig {
   serverAddress: string;
-  // clientId: string;
   STEP: number;
   db: DataDBHandler;
   logs?: Logs;
@@ -21,11 +20,13 @@ interface IWS {
   isAvailable: boolean
   promtID: string
   hashImageID: string
+  reconnectAttempts: number;
+  inactivityTimeout: NodeJS.Timeout | null;
 }
 
 class ComfyUIPromptProcessor {
   private serverAddress: string;
-  private WSS_URL: string;
+  // private WSS_URL: string;
   private STEP = 20;
   private db: DataDBHandler;
   private ws?: WebSocket;
@@ -35,7 +36,8 @@ class ComfyUIPromptProcessor {
   private currentPromptId: string | null = null;
   private logs: Logs;
   private isWait: boolean = false;
-
+  private readonly maxReconnectAttempts = 5;
+  private readonly reconnectDelay = 1000; // Base delay in ms
 
   constructor (config: IComfyConfig) {
     if (!config.serverAddress) {
@@ -46,7 +48,7 @@ class ComfyUIPromptProcessor {
     }
 
     this.serverAddress = config.serverAddress;
-    this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.generateClientId()}`;
+    // this.WSS_URL = `ws://${config.serverAddress}/ws?clientId=${this.generateClientId()}`;
     this.db = config.db;
     // this.bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
     this.registerShutdownHandlers();
@@ -60,7 +62,9 @@ class ComfyUIPromptProcessor {
           url: url,
           isAvailable: true,
           promtID: "",
-          hashImageID: ""
+          hashImageID: "",
+          reconnectAttempts: 0
+          , inactivityTimeout: null
         });
       })
     }
@@ -202,95 +206,44 @@ class ComfyUIPromptProcessor {
   }
 
   // เริ่มการทำงานหลัก โดยสร้าง WebSocket connection และจัดการ event ต่าง ๆ
-  public async start() {
-    this.ws = new WebSocket(this.WSS_URL);
-
-    this.ws.on('open', async () => {
-      // สามารถเพิ่ม logic เมื่อต้องการทำงานตอนเปิด connection ได้
-      this.logs.info("WebSocket connected.");
-    });
-
-    this.ws.on('message', async (data: WebSocket.Data) => {
-      const message = JSON.parse(data.toString());
-
-      if (message.type === "progress") {
-        this.bar.update(message.data.value);
-        if (message.data.value === message.data.max) {
-          try {
-            if (!this.currentPromptTextId) {
-              throw new Error("currentPromptTextId is empty");
-            }
-            await this.db.updateStageByID(
-              this.currentPromptTextId,
-              "WAITING_DOWNLOAD",
-              "",
-              message.data.prompt_id
-            );
-            this.bar.stop();
-          } catch (error) {
-            this.logs.error("Error updating stage", {
-              message,
-              error
-            });
-            this.ws?.close();
-            throw new Error("Error updating stage");
-          }
-        }
-      }
-
-      if (message.type === "status" && message.data.status.exec_info.queue_remaining === 0) {
-        const promtText = await this.db.findFirstStart();
-        if (!promtText?.ID) {
-          this.logs.error("Error finding prompt text", {
-            promtText
-          });
-          throw new Error("Error finding prompt text");
-        }
-        const noise = this.generateRandomNoise();
-        const promptText = this.getPrompt(`${promtText.Title} high detail 8k `, noise);
-        this.currentPromptTextId = promtText.ID;
-        const promptResponse = await this.queuePrompt(this.serverAddress, promptText);
-        const promptId = promptResponse.prompt_id;
-        this.currentPromptId = promptId;
-        await this.db.updateStageByID(promtText.ID, "WAITING", "", promptId);
-        console.log("เริ่มรอบใหม่", promtText.ID, "PROMPT ID", promptId);
-        // this.logs.info(`เริ่มรอบใหม่ ${promtText.ID} PROMPT ID ${promptId}`, {
-        //   promtText,
-        //   promptId
-        // });
-        this.bar.start(this.STEP, 0);
-      }
-    });
-
-    this.ws.on('error', (error) => {
-      this.logs.error("WebSocket error", {
-        error
-      });
-    });
-  }
 
   public async starts() {
 
     for (let index = 0; index < this.wsList.length; index++) {
+      if (this.wsList[index].ws) {
+        return;
+      }
       const service = this.wsList[index]
       this.wsList[index].ws = new WebSocket(`ws://${service.url}/ws?clientId=${this.generateClientId()}`) as WebSocket
       if (!this.wsList[index].ws) {
         return;
       }
       const ws = this.wsList[index].ws as WebSocket
-      this.processWS(ws,index)
+      this.processWS(ws, index)
     }
   }
 
 
-  public async processWS(ws: WebSocket,serverNo:number): Promise<void> {
+  public async processWS(ws: WebSocket, serverNo: number): Promise<void> {
+    const resetInactivityTimer = () => {
+      if (this.wsList[serverNo].inactivityTimeout) clearTimeout(this.wsList[serverNo].inactivityTimeout);
+      this.wsList[serverNo].inactivityTimeout = setTimeout(() => {
+        console.warn(`No message received from server ${serverNo} for 2 minutes. Reconnecting...`);
+        ws.close(); // ปิด WebSocket เพื่อให้เกิดการ reconnect
+      }, 2 * 60 * 1000); // 2 นาที
+    };
+    ws.removeAllListeners();
 
     ws.on('open', async () => {
       // this.isWait = true;
-      this.logs.info("WebSocket connected from server no " + serverNo );
+      this.logs.info("WebSocket connected from server no " + serverNo);
+      this.wsList[serverNo].reconnectAttempts = 0;
+      this.wsList[serverNo].isAvailable = true;
+      resetInactivityTimer(); // เริ่มจับเวลาss
     });
 
     ws.on('message', async (data: WebSocket.Data) => {
+      resetInactivityTimer(); // รีเซ็ตตัวจับเวลาเมื่อได้รับ message
       const message = JSON.parse(data.toString());
 
       if (message.type === "progress") {
@@ -310,8 +263,8 @@ class ComfyUIPromptProcessor {
               `Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD จาก server no ${serverNo}`
             )
           } catch (error) {
-            console.log('error',error);
-            
+            console.log('error', error);
+
             this.logs.error(`Error updating stagefrom server no ${serverNo}`, {
               message,
               error
@@ -339,7 +292,7 @@ class ComfyUIPromptProcessor {
         const noise = this.generateRandomNoise();
         const promptText = this.getPrompt(`${promtText.Title} high detail 8k `, noise);
         this.wsList[serverNo].promtID = promtText.ID;
-        this.logs.info(`เริ่มรอบใหม่ ${promtText.ID} จาก server no ${serverNo}` , {
+        this.logs.info(`เริ่มรอบใหม่ ${promtText.ID} จาก server no ${serverNo}`, {
           promtText
         });
         const promptResponse = await this.queuePrompt(this.wsList[serverNo].url, promptText);
@@ -355,7 +308,30 @@ class ComfyUIPromptProcessor {
         error
       });
     });
+
+    ws.on('close', async (event) => {
+      this.logs.info("WebSocket closed from server no " + serverNo);
+      if (this.wsList[serverNo].inactivityTimeout) clearTimeout(this.wsList[serverNo].inactivityTimeout); // หยุดจับเวลาหากปิดการเชื่อมต่อ
+
+      console.warn(`WebSocket closed: ${event}`);
+      if (this.wsList[serverNo].reconnectAttempts < this.maxReconnectAttempts) {
+        const timeout = this.reconnectDelay * Math.pow(2, this.wsList[serverNo].reconnectAttempts); // Exponential backoff
+        console.log(`Reconnecting in ${timeout / 1000} seconds...`);
+        setTimeout(() => this.reconnect(serverNo), timeout);
+        this.wsList[serverNo].reconnectAttempts++;
+      } else {
+        console.error("Max reconnect attempts reached. Stopping reconnection.");
+      }
+    });
   }
+
+  private reconnect(serverNo: number) {
+    this.logs.info(`Reconnecting WebSocket for server no ${serverNo}...`);
+    const service = this.wsList[serverNo]
+    this.wsList[serverNo].ws = new WebSocket(`ws://${service.url}/ws?clientId=${this.generateClientId()}`);
+    this.processWS(this.wsList[serverNo].ws, serverNo);
+  }
+
 
   // ลงทะเบียน handler สำหรับการ shutdown แบบปลอดภัย
   private registerShutdownHandlers() {
@@ -366,12 +342,12 @@ class ComfyUIPromptProcessor {
         for (let index = 0; index < this.wsList.length; index++) {
           const server = this.wsList[index];
           server.ws?.close();
-          
+
           this.logs.info(`Updating prompt ${server.promtID} to START`);
           await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
-          
+
           this.logs.info("Closing connection to server " + server.url);
-          
+
         }
 
       } catch (error) {
@@ -395,7 +371,7 @@ class ComfyUIPromptProcessor {
 // สร้าง instance และเริ่มทำงาน
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
-  serverAddressList:[ 
+  serverAddressList: [
     process.env.COMFY_SERVER_ADDRESS as string,
     process.env.COMFY_SERVER_ADDRESS_2 as string
   ],

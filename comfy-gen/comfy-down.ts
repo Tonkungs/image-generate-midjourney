@@ -83,7 +83,7 @@ class ImageDownloader {
               continue;
             }
             
-            if (history[promptId] === undefined) {
+            if (history === undefined || history[promptId] === undefined) {
               continue;
             }
             this.logs?.info("เริ่มดาวโหลดรูปภาพจาก server no " + index);
@@ -109,12 +109,12 @@ class ImageDownloader {
             }
           }
           // console.log("outputImages",outputImages);
-          if (!outputImages[this.NODE_IMAGE_PATH]) {
+          if (outputImages === undefined || outputImages[this.NODE_IMAGE_PATH] === undefined || !outputImages[this.NODE_IMAGE_PATH]) {
             this.logs.info(`ไม่มีข้อมูลรูปภาพใน node ${this.NODE_IMAGE_PATH}`)
             continue
           }
           // เลือกใช้ Buffer ตัวแรกจาก outputImages[this.NODE_IMAGE_PATH]
-          if (outputImages[this.NODE_IMAGE_PATH] && outputImages[this.NODE_IMAGE_PATH].length > 0) {
+          if (outputImages[this.NODE_IMAGE_PATH] && outputImages[this.NODE_IMAGE_PATH].length > 0 && outputImages[this.NODE_IMAGE_PATH][0]) {
             await this.bufferToJpgImage(outputImages[this.NODE_IMAGE_PATH][0], outputPath);
           } else {
             this.logs.error(`ไม่มีข้อมูลรูปภาพใน node ${this.NODE_IMAGE_PATH}`);
@@ -125,7 +125,6 @@ class ImageDownloader {
 
         } catch (error) {
           console.log("error", error);
-
           this.logs.error("Error downloading image", { error });
           throw new Error("Error downloading image");
         }

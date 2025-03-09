@@ -11,6 +11,8 @@ export interface IDataPromt {
   Round: number;
   ImageUrl: string;
   PromtId?: string
+  Category?: string
+
 }
 interface IPromt {
   id?: string;
@@ -318,7 +320,7 @@ export default class DataDBHandler {
           seed_id: record.SeedID,
           round: record.Round,
           image_url: record.ImageUrl,
-          category: this.category,
+          category:record.Category,// this.category,
         });
 
       if (error) {

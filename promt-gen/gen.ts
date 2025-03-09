@@ -151,6 +151,8 @@ class PromtGen {
                     ImageUrl: '', // ค่าเริ่มต้น
                     Category: 'business',
                 }));
+
+                this.log.info("Insert => "+ promtsToInsert.length);
                 await this.DB.bulkInsertWithConflictHandling(promtsToInsert)
                 // await this.delay(1000);
 
