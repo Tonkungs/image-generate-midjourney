@@ -40,11 +40,18 @@ export interface ContentImage {
   media_type_label?: string;
 }
 
+export interface IServerComfy {
+  ID: string;
+  Url: string;
+  Is_available: boolean;
+}
+
 
 export default class DataDBHandler {
   private supabase;
   private tableName = 'images';
   private tableContent = 'content';
+  private server = 'server';
   private category = "00"
   private URL = "https://pemswohgxrbawcfbwmhe.supabase.co";
   private KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlbXN3b2hneHJiYXdjZmJ3bWhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIyMDA4NTcsImV4cCI6MjA0Nzc3Njg1N30.L64EovTXadW_XRc4oy7vZ3VRMNPHnm8Bgn3VlIlGWbw";
@@ -78,11 +85,12 @@ export default class DataDBHandler {
   }
 
   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
-  public async findFirstStart(): Promise<IDataPromt | null> {
+  public async findFirstStart(category: string = "00"): Promise<IDataPromt | null> {
     const { data, error } = await this.supabase
       .from(this.tableName)
-      .select('id,image_url,title,stage,seed_id,round,created_at,updated_at,promt_id')
+      .select('id,image_url,title,stage,seed_id,round,category,created_at,updated_at,promt_id')
       .eq('stage', 'START')
+      .eq('category', category)
       .order('created_at')
       .limit(1)
       .single()
@@ -91,7 +99,7 @@ export default class DataDBHandler {
   }
 
   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
-  public async findAllWait(): Promise<IDataPromt | null> {
+  public async findFirstWait(): Promise<IDataPromt | null> {
     const { data, error } = await this.supabase
       .from(this.tableName)
       .select('id,image_url,title,stage,seed_id,round,created_at,updated_at,promt_id')
@@ -103,6 +111,34 @@ export default class DataDBHandler {
     return await this.outputResut(data as IPromt || null, error);
   }
 
+
+  public async findTopWait(limit: number = 10): Promise<IDataPromt[] | null> {
+    const { data, error } = await this.supabase
+      .from(this.tableName)
+      .select('id,image_url,title,stage,seed_id,round,created_at,updated_at,promt_id')
+      .eq('stage', 'WAITING_DOWNLOAD')
+      .order('created_at')
+      .limit(limit)
+      
+    let promtTitles: IDataPromt[] = [];
+    if (data === null) {
+      return promtTitles
+    } else {
+
+      (data as IPromt[]).map((data) => {
+        promtTitles.push({
+          ID: data?.id,
+          Title: data?.title,
+          Stage: data?.stage as StageType,
+          SeedID: data?.seed_id as string,
+          Round: data?.round as number,
+          ImageUrl: data?.image_url,
+          PromtId: data?.promt_id as string,
+        })
+      })
+    }
+    return promtTitles;
+  }
   // ฟังก์ชันในการค้นหา item แรกที่ stage เป็น 'START'
   public async findByPromtID(promtID: String): Promise<IDataPromt | null> {
     const { data, error } = await this.supabase
@@ -114,6 +150,40 @@ export default class DataDBHandler {
       .single()
 
     return await this.outputResut(data as IPromt || null, error);
+  }
+
+  public async findServer(): Promise<IServerComfy[] | null> {
+
+    let { data: server, error } = await this.supabase
+      .from('comfy_server')
+      .select('*')
+      .eq('id', '65e0ef6b-1183-425b-92a8-0945bf883186')
+      .single()
+    // .select('id,url,is_available')
+    // .select('id,url,is_available')
+    // .eq('is_available', true)
+
+    if (error !== null && error?.code === this.CODE_EMPTY) {
+      return null;
+    }
+
+    if (error !== null) {
+      throw error
+    }
+    console.log("data", server);
+
+    let promtTitles: IServerComfy[] = [];
+    (server as { id: any; url: any; is_available: any; }[]).map((item) => {
+      console.log("123456");
+
+      promtTitles.push({
+        ID: item.id,
+        Url: item.url,
+        Is_available: item.is_available as boolean,
+      });
+    });
+    return promtTitles;
+
   }
 
   private async outputResut(data: IPromt, error: any): Promise<IDataPromt | null | any> {
@@ -253,7 +323,6 @@ export default class DataDBHandler {
     return (data as any[]).length > 0;
   }
 
-
   // ฟังก์ชันในการบันทึกข้อมูลใหม่
   public async insertData(data: IDataPromt): Promise<boolean> {
     const { error } = await this.supabase.from(this.tableName).insert([
@@ -320,7 +389,7 @@ export default class DataDBHandler {
           seed_id: record.SeedID,
           round: record.Round,
           image_url: record.ImageUrl,
-          category:record.Category,// this.category,
+          category: record.Category,// this.category,
         });
 
       if (error) {
@@ -338,18 +407,18 @@ export default class DataDBHandler {
 
   public async bulkInsertContent(data: ContentImage[]): Promise<void | Error> {
     try {
-        const { error } = await this.supabase
-          .from(this.tableContent)
-          .insert(data);
-        
-        if (error) {
-          console.error('Error inserting content:', error);
-          return error;
-        }
-      } catch (error) {
-        console.error('Error bulk inserting content:', error);
-        throw error
+      const { error } = await this.supabase
+        .from(this.tableContent)
+        .insert(data);
+
+      if (error) {
+        console.error('Error inserting content:', error);
+        return error;
       }
+    } catch (error) {
+      console.error('Error bulk inserting content:', error);
+      throw error
+    }
   }
 }
 

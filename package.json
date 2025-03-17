@@ -15,6 +15,7 @@
     "gen_key": "ts-node ./promt-gen/gen.ts",
     "gen_comfy": "ts-node ./comfy-gen/comfy-gen.ts",
     "down_comfy": "ts-node ./comfy-gen/comfy-down.ts",
+    "pm2-comfy": "pm2 start ./ecosystem.config.js",
     "dev": "nodemon"
   },
   "dependencies": {
