@@ -5,12 +5,12 @@ echo "Installing cloudflared..."
 wget -P ~ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 dpkg -i ~/cloudflared-linux-amd64.deb
 
-# กำหนด WORKSPACE
-WORKSPACE=$(pwd)/ComfyUI
-COMFYUI_DIR=${WORKSPACE}
-# รัน ComfyUI
-echo "Starting ComfyUI..."
-/usr/bin/python3 ${COMFYUI_DIR}/main.py --dont-print-server &
+# # กำหนด WORKSPACE
+# WORKSPACE=$(pwd)/ComfyUI
+# COMFYUI_DIR=${WORKSPACE}
+# # รัน ComfyUI
+# echo "Starting ComfyUI..."
+# /usr/bin/python3 ${COMFYUI_DIR}/main.py --dont-print-server &
 
 # ฟังก์ชันเช็คการรัน ComfyUI และเปิด cloudflared
 echo "Waiting for ComfyUI to start..."

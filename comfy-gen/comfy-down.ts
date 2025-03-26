@@ -6,7 +6,7 @@ import axios from 'axios';
 import Ut from "../src/util/util";
 import Logs from "../src/logs";
 
-const DIR_COMFYUI = 'comfy05';
+const DIR_COMFYUI = 'comfy07';
 
 interface IServer {
   serverAddress: string;
@@ -24,7 +24,7 @@ class ImageDownloader {
   private db: DataDBHandler;
   private serverList: IServer[];
   private logs: Logs;
-  private NODE_IMAGE_PATH: string = "10";
+  private NODE_IMAGE_PATH: string = "9";
   private MAX_RETRIES = 3; // จำกัดจำนวนครั้งที่ลองโหลดภาพใหม่
   private TOKEN = `?token=`;
 
@@ -148,7 +148,7 @@ class ImageDownloader {
     const outputImages: { [nodeId: string]: Buffer[] } = {};
 
     for (const server of this.serverList) {
-      if (!server.isAvailable) continue;
+      // if (!server.isAvailable) continue;
 
       try {
         const history = await this.getHistory(server.serverAddress, promptId);
@@ -243,10 +243,10 @@ class ImageDownloader {
       serverAddressList: [
         process.env.COMFY_SERVER_ADDRESS as string,
         process.env.COMFY_SERVER_ADDRESS_2 as string,
-        process.env.COMFY_SERVER_ADDRESS_3 as string,
-        process.env.COMFY_SERVER_ADDRESS_4 as string,
-        process.env.COMFY_SERVER_ADDRESS_5 as string,
-        process.env.COMFY_SERVER_ADDRESS_6 as string
+        // process.env.COMFY_SERVER_ADDRESS_3 as string,
+        // process.env.COMFY_SERVER_ADDRESS_4 as string,
+        // process.env.COMFY_SERVER_ADDRESS_5 as string,
+        // process.env.COMFY_SERVER_ADDRESS_6 as string
       ],
     });
 

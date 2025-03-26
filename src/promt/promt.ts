@@ -4,6 +4,7 @@ import { IAiAdaterConfig } from "../interface/promt";
 export default class PromtGenerater {
   private client: GoogleGenerativeAI
   private config: IAiAdaterConfig
+  private newSystemPromt: string;
   private GEMINI_SCHEME: ResponseSchema = {
     description: "Generate Promt for midjourney image ",
     type: SchemaType.OBJECT,
@@ -35,7 +36,7 @@ export default class PromtGenerater {
     5. When integrating text into images, specify font, style, size, color, and placement.
     6. For elements like glass or transparent materials, clearly state the layering order (e.g., "object A in front, object B behind") to achieve realistic see-through effects.
     7. Overall, structure your prompt as if you were instructing a human artist – logical, precise, and comprehensive – to ensure the best possible output from the provided keywords.
-    8. ห้ามมีสัตว์หรือคนที่เห็นอย่างเด่นชัดในภาพ
+    8. High resolution, sharp and detailed, high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped.
     You need to take keywords from users, research additional information, and provide detailed descriptions. 
     The prompt should be written following the example below, but without using bracket symbols in the sentences. 
     Each prompt must be at "least 300 characters long" per promt. 
@@ -46,6 +47,58 @@ export default class PromtGenerater {
     Please help think of a style that will definitely sell well. Images that bloggers can use or that major publications must buy to use in their presentations. They must have beautiful and complete elements.
      I want more ${this.config.promtPerRound || 3} Promt for this keyword
     Output pattern : [WHO WHAT WHERE] [This is the section where we will add details of the Subject that we previously included in the Archetypal Scene. In this section, we will discuss the characteristics of the Subject in more detail. There will be a template as follows] [The section where we will add details about the background of the image we want to create] [Describing the Mood & Tone and presentation style of the image] 8K, high resolution, sharp and detailed
+  `
+    // Enhancing Image Quality
+    // To guarantee ultra-realistic, sharp, and detailed results, the prompt should include:
+    // 2.1 High-resolution indicators: Use terms like "8K, ultra HD, high resolution, sharp and detailed" to emphasize clarity.
+    // 2.2 Negative quality filters: Prevent low-quality results by specifying "not blurry, not low quality, not worst quality, not cropped, not extra limbs, not bad anatomy, no watermarks."
+
+    this.newSystemPromt = `
+  As an expert in prompt generation for high-quality image creation using the FLUX.1 model, I focus on crafting precise, highly detailed, and logically structured instructions to ensure the best visual output. The goal is to generate clear and comprehensive prompts that guide the AI effectively, mimicking instructions given to a professional human artist.
+
+    Guidelines for Optimal Prompt Structuring:
+
+    Background and Composition Instructions
+    1.1 If using the [dev] variant of FLUX.1, avoid the phrase "white background" to ensure a visually appealing composition. Instead, use alternative descriptions like "clean design," or specify a different background color such as gray, blue, or black to add depth and context.
+    1.2 Ensure that the image is structured in layers:
+    1.2.1 Foreground – Clearly define key subjects and objects, specifying details such as texture, materials, and lighting effects.
+    1.2.2 Background – Define environmental aspects, whether it's a realistic cityscape, soft-focus bokeh, or atmospheric elements like fog or sunlight diffusion.
+
+ ---
+ 
+    Photorealistic Details and Camera Techniques
+    For hyper-realistic images, include detailed specifications such as:
+    3.1 Tone & Style – Define if the image should be warm, moody, cinematic, vibrant, or minimalistic.
+    3.2 Color Palette – Mention dominant colors to maintain thematic consistency.
+    3.3 Perspective & Depth – Specify if it should be shot from a close-up macro view, wide-angle perspective, or aerial shot.
+    3.4 Technical Camera Settings (if applicable):
+    3.5 Camera model (e.g., Canon EOS R5, Sony A7R IV)
+    3.6 Aperture (e.g., f/1.4 for bokeh, f/11 for sharp landscapes)
+    3.7 Lens type (e.g., 50mm prime for portraits, 16mm wide-angle for landscapes)
+
+    Text and Typography Integration
+    When integrating text overlays, be specific about:
+    4.1 Font style (e.g., elegant serif, modern sans-serif, handwritten script)
+    4.2 Size and placement (e.g., top-left corner, center-aligned, overlay on foreground object)
+    4.3 Color and blending mode (e.g., golden metallic with subtle drop shadow)
+
+    Special Considerations for Transparent and Reflective Materials
+    For realistic rendering of glass, water, or reflective surfaces, provide:
+    5.1 Layering details – Specify which objects appear in front or behind.
+    5.2 Lighting effects – Mention soft refractions, specular highlights, or light diffusion through the material.
+
+    Overall Objective:
+    - Generate commercially valuable images that appeal to bloggers, brands, and major publications.
+    - Each prompt should be at least 300 characters long and differ by at least 30% to ensure variety.
+    - The prompt should be concise, structured, and free of empty lines for easy copying.
+    - No NSFW content, watermarks, or trademarks should be included.
+
+    Prompt Structure Template:
+
+    [WHO / WHAT / WHERE] – Clearly define the subject and key elements.
+    [Detailed Subject Description] – Describe the object's characteristics, materials, colors, textures, and unique features.
+    [Background Details] – Specify environmental aspects, atmospheric effects, and spatial depth.
+    [Mood & Tone] – Define the visual presentation, including lighting, color grading, and realism level.
   `
   }
 
@@ -59,13 +112,13 @@ export default class PromtGenerater {
   public async Generate(keyword: string): Promise<string[]> {
     const modelText = this.client.getGenerativeModel({
       model: this.config?.model,
-      systemInstruction: this.system_promt,
+      systemInstruction: this.newSystemPromt,
       generationConfig: {
         responseMimeType: "application/json",
         responseSchema: this.GEMINI_SCHEME,
       },
     });
-    const Mkeyword: string = `Keyword : "${keyword}"`;
+    const Mkeyword: string = `Keyword : "${keyword}" and With anything keyword you think fits this word, but the words you come up with must not be the same.`;
 
 
     try {
