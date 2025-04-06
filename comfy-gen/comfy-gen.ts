@@ -2,14 +2,16 @@ import dotenv from 'dotenv';
 dotenv.config();
 import WebSocket from 'ws';
 import axios from 'axios';
-import DataDBHandler, { IDataPromt } from "../src/util/db";
+// import DataDBHandler, { IDataPromt } from "../src/util/db";
 import Logs from "../src/logs";
 import Ut from "../src/util/util";
+import DataDBHandler, { Database } from "../src/db/database";
+import { ImageEntity } from '../src/db/entities/image';
 
 interface IComfyConfig {
   serverAddress: string;
   STEP: number;
-  db: DataDBHandler;
+  db: Database;
   logs?: Logs;
   serverAddressList?: string[];
 }
@@ -18,16 +20,17 @@ interface IWS {
   ws?: WebSocket;
   url: string;
   isAvailable: boolean;
-  promtID: string;
+  promtID: number;
   hashImageID: string;
   reconnectAttempts: number;
   inactivityTimeout: NodeJS.Timeout | null;
+  ImageEntity: ImageEntity;
 }
 
 class ComfyUIPromptProcessor {
   private serverAddress: string;
   private STEP: number;
-  private db: DataDBHandler;
+  private db: Database;
   private wsList: IWS[] = [];
   private logs: Logs;
   private isWait: boolean = false;
@@ -55,10 +58,12 @@ class ComfyUIPromptProcessor {
       this.wsList.push({
         url,
         isAvailable: true,
-        promtID: "",
+        promtID: 0,
         hashImageID: "",
         reconnectAttempts: 0,
-        inactivityTimeout: null
+        inactivityTimeout: null,
+        ImageEntity: new ImageEntity()
+
       });
     });
   }
@@ -306,18 +311,17 @@ class ComfyUIPromptProcessor {
 
   public async starts(): Promise<void> {
     try {
+      this.logs.info("Starting Db...");
+      await this.db.initialize();
       for (let index = 0; index < this.wsList.length; index++) {
         if (this.wsList[index].ws) return;
         const service = this.wsList[index];
         this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
 
-        console.log("เข้า WSS");
-
         if (!this.wsList[index].ws) return;
         this.processWS(this.wsList[index].ws as WebSocket, index);
       }
     } catch (error) {
-      console.log("ตาย");
 
       this.logs.error(`Error starting processor ${error}`, { error });
     }
@@ -374,14 +378,16 @@ class ComfyUIPromptProcessor {
     if (message.data.value === message.data.max) {
       try {
         if (!this.wsList[serverNo].promtID) {
-          const result = await this.db.findByPromtID(message.data.prompt_id);
+          const result = await this.db.findByPromtId(message.data.prompt_id);
           if (!result) {
             this.logs.error(`Error finding prompt text from server no ${serverNo} promtID is ${message.data.prompt_id} To Next Round`, { result, serverNo });
             return;
           }
-          this.wsList[serverNo].promtID = result.ID as string;
+          this.wsList[serverNo].promtID = result.id;
         }
-        await this.db.updateStageByID(this.wsList[serverNo].promtID, "WAITING_DOWNLOAD", "", message.data.prompt_id);
+        // await this.updateStageByID
+        await this.updateStageByID(this.wsList[serverNo].ImageEntity as ImageEntity, "WAITING_DOWNLOAD", message.data.prompt_id);
+        // await this.db.updateStageByID(this.wsList[serverNo].promtID, "WAITING_DOWNLOAD", "", message.data.prompt_id);
         this.logs.info(`Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD from server no ${serverNo}`);
       } catch (error) {
         console.log("error =>", error);
@@ -395,6 +401,7 @@ class ComfyUIPromptProcessor {
   private async handleStatusMessage(serverNo: number): Promise<void> {
     const maxWaitTime = 300 * 1000; // ตั้ง timeout ไว้ที่ 30 วินาที
     const startTime = Date.now();
+
     while (this.isWait) {
       this.logs.info(`Waiting from server no ${serverNo} 1 second`);
       await Ut.Delay(1000);
@@ -407,28 +414,32 @@ class ComfyUIPromptProcessor {
     }
     this.isWait = true;
 
-    let promtText :IDataPromt | null = null
+    let promtText: ImageEntity | null = null
     try {
       // const promtText = await this.db.findFirstStart('business')
-      promtText = await this.db.findFirstStart('healthy')
+      promtText = await this.db.findFirstStart('Spring 2025')
 
-      if (!promtText?.ID) {
+      if (!promtText?.id) {
         this.logs.error(`Error finding prompt text from server no ${serverNo}`, { promtText, serverNo });
         // throw new Error(`Error finding prompt text from server no ${serverNo}`);
         return;
       }
+
       const noise = this.generateRandomNoise();
-      const promptText = this.getPrompt(`${promtText.Title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
-      this.wsList[serverNo].promtID = promtText.ID;
-      this.logs.info(`Starting new round ${promtText.ID} from server no ${serverNo}`, { promtText });
+      const promptText = this.getPrompt(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
+      this.wsList[serverNo].promtID = promtText.id;
+      this.wsList[serverNo].ImageEntity = promtText;
+      this.logs.info(`Starting new round ${promtText.id} from server no ${serverNo}`, { promtText });
       const promptResponse = await this.queuePrompt(this.wsList[serverNo].url, promptText);
       const hashImageID = promptResponse.prompt_id;
       this.wsList[serverNo].hashImageID = hashImageID;
-      await this.db.updateStageByID(promtText.ID, "WAITING", "", hashImageID);
+      await this.updateStageByID(promtText, "WAITING", hashImageID);
+      // await this.db.updateStageByID(promtText.ID, "WAITING", "", hashImageID);
 
     } catch (error) {
-      if (this.wsList[serverNo].hashImageID && promtText?.ID) {
-        await this.db.updateStageByID(promtText.ID, "START", "", this.wsList[serverNo].hashImageID);
+      if (this.wsList[serverNo].hashImageID && promtText && promtText?.id) {
+        await this.updateStageByID(promtText, "START", this.wsList[serverNo].hashImageID);
+        // await this.db.updateStageByID(promtText.ID, "START", "", this.wsList[serverNo].hashImageID);
         this.logs.error(`Error updating stage from server no ${serverNo}`, { promtText, error });
       }
     } finally {
@@ -479,7 +490,8 @@ class ComfyUIPromptProcessor {
           server.ws?.terminate();
           if (server.promtID) {
             this.logs.info(`Updating prompt ${server.promtID} to START`);
-            await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
+            await this.updateStageByID(server.ImageEntity as ImageEntity, "START", server.hashImageID);
+            // await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
           }
           this.logs.info(`Closing connection to server ${server.url}`);
         }
@@ -496,20 +508,28 @@ class ComfyUIPromptProcessor {
     process.on('exit', safeShutdown);
     process.on('uncaughtException', safeShutdown);
   }
+
+  private async updateStageByID(data: ImageEntity, stage: string, promptId: string): Promise<void> {
+    await this.db.update(data.id, {
+      ...data,
+      promt_id: promptId,
+      stage: stage
+    });
+  }
 }
 
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
   serverAddressList: [
     process.env.COMFY_SERVER_ADDRESS as string,
-    process.env.COMFY_SERVER_ADDRESS_2 as string,
+    // process.env.COMFY_SERVER_ADDRESS_2 as string,
     // process.env.COMFY_SERVER_ADDRESS_3 as string,
     // process.env.COMFY_SERVER_ADDRESS_4 as string,
     // process.env.COMFY_SERVER_ADDRESS_5 as string,
     // process.env.COMFY_SERVER_ADDRESS_6 as string
   ],
   STEP: 25,
-  db: new DataDBHandler(),
+  db: new Database(),
   logs: new Logs()
 });
 

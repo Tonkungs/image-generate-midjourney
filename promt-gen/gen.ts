@@ -1,9 +1,11 @@
 require("dotenv").config();
 import PromtGenerater from "../src/promt/promt";
 import { IAiAdaterConfig, Models } from "../src/interface/promt";
-import DataDBHandler, { IDataPromt } from "../src/util/db";
+import { IDataPromt } from "../src/util/db";
+import DataDBHandler, { Database } from "../src/db/database";
 import Logs from "../src/logs";
 import { Category } from '../find-keyword/interface';
+import { ImageEntity } from "../src/db/entities/image";
 const fs = require('fs');
 const fileKEYWORD = './keyword.txt'
 const fileKEYWORD_complate = './complate-key.txt'
@@ -12,7 +14,7 @@ interface IPromtGenConfig {
   Category: string;
   api_keys: string[],
   keywords: string[],
-  db: DataDBHandler,
+  db: Database,
   log: Logs
 }
 
@@ -39,7 +41,7 @@ class PromtGen {
   private APIKEYS: string[] = [];
   private keywords: string[] = []
   private bots: IBotConfig[] = [];
-  private DB: DataDBHandler;
+  private DB: typeof DataDBHandler;
   private MAX_ROUND_PER_KEYWORD = 3;
   private MAX_ROUND_PER_PROMT = 10;
   private log: Logs;
@@ -51,7 +53,9 @@ class PromtGen {
     this.DB = config.db;
     this.initBots();
     this.log = config.log;
-    this.Category= config.Category
+    this.Category = config.Category
+
+    
   }
 
   private initBots() {
@@ -80,6 +84,7 @@ class PromtGen {
    */
   public async Run() {
     this.log.info("Start running");
+    await this.DB.initialize()
     let roundKeyword = 0
     let keywordRunning: string[] = []
     let runningTasks: Promise<void>[] = [];
@@ -141,23 +146,24 @@ class PromtGen {
         );
         // ดึงข้อมูล
         const promts: string[] = await bot.promtGen.Generate(keyword);
-
-        // Prepare Insert
-        const promtsToInsert: IDataPromt[] = promts.map((promt, index) => ({
-          Title: promt,
-          Stage: 'START', // ค่าเริ่มต้น
-          SeedID: '', // ค่าเริ่มต้น          
-          Round: index + 1, // ค่าเริ่มต้น
-          ImageUrl: '', // ค่าเริ่มต้น
-          Category:  this.Category,
+        const promtsToInsert: Partial<ImageEntity>[] = promts.map((promt, index) => ({
+          title: promt,
+          stage: 'START', // ค่าเริ่มต้น
+          seed_id: '', // ค่าเริ่มต้น          
+          round: index + 1, // ค่าเริ่มต้น
+          image_url: '', // ค่าเริ่มต้น
+          category: this.Category,
         }));
-        // console.log("promtsToInsert", promtsToInsert);
-        
-        this.log.info("Insert => " + promtsToInsert.length);
+                // throw new Error("Test Error");
+
+        await this.DB.bulkInsert(promtsToInsert);
+        this.log.info(`Bot ${botIndex} processing keyword Insert Success`, {
+          botIndex,
+          keyword,
+          round: subIndex + 1,
+        });
         // throw new Error("Test Error");
-        
-        await this.DB.bulkInsertWithConflictHandling(promtsToInsert)
-        await this.delay(1000);
+        await this.delay(2000);
 
       } catch (error) {
         this.log.error("Error in processData", {
@@ -167,7 +173,7 @@ class PromtGen {
           error
         });
 
-        throw error
+        // throw error
       }
     }
     bot.isAvailable = true;
@@ -188,11 +194,6 @@ class PromtGen {
   }
 }
 
-const db = new DataDBHandler();
-
-
-// Read completed keywords from complate-key.txt
-
 // Initialize keywords
 let loveSymbols = readKeywords();
 
@@ -210,9 +211,9 @@ const promt = new PromtGen({
     process.env.GEMINI_KEY_6 as string,
   ],
   keywords: loveSymbols,
-  db: db,
+  db: new Database(),
   log: new Logs(),
-  Category: "healthy"
+  Category: "Spring 2025",
 });
 
 (() => {

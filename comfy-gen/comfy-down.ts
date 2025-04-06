@@ -1,12 +1,15 @@
 require("dotenv").config();
-import DataDBHandler, { IDataPromt } from "../src/util/db";
+// import DataDBHandler, { IDataPromt } from "../src/util/db";
+import DataDBHandler, { Database } from "../src/db/database";
+import { ImageEntity } from "../src/db/entities/image";
+
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import axios from 'axios';
 import Ut from "../src/util/util";
 import Logs from "../src/logs";
 
-const DIR_COMFYUI = 'comfy07';
+const DIR_COMFYUI = 'comfy08';
 
 interface IServer {
   serverAddress: string;
@@ -15,13 +18,13 @@ interface IServer {
 }
 
 interface IImageDownloader {
-  db: DataDBHandler;
+  db: Database;
   logs: Logs;
   serverAddressList: string[];
 }
 
 class ImageDownloader {
-  private db: DataDBHandler;
+  private db: Database;
   private serverList: IServer[];
   private logs: Logs;
   private NODE_IMAGE_PATH: string = "9";
@@ -45,8 +48,8 @@ class ImageDownloader {
   public async starts(): Promise<void> {
     while (true) {
       try {
-        const promptData: IDataPromt | null = await this.db.findFirstWait();
-
+        const promptData: ImageEntity | null = await this.db.findFirstWait();
+      await this.db.initialize()
         // const promptDatas:IDataPromt[] | null = await this.db.findTopWait();
 
         // console.log("promptDatas =>",promptDatas);
@@ -58,27 +61,29 @@ class ImageDownloader {
           continue;
         }
 
-        const promptId = promptData?.PromtId as string;
+        const promptId = promptData?.promt_id as string;
         if (!promptId) continue;
 
         try {
           const imageBuffers = await this.downloadImages(promptId);
           if (!imageBuffers || !imageBuffers[this.NODE_IMAGE_PATH]) {
             this.logs.info(`No valid images found in node ${this.NODE_IMAGE_PATH}`);
-            await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
+            await this.updateStageByID(promptData, "START", promptId);
+            // await this.db.updateStageByID(promptData?.id as string, "START", "", promptId);
             continue;
           }
 
           const directoryPath = path.join(__dirname, DIR_COMFYUI);
           await this.ensureDirectoryExistence(directoryPath);
-          const fileName = `${promptData?.ID as string}_${promptId}.jpg`;
+          const fileName = `${promptData?.id}_${promptId}.jpg`;
           const outputPath = path.join(directoryPath, fileName);
           await this.saveImage(imageBuffers[this.NODE_IMAGE_PATH][0], outputPath, fileName);
-
-          await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
+          await this.updateStageByID(promptData, "DONE", promptId);
+          // await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
         } catch (error) {
           this.logs.error(`Error downloading image: ${error}`);
-          await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
+          await this.updateStageByID(promptData, "START", promptId);
+          // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
         }
       } catch (error) {
         console.log("error =>", error);
@@ -93,10 +98,12 @@ class ImageDownloader {
    * name
    */
   public async startss(): Promise<void> {
+    await this.db.initialize()
+
     while (true) {
       try {
 
-        const promptDatas: IDataPromt[] | null = await this.db.findTopWait(10);
+        const promptDatas: ImageEntity[] | null = await this.db.findTopWait('WAITING_DOWNLOAD',10);
         if (!promptDatas || promptDatas.length === 0) {
           this.logs.info("No pending prompts. Retrying in 5 seconds...");
           await Ut.Delay(5000);
@@ -117,28 +124,30 @@ class ImageDownloader {
     }
   }
 
-  private async processPrompt(promptData: IDataPromt): Promise<void> {
-    const promptId = promptData?.PromtId as string;
+  private async processPrompt(promptData: ImageEntity): Promise<void> {
+    const promptId = promptData?.promt_id as string;
     if (!promptId) return;
 
     try {
       const imageBuffers = await this.downloadImages(promptId);
       if (!imageBuffers || !imageBuffers[this.NODE_IMAGE_PATH]) {
         this.logs.info(`No valid images found in node ${this.NODE_IMAGE_PATH}`);
-        await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
+        await this.updateStageByID(promptData, "START", promptId);
+        // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
         return;
       }
 
       const directoryPath = path.join(__dirname, DIR_COMFYUI);
       await this.ensureDirectoryExistence(directoryPath);
-      const fileName = `${promptData?.ID as string}_${promptId}.jpg`;
+      const fileName = `${promptData.id}_${promptId}.jpg`;
       const outputPath = path.join(directoryPath, fileName);
       await this.saveImage(imageBuffers[this.NODE_IMAGE_PATH][0], outputPath, fileName);
-
-      await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
+      await this.updateStageByID(promptData, "DONE", promptId);
+      // await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
     } catch (error) {
       this.logs.error(`Error downloading image: ${error}`);
-      await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
+      this.updateStageByID(promptData, "START", promptId);
+      // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
     }
 
     return;
@@ -233,16 +242,24 @@ class ImageDownloader {
       }
     }
   }
+
+  private async updateStageByID( data: ImageEntity, stage: string, promptId: string): Promise<void> {
+    await this.db.update(data.id, {
+      ...data,
+      promt_id: promptId,
+      stage: stage
+    });
+  }
 }
 
 (async () => {
   try {
     const downloader = new ImageDownloader({
-      db: new DataDBHandler(),
+      db: new Database(),
       logs: new Logs(),
       serverAddressList: [
         process.env.COMFY_SERVER_ADDRESS as string,
-        process.env.COMFY_SERVER_ADDRESS_2 as string,
+        // process.env.COMFY_SERVER_ADDRESS_2 as string,
         // process.env.COMFY_SERVER_ADDRESS_3 as string,
         // process.env.COMFY_SERVER_ADDRESS_4 as string,
         // process.env.COMFY_SERVER_ADDRESS_5 as string,
