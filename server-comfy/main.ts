@@ -1,21 +1,25 @@
 import express, { Application, Request, Response } from 'express';
-import { DataSource, Not, Repository } from 'typeorm';
+import { DataSource, Like, Not, Repository } from 'typeorm';
 import { Server } from './entity/server';
+import { ServerHistory } from "./entity/server-history";
 import Logs from '../src/logs';
-import { ServerResponse, CreateServerRequest, ServerStage } from "./interface/iserver";
+import { ServerHisResponse, CreateServerHisRequest, ServerStage, IResponseData, IServer } from "./interface/iserver";
+var cors = require('cors')
+
 export class ServerApp {
   private app: Application;
   private dataSource: DataSource;
   private serverRepository!: Repository<Server>;
+  private serverHistoryRepository!: Repository<ServerHistory>;
   private log !: Logs
   constructor () {
     this.app = express();
 
     this.registerShutdownHandlers();
-    // this.app.use(bodyParser.json());
-    // this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
+
+    this.app.use(cors())
     this.log = new Logs();
     this.dataSource = new DataSource({
       type: "postgres",
@@ -24,7 +28,7 @@ export class ServerApp {
       username: "tonkung",
       password: "yourpassword",
       database: "images",
-      entities: [Server],
+      entities: [Server,ServerHistory],
       synchronize: true,
       logging: false
     });
@@ -35,6 +39,7 @@ export class ServerApp {
       await this.dataSource.initialize();
       this.log.info("Data Source has been initialized!");
       this.serverRepository = this.dataSource.getRepository(Server);
+      this.serverHistoryRepository = this.dataSource.getRepository(ServerHistory);
       this.setupRoutes();
       this.log.info("Routes have been set up!");
       this.startServer();
@@ -46,39 +51,133 @@ export class ServerApp {
   }
 
   private setupRoutes(): void {
-    this.app.post('/server', this.createServer.bind(this));
-    this.app.get('/server', this.getServers.bind(this));
-    this.app.post('/server/:server_ip/ready', this.updateStageReady.bind(this));
-    this.app.post('/server/:server_ip/activate', this.updateStageActivate.bind(this));
-    this.app.post('/server/:server_ip/stop', this.updateStageStop.bind(this));
-    this.app.post('/server/:server_ip/destroy', this.updateStageDestroy.bind(this));
-    this.app.post('/server/promt', this.promtTest.bind(this));
+    this.app.get('/servers',this.middlewarelogger.bind(this), this.getListServer.bind(this));
+    this.app.post('/servers',this.middlewarelogger.bind(this), this.createServerOwn.bind(this));
+    this.app.get('/servers/:id',this.middlewarelogger.bind(this), this.serverByID.bind(this));
+    this.app.put('/servers/:id',this.middlewarelogger.bind(this), this.editServer.bind(this));
+    this.app.delete('/servers/:id',this.middlewarelogger.bind(this), this.deleteServer.bind(this));
+    this.app.post('/server-history', this.createServer.bind(this));
+    this.app.get('/server-history',this.middlewarelogger.bind(this), this.getServers.bind(this));
+    this.app.post('/server-history/:server_ip/ready',this.middlewarelogger.bind(this), this.updateStageReady.bind(this));
+    this.app.post('/server-history/:server_ip/activate',this.middlewarelogger.bind(this), this.updateStageActivate.bind(this));
+    this.app.post('/server-history/:server_ip/stop',this.middlewarelogger.bind(this), this.updateStageStop.bind(this));
+    this.app.post('/server-history/:server_ip/destroy',this.middlewarelogger.bind(this), this.updateStageDestroy.bind(this));
+    this.app.post('/server-history/promt',this.middlewarelogger.bind(this), this.promtTest.bind(this));
   }
 
-  // create middleware ให ้สร้างlog เวลา  error
-  private async createServerMiddleware(req: Request, res: Response, next: Function) {
+  private async middlewarelogger(req: Request, res: Response, next: () => void): Promise<void> {
+    this.log.info(`Request URL: ${req.url}`);
+    this.log.info(`Request Method: ${req.method}`);
+    this.log.info(`Request Body: ${JSON.stringify(req.body)}`);
+    next();
+  }
+
+  private async createServerOwn(req: Request, res: Response): Promise<void> {
     try {
-      const { server_url, server_ip }: CreateServerRequest = req.body;
-      if (!server_url || !server_ip) {
-        this.log.error("Missing required fields");
-        return res.status(400).json({ error: "Missing required fields" });
+
+      let server = new Server();
+      server = Object.assign(server, req.body);
+      const result = await this.serverRepository.save(server);
+      res.json({
+        message: "Server created successfully",
+        data: {
+          id:result.id,
+        }
+      });
+    } catch (error: any | Error) {
+      this.log.error("Error creating server:" + error);
+      res.status(500).json({ error: error.message ? error.message : 'An unknown error occurred' });
+    }
+  }
+
+  private async serverByID(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const result = await this.serverRepository.findOne({
+        where: {
+          id: parseInt(id),
+        }
+      });
+      if (!result) {
+        res.status(404).json({ message: "Server not found" });
+        return;
       }
-      next();
-    } catch (error) {
-      this.log.error("Error in middleware:", error);
-      res.status(500).json({ error: "Internal server error" });
+
+      const response: IResponseData<IServer> = {
+        message: "successfully",
+        data: {
+          ...result
+        }
+      };
+      res.json(response);
+    } catch (error: any | Error) {
+      this.log.error("Error creating server:" + error);
+      res.status(500).json({ error: true,
+        message:error.message ? error.message : 'An unknown error occurred'
+       });
+    }
+  }
+
+  // edist server
+  private async editServer(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const result = await this.serverRepository.findOne({
+        where: {
+          id: parseInt(id),
+        }
+      });
+      if (!result) {
+        res.status(404).json({ message: "Server not found" });
+        return;
+      }
+      const updatedResult = Object.assign(result, req.body);
+      const updatedServer = await this.serverRepository.save(updatedResult);
+      res.json({ message: "Server updated successfully", data: {
+        id: updatedServer.id,
+      } });
+    } catch (error: any | Error) {
+      this.log.error("Error creating server:" + error);
+      res.status(500).json({ error: true,
+        message:error.message ? error.message : 'An unknown error occurred'
+       });
+    }
+
+  }
+
+  // soft delete server
+  private async deleteServer(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const result = await this.serverRepository.findOne({
+        where: {
+          id: parseInt(id),
+        }
+      });
+      if (!result) {
+        res.status(404).json({ message: "Server not found" });
+        return;
+      }
+      await this.serverRepository.softRemove(result);
+      res.json({ message: "Server deleted successfully" });
+    } catch (error: any | Error) {
+      this.log.error("Error creating server:" + error);
+      res.status(500).json({ error: true,
+        message:error.message ? error.message : 'An unknown error occurred'
+       });
     }
   }
 
   private async createServer(req: Request, res: Response): Promise<void> {
     try {
       const { server_url, server_ip } = req.body;
-      let server = new Server();
+      let server = new ServerHistory();
       server.server_ip = server_ip;
       server.server_url = server_url;
       server.stage = ServerStage.START;
       server.restart_round = 0;
-      const result = await this.serverRepository.save(server);
+      console.log("server=> Start", server);
+      const result = await this.serverHistoryRepository.save(server);
       res.json(result);
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
@@ -86,18 +185,47 @@ export class ServerApp {
     }
   }
 
+  private async getListServer(req: Request, res: Response): Promise<void> {
+    try {
+      const {  search } = req.query;
+      
+      let whereConditions = {};
+      if (search) {
+        whereConditions = [
+          { gpu_id: Like(`%${search}%`) },
+          { machine_id: Like(`%${search}%`) },
+          { server_ip: Like(`%${search}%`) }
+        ];
+      }
+
+      const servers = await this.serverRepository.find({
+        where: whereConditions,
+        order: { created_at: "DESC" }
+      });
+      if (!servers) {        
+        res.status(404).json({ error: "Server not found" });
+        return;
+      }
+      res.json({ server_list: servers });
+    } catch (error) {
+      this.log.error("Error getting server list:", error);
+      res.status(500).json({ error: "Error fetching server list" });
+    }
+  }
+
   private async updateStageReady(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip } = req.params;
+      const { server_ip,server_url } = req.body;
 
-      const server = await this.getServerByIp(server_ip);
+      const server = await this.getServerByIp(server_ip,server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
       }
       server.stage = ServerStage.READY;
-      await this.serverRepository.save(server);
+      console.log("server=> READY", server);
+      await this.serverHistoryRepository.save(server);
       res.json({
         message: "Server stage updated to READY",
       });
@@ -110,14 +238,18 @@ export class ServerApp {
   private async updateStageActivate(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip } = req.params;
-      const server = await this.getServerByIp(server_ip);
+      const { server_ip,server_url } = req.body;
+      console.log("server_ip=>", server_ip);
+      console.log("server_url=>", server_url);
+      
+      const server = await this.getServerByIp(server_ip,server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
       }
       server.stage = ServerStage.ACTIVATE;
-      await this.serverRepository.save(server);
+      console.log("server=> ACTIVATE", server);
+      await this.serverHistoryRepository.save(server);
       res.json({
         message: "Server stage updated to Activate",
       });
@@ -130,14 +262,15 @@ export class ServerApp {
   private async updateStageStop(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip } = req.params;
-      const server = await this.getServerByIp(server_ip);
+      const { server_ip ,server_url} = req.body;
+      const server = await this.getServerByIp(server_ip,server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
       }
       server.stage = ServerStage.STOP;
-      await this.serverRepository.save(server);
+      console.log("server=> STOP", server);
+      await this.serverHistoryRepository.save(server);
       res.json({
         message: "Server stage updated to STOP",
       });
@@ -150,14 +283,15 @@ export class ServerApp {
   private async updateStageDestroy(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip } = req.params;
-      const server = await this.getServerByIp(server_ip);
+      const { server_ip ,server_url} = req.body;
+      const server = await this.getServerByIp(server_ip,server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
       }
       server.stage = ServerStage.DESTROY;
-      await this.serverRepository.save(server);
+      console.log("server=> DESTROY", server);
+      await this.serverHistoryRepository.save(server);
       res.json({
         message: "Server stage updated to Destroy",
       });
@@ -168,12 +302,14 @@ export class ServerApp {
     }
   }
 
-  private async getServerByIp(ip: string): Promise<Server | null> {
-    try {      
-      const server = await this.serverRepository.findOne({
+  private async getServerByIp(ip: string,server_url: string): Promise<ServerHistory | null> {
+    try {   
+      console.log("getServerByIp=>", ip);
+      console.log("getServerByIp=>", server_url);
+      const server = await this.serverHistoryRepository.findOne({
         where: {
           server_ip: ip,
-          // stage: Not(ServerStage.DESTROY)
+          server_url: server_url,
         }
       });
       
@@ -191,9 +327,7 @@ export class ServerApp {
     try {
       console.log("req=>", req.body);
       // set deleay 5000ms
-      await new Promise(resolve => setTimeout(resolve, 30000));
-      console.log("ok", 30000);
-      
+      await new Promise(resolve => setTimeout(resolve, 30000));      
       res.json({ "message": "test" });
     } catch (error) {
       
@@ -202,7 +336,7 @@ export class ServerApp {
 
   private async getServers(req: Request, res: Response): Promise<void> {
     try {
-      const servers: ServerResponse[] = await this.serverRepository.find(
+      const servers: ServerHisResponse[] = await this.serverHistoryRepository.find(
         {
           where: { stage: ServerStage.READY },
           order: { created_at: "DESC" }

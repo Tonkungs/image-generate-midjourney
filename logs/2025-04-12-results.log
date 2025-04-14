@@ -1,0 +1,109 @@
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:03:31"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:03:31"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://patrol-fate-el-wonder.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:03:31"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:17:20"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:17:20"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://cf-podcast-alignment-grain.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:17:20"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:23:47"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:23:47"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://hong-pub-lauderdale-mature.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:23:47"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:32:55"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:32:55"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://attraction-zone-contrary-epinions.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:32:55"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:41:17"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:41:17"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://under-rip-ep-angry.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:41:17"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:44:34"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:44:34"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://bicycle-curves-public-motor.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:44:34"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 00:51:35"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 00:51:35"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://cambodia-element-drinking-kind.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 00:51:35"}
+{"label":"main.ts","level":"info","message":"Shutting down gracefully... Signal: SIGINT","timestamp":"2025-04-12 11:09:11"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 11:09:18"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 11:09:18"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 11:09:18"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"label":"main.ts","level":"error","message":"Error during Data Source initialization:","port":5432,"syscall":"connect","timestamp":"2025-04-12 11:19:56"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"label":"main.ts","level":"error","message":"Error during Data Source initialization:","port":5432,"syscall":"connect","timestamp":"2025-04-12 11:20:41"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"label":"main.ts","level":"error","message":"Error during Data Source initialization:","port":5432,"syscall":"connect","timestamp":"2025-04-12 11:23:37"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 19:35:44"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 19:35:44"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 19:35:44"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 19:42:06"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 19:42:06"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://apr-enquiry-protected-chose.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 19:42:06"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 19:47:55"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 19:47:55"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://norfolk-candles-nerve-thee.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 19:47:55"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 19:51:09"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 19:51:09"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 19:51:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 20:04:29"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 20:04:29"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://earlier-classical-catalogs-stress.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 20:04:29"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 20:06:57"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 20:06:57"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 20:06:57"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 20:10:17"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 20:10:17"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://gained-skill-clothing-characterized.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 20:10:17"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 20:22:14"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 20:22:14"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://budgets-destination-holder-units.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 20:22:14"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 20:24:18"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 20:24:18"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 20:24:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 20:41:10"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 20:41:10"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://also-humanities-dk-ev.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 20:41:10"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 21:37:31"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 21:37:31"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://designation-nn-extreme-code.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 21:37:31"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 21:42:58"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 21:42:58"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://advert-exhaust-shed-travelling.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 21:42:58"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 21:53:58"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 21:53:58"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://seminar-editorials-aug-junk.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 21:53:58"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 22:03:13"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 22:03:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://spelling-fioricet-roll-coaching.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 22:03:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 22:10:44"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 22:10:44"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://decimal-hiv-coral-illness.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 22:10:44"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-12 22:13:23"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-12 22:13:23"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-12 22:13:23"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 22:29:22"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 22:29:22"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://am-lady-news-durable.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 22:29:22"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 23:26:59"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:26:59"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://gsm-antique-visits-pulling.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:26:59"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/stop","timestamp":"2025-04-12 23:27:26"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:27:26"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://gsm-antique-visits-pulling.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:27:26"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 23:31:06"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:31:06"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://demonstrate-leave-expects-guy.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:31:06"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/stop","timestamp":"2025-04-12 23:32:25"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:32:25"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://demonstrate-leave-expects-guy.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:32:25"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 23:48:26"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:48:26"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://renewable-charlotte-wooden-personal.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:48:26"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/stop","timestamp":"2025-04-12 23:49:22"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:49:22"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://renewable-charlotte-wooden-personal.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:49:22"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 23:52:47"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:52:47"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://amp-aruba-inches-like.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:52:47"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/destroy","timestamp":"2025-04-12 23:53:42"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:53:42"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://amp-aruba-inches-like.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:53:42"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-12 23:56:45"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:56:45"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://le-subdivision-continuity-segments.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:56:45"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/destroy","timestamp":"2025-04-12 23:59:26"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-12 23:59:26"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://le-subdivision-continuity-segments.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-12 23:59:26"}

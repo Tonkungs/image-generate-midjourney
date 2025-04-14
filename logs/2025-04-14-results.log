@@ -1,0 +1,513 @@
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 00:10:55"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 00:10:55"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 00:10:55"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 00:11:11"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 00:11:11"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 00:11:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:12:15"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:12:15"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:12:15"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:13:08"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:13:08"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:13:08"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:13:31"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:13:31"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:13:31"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:14:03"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:14:03"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:14:03"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:17:33"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:17:33"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:17:33"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:18:12"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:18:12"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:18:12"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:18:14"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:18:14"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:18:14"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:18:41"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:18:41"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:18:41"}
+{"label":"main.ts","level":"info","message":"Shutting down gracefully... Signal: SIGINT","timestamp":"2025-04-14 00:19:29"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 00:20:13"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 00:20:13"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 00:20:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:20:23"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:20:23"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:20:23"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:20:42"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:20:42"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:20:42"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:20:51"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:25:23"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:25:23"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:25:23"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:25:24"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:25:24"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:25:24"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 00:25:26"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 00:25:26"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 00:25:26"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:17:59"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:24:44"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:24:44"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:24:44"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:25:40"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:25:40"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:25:40"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:29:38"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:29:38"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:29:38"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=","timestamp":"2025-04-14 08:30:28"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:30:28"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:30:28"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:30:32"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:30:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:30:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:32:24"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:32:24"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:32:24"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 08:37:41"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:20:42"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:20:49"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:21:51"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:21:51"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:21:51"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:24:07"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:24:07"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:24:07"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:24:18"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:24:18"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:24:18"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:24:24"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:24:24"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:24:24"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:24:53"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:24:53"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:24:53"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:25:11"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:25:11"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:25:11"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:26:40"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:26:40"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:26:40"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:28:15"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:28:15"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:28:15"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:28:24"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:28:24"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:28:24"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:35:35"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:35:35"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:35:35"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:37:13"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:37:13"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:37:13"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:40:18"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:40:18"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:40:18"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:42:07"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:42:07"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:42:07"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:42:29"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:42:29"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:42:29"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:42:38"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:42:38"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:42:38"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 14:42:45"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 14:42:45"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 14:42:45"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:43:12"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:43:12"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:43:12"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:45:13"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:45:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:45:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:45:19"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:45:19"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:45:19"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:45:44"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:45:44"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:45:44"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:48:35"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:48:35"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:48:35"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:52:18"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:52:18"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:52:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:52:58"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:52:58"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:52:58"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:53:37"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 14:53:37"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"123\",\"server_ip\":\"184.22.33.249\",\"tf_lops\":1,\"dl_perf\":12,\"price\":\"2.2\",\"price_gpu\":12,\"price_hdd\":12,\"gpu_type\":\"RTX_3090\",\"created_at\":\"2025-04-13T09:16:56.862Z\",\"updated_at\":\"2025-04-13T09:16:56.862Z\",\"deleted_at\":null}","timestamp":"2025-04-14 14:53:37"}
+{"label":"main.ts","level":"error","message":"Error creating server:QueryFailedError: invalid input syntax for type integer: \"2.2\"","timestamp":"2025-04-14 14:53:37"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:53:54"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 14:53:54"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"123\",\"server_ip\":\"184.22.33.249\",\"tf_lops\":1,\"dl_perf\":12,\"price\":\"2.2\",\"price_gpu\":12,\"price_hdd\":12,\"gpu_type\":\"RTX_3090\",\"created_at\":\"2025-04-13T09:16:56.862Z\",\"updated_at\":\"2025-04-13T09:16:56.862Z\",\"deleted_at\":null}","timestamp":"2025-04-14 14:53:54"}
+{"label":"main.ts","level":"error","message":"Error creating server:QueryFailedError: invalid input syntax for type integer: \"2.2\"","timestamp":"2025-04-14 14:53:54"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:54:45"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:54:45"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:54:45"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:54:49"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 14:54:49"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"123\",\"server_ip\":\"184.22.33.249\",\"tf_lops\":1,\"dl_perf\":12,\"price\":0,\"price_gpu\":12,\"price_hdd\":12,\"gpu_type\":\"RTX_3090\",\"created_at\":\"2025-04-13T09:16:56.862Z\",\"updated_at\":\"2025-04-13T09:16:56.862Z\",\"deleted_at\":null}","timestamp":"2025-04-14 14:54:49"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:55:23"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:55:23"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:55:23"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:55:25"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"213\",\"machine_id\":\"123\",\"server_ip\":\"184.22.33.249\",\"tf_lops\":1,\"dl_perf\":12,\"price\":0,\"price_gpu\":12,\"price_hdd\":12,\"gpu_type\":\"RTX_3090\",\"created_at\":\"2025-04-13T09:16:56.862Z\",\"updated_at\":\"2025-04-13T09:16:56.862Z\",\"deleted_at\":null}","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 14:55:30"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 14:55:30"}
+{"code":"42601","driverError":{"code":"42601","file":"scan.l","length":90,"line":"1244","name":"error","position":"52","routine":"scanner_yyerror","severity":"ERROR"},"file":"scan.l","label":"main.ts","length":90,"level":"error","line":"1244","message":"Error during Data Source initialization:","position":"52","query":"ALTER TABLE \"server\" ADD \"tf_lops\" double precision(14,4) NOT NULL","routine":"scanner_yyerror","severity":"ERROR","timestamp":"2025-04-14 15:03:18"}
+{"code":"42601","driverError":{"code":"42601","file":"scan.l","length":91,"line":"1244","name":"error","position":"190","routine":"scanner_yyerror","severity":"ERROR"},"file":"scan.l","label":"main.ts","length":91,"level":"error","line":"1244","message":"Error during Data Source initialization:","position":"190","query":"CREATE TABLE \"server\" (\"id\" SERIAL NOT NULL, \"gpu_id\" character varying NOT NULL, \"machine_id\" character varying NOT NULL, \"server_ip\" character varying NOT NULL, \"tf_lops\" double precision(14,4) NOT NULL, \"dl_perf\" double precision(14,4) NOT NULL, \"price\" double precision(14,4) NOT NULL, \"price_gpu\" double precision(14,4) NOT NULL, \"price_hdd\" double precision(14,4) NOT NULL, \"gpu_type\" \"public\".\"ServerType\" NOT NULL DEFAULT 'RTX_4090', \"created_at\" TIMESTAMP NOT NULL DEFAULT now(), \"updated_at\" TIMESTAMP NOT NULL DEFAULT now(), \"deleted_at\" TIMESTAMP, CONSTRAINT \"UQ_0a3addb52c70dc20a54b16b965b\" UNIQUE (\"gpu_id\", \"machine_id\", \"server_ip\"), CONSTRAINT \"PK_f8b8af38bdc23b447c0a57c7937\" PRIMARY KEY (\"id\"))","routine":"scanner_yyerror","severity":"ERROR","timestamp":"2025-04-14 15:03:35"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 15:05:57"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 15:05:57"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 15:05:57"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 15:10:43"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 15:10:43"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 15:10:43"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:32:40"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:33:02"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:33:02"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:33:02"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:44:49"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 15:44:49"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"123\",\"machine_id\":\"123\",\"server_ip\":\"123\",\"tf_lops\":\"121\",\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 15:44:49"}
+{"label":"main.ts","level":"error","message":"Error creating server:QueryFailedError: null value in column \"server_url\" of relation \"server_history\" violates not-null constraint","timestamp":"2025-04-14 15:44:49"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"ดไำพ\",\"machine_id\":\"ไำพไำพ\",\"server_ip\":\"978978\",\"tf_lops\":\"789\",\"dl_perf\":0,\"price\":0,\"price_gpu\":\"456\",\"price_hdd\":\"456\",\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"error","message":"Error creating server:QueryFailedError: null value in column \"server_url\" of relation \"server_history\" violates not-null constraint","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:45:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:46:59"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 15:46:59"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"\",\"machine_id\":\"\",\"server_ip\":\"\",\"tf_lops\":0,\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 15:46:59"}
+{"label":"main.ts","level":"error","message":"Error creating server:QueryFailedError: null value in column \"server_url\" of relation \"server_history\" violates not-null constraint","timestamp":"2025-04-14 15:46:59"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 15:49:03"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 15:49:03"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 15:49:03"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 15:49:22"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 15:49:22"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 15:49:22"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:49:41"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 15:49:41"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"/-/\",\"machine_id\":\"ๅ/-ๅ/\",\"server_ip\":\"ฟหก\",\"tf_lops\":0,\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 15:49:41"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 15:53:45"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:30:52"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:30:52"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:30:52"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:32:33"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:32:33"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:32:33"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:34:26"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:34:26"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:34:26"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:35:40"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:35:40"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:35:40"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:37:32"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:37:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:37:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 16:39:12"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 16:39:12"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 16:39:12"}
+{"label":"main.ts","level":"info","message":"Shutting down gracefully... Signal: SIGINT","timestamp":"2025-04-14 16:46:04"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 16:48:09"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 16:48:09"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 16:48:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:08:46"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:08:46"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:08:46"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:08:55"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:08:55"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:08:55"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:08:56"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:08:56"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:08:56"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"ๅ/-ๅ/\",\"server_ip\":\"ฟหก\",\"tf_lops\":\"0.0000\",\"dl_perf\":\"0.0000\",\"price\":\"0.0000\",\"price_gpu\":\"0.0000\",\"price_hdd\":\"0.0000\",\"gpu_type\":\"RTX_4090\",\"created_at\":\"2025-04-14T01:49:41.321Z\",\"updated_at\":\"2025-04-14T01:49:41.321Z\",\"deleted_at\":null}","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:01"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:03"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"qwewqeq\",\"server_ip\":\"ฟหก\",\"tf_lops\":\"0.0000\",\"dl_perf\":\"0.0000\",\"price\":\"0.0000\",\"price_gpu\":\"0.0000\",\"price_hdd\":\"0.0000\",\"gpu_type\":\"RTX_4090\",\"created_at\":\"2025-04-14T01:49:41.321Z\",\"updated_at\":\"2025-04-14T03:09:01.335Z\",\"deleted_at\":null}","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:07"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Method: PUT","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"id\":1,\"gpu_id\":\"123\",\"machine_id\":\"qwewqeq\",\"server_ip\":\"ฟหก\",\"tf_lops\":\"0.0000\",\"dl_perf\":\"1.2515\",\"price\":\"0.0000\",\"price_gpu\":\"0.0000\",\"price_hdd\":\"0.0000\",\"gpu_type\":\"RTX_4090\",\"created_at\":\"2025-04-14T01:49:41.321Z\",\"updated_at\":\"2025-04-14T03:09:07.080Z\",\"deleted_at\":null}","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:09:20"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:23:14"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:23:17"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:23:17"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:23:17"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:23:22"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 17:23:22"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"\",\"machine_id\":\"\",\"server_ip\":\"\",\"tf_lops\":0,\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 17:23:22"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:24:36"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:24:36"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:24:36"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:24:52"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:24:52"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:24:52"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:25:14"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:25:14"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:25:14"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:42:29"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/2","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request Method: DELETE","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:42:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:44:13"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:44:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:44:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:51:51"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:51:51"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:51:51"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:56:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 17:56:16"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:08:56"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:00"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request Method: DELETE","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:02"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"213\",\"machine_id\":\"\",\"server_ip\":\"\",\"tf_lops\":0,\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\"}","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:09:07"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:15:56"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:15:56"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:15:56"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:16:25"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:16:25"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:16:25"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:17:16"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:17:16"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:17:16"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:17:28"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:17:28"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:17:28"}
+{"code":"23502","column":"availability_seconds","driverError":{"code":"23502","column":"availability_seconds","file":"tablecmds.c","length":172,"line":"6279","name":"error","routine":"ATRewriteTable","schema":"public","severity":"ERROR","table":"server"},"file":"tablecmds.c","label":"main.ts","length":172,"level":"error","line":"6279","message":"Error during Data Source initialization:","query":"ALTER TABLE \"server\" ADD \"availability_seconds\" integer NOT NULL","routine":"ATRewriteTable","schema":"public","severity":"ERROR","table":"server","timestamp":"2025-04-14 21:21:14"}
+{"code":"23502","column":"availability_seconds","driverError":{"code":"23502","column":"availability_seconds","file":"tablecmds.c","length":172,"line":"6279","name":"error","routine":"ATRewriteTable","schema":"public","severity":"ERROR","table":"server"},"file":"tablecmds.c","label":"main.ts","length":172,"level":"error","line":"6279","message":"Error during Data Source initialization:","query":"ALTER TABLE \"server\" ADD \"availability_seconds\" integer NOT NULL","routine":"ATRewriteTable","schema":"public","severity":"ERROR","table":"server","timestamp":"2025-04-14 21:23:59"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:24:48"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:24:48"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:24:48"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:28:51"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:28:51"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:28:51"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:02"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-14 21:29:02"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"gpu_id\":\"213\",\"machine_id\":\"\",\"server_ip\":\"\",\"tf_lops\":0,\"dl_perf\":0,\"price\":0,\"price_gpu\":0,\"price_hdd\":0,\"gpu_type\":\"RTX_4090\",\"can_generate\":\"YES\",\"availability_seconds\":\"50\",\"generation_seconds\":0}","timestamp":"2025-04-14 21:29:02"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:03"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:05"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:09"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:52"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:54"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:29:57"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers/1","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:06"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:08"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=%E0%B9%85/-%E0%B9%85/-","timestamp":"2025-04-14 21:30:37"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:30:37"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:30:37"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:31:48"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:31:48"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:31:48"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=312312","timestamp":"2025-04-14 21:32:13"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:32:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:32:13"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:33:13"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:33:13"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:33:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=312312","timestamp":"2025-04-14 21:33:16"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:33:16"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:33:16"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:37:23"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:37:23"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:37:23"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers","timestamp":"2025-04-14 21:37:32"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:37:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:37:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=213","timestamp":"2025-04-14 21:40:18"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:40:18"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:40:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=321","timestamp":"2025-04-14 21:40:23"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:40:23"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:40:23"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-14 21:40:42"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-14 21:40:42"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-14 21:40:42"}
+{"label":"main.ts","level":"info","message":"Request URL: /servers?search=","timestamp":"2025-04-14 21:47:09"}
+{"label":"main.ts","level":"info","message":"Request Method: GET","timestamp":"2025-04-14 21:47:09"}
+{"label":"main.ts","level":"info","message":"Request Body: {}","timestamp":"2025-04-14 21:47:09"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"label":"main.ts","level":"error","message":"Error during Data Source initialization:","port":5432,"syscall":"connect","timestamp":"2025-04-14 21:47:36"}

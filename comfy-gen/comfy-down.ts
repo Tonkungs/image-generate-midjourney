@@ -9,7 +9,7 @@ import axios from 'axios';
 import Ut from "../src/util/util";
 import Logs from "../src/logs";
 
-const DIR_COMFYUI = 'comfy08';
+const DIR_COMFYUI = 'comfy09';
 
 interface IServer {
   serverAddress: string;
@@ -20,12 +20,12 @@ interface IServer {
 interface IImageDownloader {
   db: Database;
   logs: Logs;
-  serverAddressList: string[];
+  // serverAddressList: string[];
 }
 
 class ImageDownloader {
   private db: Database;
-  private serverList: IServer[];
+  // private serverList: IServer[];
   private logs: Logs;
   private NODE_IMAGE_PATH: string = "9";
   private MAX_RETRIES = 3; // จำกัดจำนวนครั้งที่ลองโหลดภาพใหม่
@@ -38,11 +38,11 @@ class ImageDownloader {
     this.db = config.db;
     this.logs = config.logs;
 
-    this.serverList = config.serverAddressList.map(server => ({
-      serverAddress: server,
-      isAvailable: true,
-      reconnectAttempts: 0
-    }));
+    // this.serverList = config.serverAddressList.map(server => ({
+    //   serverAddress: server,
+    //   isAvailable: true,
+    //   reconnectAttempts: 0
+    // }));
   }
 
   public async starts(): Promise<void> {
@@ -99,7 +99,7 @@ class ImageDownloader {
    */
   public async startss(): Promise<void> {
     await this.db.initialize()
-
+    
     while (true) {
       try {
 
@@ -155,15 +155,14 @@ class ImageDownloader {
 
   private async downloadImages(promptId: string): Promise<{ [nodeId: string]: Buffer[] }> {
     const outputImages: { [nodeId: string]: Buffer[] } = {};
-
-    for (const server of this.serverList) {
-      // if (!server.isAvailable) continue;
-
+    const serverList = await this.db.getAllServers();
+    for (const server of serverList) {
+      // if (!server.isAvailable) continue;s
       try {
-        const history = await this.getHistory(server.serverAddress, promptId);
+        const history = await this.getHistory(server.server_url, promptId);
         if (!history || !history[promptId]) continue;
 
-        this.logs.info(`Downloading images from ${server.serverAddress}`);
+        this.logs.info(`Downloading images from ${server.server_url}`);
 
         for (const nodeId in history[promptId].outputs) {
           const nodeOutput = history[promptId].outputs[nodeId];
@@ -171,13 +170,13 @@ class ImageDownloader {
 
           outputImages[nodeId] = await Promise.all(
             nodeOutput.images.map(async (image: { filename: string; subfolder: string; type: string; }) => {
-              return this.getImageWithRetry(server.serverAddress, image.filename, image.subfolder, image.type);
+              return this.getImageWithRetry(server.server_url, image.filename, image.subfolder, image.type);
             })
           );
         }
       } catch (error) {
-        server.isAvailable = false;
-        this.logs.info(`Server ${server.serverAddress} is unavailable`);
+        // server.isAvailable = false;
+        this.logs.info(`Server ${server.server_url} is unavailable`);
       }
     }
 
@@ -257,14 +256,14 @@ class ImageDownloader {
     const downloader = new ImageDownloader({
       db: new Database(),
       logs: new Logs(),
-      serverAddressList: [
-        process.env.COMFY_SERVER_ADDRESS as string,
-        // process.env.COMFY_SERVER_ADDRESS_2 as string,
-        // process.env.COMFY_SERVER_ADDRESS_3 as string,
-        // process.env.COMFY_SERVER_ADDRESS_4 as string,
-        // process.env.COMFY_SERVER_ADDRESS_5 as string,
-        // process.env.COMFY_SERVER_ADDRESS_6 as string
-      ],
+      // serverAddressList: [
+      //   process.env.COMFY_SERVER_ADDRESS as string,
+      //   process.env.COMFY_SERVER_ADDRESS_2 as string,
+      //   process.env.COMFY_SERVER_ADDRESS_3 as string,
+      //   // process.env.COMFY_SERVER_ADDRESS_4 as string,
+      //   // process.env.COMFY_SERVER_ADDRESS_5 as string,
+      //   // process.env.COMFY_SERVER_ADDRESS_6 as string
+      // ],
     });
 
     await downloader.startss();

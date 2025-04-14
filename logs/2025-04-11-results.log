@@ -1,0 +1,56 @@
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 20:53:56"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 20:53:56"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 20:53:56"}
+{"label":"main.ts","level":"info","message":"Shutting down gracefully... Signal: SIGINT","timestamp":"2025-04-11 20:54:38"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 20:55:02"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 20:55:16"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 20:55:16"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3003","timestamp":"2025-04-11 20:55:16"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 20:59:55"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 20:59:55"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 20:59:55"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 21:16:22"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 21:16:22"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 21:16:22"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 21:50:15"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 21:50:15"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 21:50:15"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 21:50:26"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 21:50:26"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 21:50:26"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 21:51:18"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 21:51:18"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 21:51:18"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 21:54:16"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 21:54:16"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://led-bradford-pamela-aquatic.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 21:54:16"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 22:02:38"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:02:38"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://betting-tires-sim-organisations.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:02:38"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 22:04:28"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 22:04:28"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 22:04:28"}
+{"label":"main.ts","level":"info","message":"Data Source has been initialized!","timestamp":"2025-04-11 22:05:11"}
+{"label":"main.ts","level":"info","message":"Routes have been set up!","timestamp":"2025-04-11 22:05:11"}
+{"label":"main.ts","level":"info","message":"Server is running on http://localhost:3000","timestamp":"2025-04-11 22:05:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 22:08:11"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:08:11"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://suppliers-talking-miniature-cooper.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:08:11"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 22:15:32"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:15:32"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://collectibles-grateful-dylan-hurt.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:15:32"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/stop","timestamp":"2025-04-11 22:15:33"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:15:33"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://collectibles-grateful-dylan-hurt.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:15:33"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://have-upc-prefer-kits.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/stop","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://have-upc-prefer-kits.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 22:26:13"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 23:54:47"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 23:54:47"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://ref-picture-argentina-shoe.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 23:54:47"}
+{"label":"main.ts","level":"info","message":"Request URL: /server/184.22.33.249/activate","timestamp":"2025-04-11 23:58:46"}
+{"label":"main.ts","level":"info","message":"Request Method: POST","timestamp":"2025-04-11 23:58:46"}
+{"label":"main.ts","level":"info","message":"Request Body: {\"server_url\":\"https://criticism-draw-longest-cpu.trycloudflare.com\",\"server_ip\":\"184.22.33.249\"}","timestamp":"2025-04-11 23:58:46"}

@@ -17,6 +17,7 @@
     "down_comfy": "ts-node ./comfy-gen/comfy-down.ts",
     "pm2-comfy": "pm2 start ./ecosystem.config.js",
     "gen_name": "ts-node ./promt-gen/gen-image-name.ts",
+    "genurl": "./clound/server.sh",
     "dev": "nodemon"
   },
   "dependencies": {
@@ -25,9 +26,11 @@
     "@types/cli-progress": "^3.11.6",
     "@types/node": "^22.7.5",
     "axios": "^1.7.9",
+    "body-parser": "^2.2.0",
     "chalk": "^5.4.1",
     "cli-progress": "^3.12.0",
     "cloudscraper": "^4.6.0",
+    "cors": "^2.8.5",
     "csv-parse": "^5.6.0",
     "csv-writer": "^1.6.0",
     "dayjs": "^1.11.13",

@@ -7,6 +7,8 @@ import Logs from "../src/logs";
 import Ut from "../src/util/util";
 import DataDBHandler, { Database } from "../src/db/database";
 import { ImageEntity } from '../src/db/entities/image';
+import { Server } from '../server-comfy/entity/server';
+import { ServerHistory } from '../server-comfy/entity/server-history';
 
 interface IComfyConfig {
   serverAddress: string;
@@ -25,8 +27,12 @@ interface IWS {
   reconnectAttempts: number;
   inactivityTimeout: NodeJS.Timeout | null;
   ImageEntity: ImageEntity;
+  ServerEntity?: ServerHistory;
 }
 
+interface IServerUrl {
+  [string: string]: string;
+}
 class ComfyUIPromptProcessor {
   private serverAddress: string;
   private STEP: number;
@@ -38,14 +44,17 @@ class ComfyUIPromptProcessor {
   private readonly reconnectDelay = 1000;
   private TOKENNN = `cdc62edb699c6d903d18f0e832a64c63a9f0ec07c8aa63a81084f4ac745c193f`;
   private TOKEN = `?token=${this.TOKENNN}`;
+  // private serverURL: IServerUrl;
+
   constructor (config: IComfyConfig) {
     this.validateConfig(config);
     this.serverAddress = config.serverAddress;
     this.STEP = config.STEP;
     this.db = config.db;
     this.logs = config.logs as Logs;
-    this.initializeWebSocketList(config.serverAddressList);
+    // this.initializeWebSocketList(config.serverAddressList);
     this.registerShutdownHandlers();
+
   }
 
   private validateConfig(config: IComfyConfig): void {
@@ -63,8 +72,31 @@ class ComfyUIPromptProcessor {
         reconnectAttempts: 0,
         inactivityTimeout: null,
         ImageEntity: new ImageEntity()
-
       });
+    });
+  }
+
+  private initializeWebSocketListwithDB(serverAddressList: ServerHistory[]): void {
+    // 1. กรองเฉพาะ server ที่ยังอยู่ใน serverAddressList
+    this.wsList = this.wsList.filter(server => {
+      return serverAddressList.some(serverAddress => serverAddress.server_url === server.url);
+    });
+
+    // 2. เพิ่ม server ใหม่ที่ยังไม่มีใน wsList
+    serverAddressList.forEach(serverAddress => {
+      const exists = this.wsList.some(server => server.url === serverAddress.server_url);
+      if (!exists) {
+        this.wsList.push({
+          url: serverAddress.server_url,
+          isAvailable: true,
+          promtID: 0,
+          hashImageID: "",
+          reconnectAttempts: 0,
+          inactivityTimeout: null,
+          ImageEntity: new ImageEntity(),
+          ServerEntity: serverAddress
+        });
+      }
     });
   }
 
@@ -327,6 +359,51 @@ class ComfyUIPromptProcessor {
     }
 
   }
+  public async startDB(): Promise<void> {
+    try {
+      this.logs.info("Starting Db...");
+      await this.db.initialize();
+
+      while (true) {
+        const serverList = await this.db.getAllServers();
+        if (serverList.length === 0) {
+          this.logs.error("No server found, Waiting for 1 second for activate server");
+          await Ut.Delay(1000);
+          continue;
+        }
+
+        this.initializeWebSocketListwithDB(serverList);
+        // console.log("New Loop =============================");
+
+        for (let index = 0; index < this.wsList.length; index++) {
+          if (this.wsList[index].ws) return;
+          const service = this.wsList[index];
+          // console.log("service.url", service.url);
+          // await Ut.Delay(3000);
+          
+          // const service = this.wsList[index];
+          this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
+
+          if (!this.wsList[index].ws) return;
+          this.processWS(this.wsList[index].ws as WebSocket, index);
+        }
+        // console.log("serverList =>", serverList);
+        // await Ut.Delay(1000);
+      }
+      // for (let index = 0; index < this.wsList.length; index++) {
+      //   if (this.wsList[index].ws) return;
+      //   const service = this.wsList[index];
+      //   this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
+
+      //   if (!this.wsList[index].ws) return;
+      //   this.processWS(this.wsList[index].ws as WebSocket, index);
+      // }
+    } catch (error) {
+      console.log("error =>", error);
+      this.logs.error(`Error starting processor ${error}`, { error });
+    }
+
+  }
 
   private async processWS(ws: WebSocket, serverNo: number): Promise<void> {
     const resetInactivityTimer = () => {
@@ -522,8 +599,8 @@ const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
   serverAddressList: [
     process.env.COMFY_SERVER_ADDRESS as string,
-    // process.env.COMFY_SERVER_ADDRESS_2 as string,
-    // process.env.COMFY_SERVER_ADDRESS_3 as string,
+    process.env.COMFY_SERVER_ADDRESS_2 as string,
+    process.env.COMFY_SERVER_ADDRESS_3 as string,
     // process.env.COMFY_SERVER_ADDRESS_4 as string,
     // process.env.COMFY_SERVER_ADDRESS_5 as string,
     // process.env.COMFY_SERVER_ADDRESS_6 as string
@@ -533,6 +610,6 @@ const processor = new ComfyUIPromptProcessor({
   logs: new Logs()
 });
 
-processor.starts().catch((error) => {
+processor.startDB().catch((error) => {
   console.error('Error in processor:', error);
 });
