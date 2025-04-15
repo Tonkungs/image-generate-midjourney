@@ -1,9 +1,9 @@
 import express, { Application, Request, Response } from 'express';
-import { DataSource, Like, Not, Repository } from 'typeorm';
+import { DataSource, Like, Not, Repository, In } from 'typeorm';
 import { Server } from './entity/server';
 import { ServerHistory } from "./entity/server-history";
 import Logs from '../src/logs';
-import { ServerHisResponse, CreateServerHisRequest, ServerStage, IResponseData, IServer } from "./interface/iserver";
+import { ServerHisResponse, CreateServerHisRequest, ServerStage, IResponseData, IServer, listOnlineServer } from "./interface/iserver";
 var cors = require('cors')
 
 export class ServerApp {
@@ -28,7 +28,7 @@ export class ServerApp {
       username: "tonkung",
       password: "yourpassword",
       database: "images",
-      entities: [Server,ServerHistory],
+      entities: [Server, ServerHistory],
       synchronize: true,
       logging: false
     });
@@ -51,18 +51,18 @@ export class ServerApp {
   }
 
   private setupRoutes(): void {
-    this.app.get('/servers',this.middlewarelogger.bind(this), this.getListServer.bind(this));
-    this.app.post('/servers',this.middlewarelogger.bind(this), this.createServerOwn.bind(this));
-    this.app.get('/servers/:id',this.middlewarelogger.bind(this), this.serverByID.bind(this));
-    this.app.put('/servers/:id',this.middlewarelogger.bind(this), this.editServer.bind(this));
-    this.app.delete('/servers/:id',this.middlewarelogger.bind(this), this.deleteServer.bind(this));
+    this.app.get('/servers', this.middlewarelogger.bind(this), this.getListServer.bind(this));
+    this.app.post('/servers', this.middlewarelogger.bind(this), this.createServerOwn.bind(this));
+    this.app.get('/servers/:id', this.middlewarelogger.bind(this), this.serverByID.bind(this));
+    this.app.put('/servers/:id', this.middlewarelogger.bind(this), this.editServer.bind(this));
+    this.app.delete('/servers/:id', this.middlewarelogger.bind(this), this.deleteServer.bind(this));
     this.app.post('/server-history', this.createServer.bind(this));
-    this.app.get('/server-history',this.middlewarelogger.bind(this), this.getServers.bind(this));
-    this.app.post('/server-history/:server_ip/ready',this.middlewarelogger.bind(this), this.updateStageReady.bind(this));
-    this.app.post('/server-history/:server_ip/activate',this.middlewarelogger.bind(this), this.updateStageActivate.bind(this));
-    this.app.post('/server-history/:server_ip/stop',this.middlewarelogger.bind(this), this.updateStageStop.bind(this));
-    this.app.post('/server-history/:server_ip/destroy',this.middlewarelogger.bind(this), this.updateStageDestroy.bind(this));
-    this.app.post('/server-history/promt',this.middlewarelogger.bind(this), this.promtTest.bind(this));
+    this.app.get('/server-history', this.middlewarelogger.bind(this), this.getServers.bind(this));
+    this.app.post('/server-history/:server_ip/ready', this.middlewarelogger.bind(this), this.updateStageReady.bind(this));
+    this.app.post('/server-history/:server_ip/activate', this.middlewarelogger.bind(this), this.updateStageActivate.bind(this));
+    this.app.post('/server-history/:server_ip/stop', this.middlewarelogger.bind(this), this.updateStageStop.bind(this));
+    this.app.post('/server-history/:server_ip/destroy', this.middlewarelogger.bind(this), this.updateStageDestroy.bind(this));
+    this.app.post('/server-history/promt', this.middlewarelogger.bind(this), this.promtTest.bind(this));
   }
 
   private async middlewarelogger(req: Request, res: Response, next: () => void): Promise<void> {
@@ -81,7 +81,7 @@ export class ServerApp {
       res.json({
         message: "Server created successfully",
         data: {
-          id:result.id,
+          id: result.id,
         }
       });
     } catch (error: any | Error) {
@@ -112,9 +112,10 @@ export class ServerApp {
       res.json(response);
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
-      res.status(500).json({ error: true,
-        message:error.message ? error.message : 'An unknown error occurred'
-       });
+      res.status(500).json({
+        error: true,
+        message: error.message ? error.message : 'An unknown error occurred'
+      });
     }
   }
 
@@ -133,14 +134,17 @@ export class ServerApp {
       }
       const updatedResult = Object.assign(result, req.body);
       const updatedServer = await this.serverRepository.save(updatedResult);
-      res.json({ message: "Server updated successfully", data: {
-        id: updatedServer.id,
-      } });
+      res.json({
+        message: "Server updated successfully", data: {
+          id: updatedServer.id,
+        }
+      });
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
-      res.status(500).json({ error: true,
-        message:error.message ? error.message : 'An unknown error occurred'
-       });
+      res.status(500).json({
+        error: true,
+        message: error.message ? error.message : 'An unknown error occurred'
+      });
     }
 
   }
@@ -162,9 +166,10 @@ export class ServerApp {
       res.json({ message: "Server deleted successfully" });
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
-      res.status(500).json({ error: true,
-        message:error.message ? error.message : 'An unknown error occurred'
-       });
+      res.status(500).json({
+        error: true,
+        message: error.message ? error.message : 'An unknown error occurred'
+      });
     }
   }
 
@@ -187,8 +192,8 @@ export class ServerApp {
 
   private async getListServer(req: Request, res: Response): Promise<void> {
     try {
-      const {  search } = req.query;
-      
+      const { search } = req.query;
+
       let whereConditions = {};
       if (search) {
         whereConditions = [
@@ -202,11 +207,11 @@ export class ServerApp {
         where: whereConditions,
         order: { created_at: "DESC" }
       });
-      if (!servers) {        
+      if (!servers) {
         res.status(404).json({ error: "Server not found" });
         return;
       }
-      res.json({ server_list: servers });
+      res.json({ message: "success", data: servers });
     } catch (error) {
       this.log.error("Error getting server list:", error);
       res.status(500).json({ error: "Error fetching server list" });
@@ -216,9 +221,9 @@ export class ServerApp {
   private async updateStageReady(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip,server_url } = req.body;
+      const { server_ip, server_url } = req.body;
 
-      const server = await this.getServerByIp(server_ip,server_url);
+      const server = await this.getServerByIp(server_ip, server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
@@ -238,11 +243,11 @@ export class ServerApp {
   private async updateStageActivate(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip,server_url } = req.body;
+      const { server_ip, server_url } = req.body;
       console.log("server_ip=>", server_ip);
       console.log("server_url=>", server_url);
-      
-      const server = await this.getServerByIp(server_ip,server_url);
+
+      const server = await this.getServerByIp(server_ip, server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
@@ -262,8 +267,8 @@ export class ServerApp {
   private async updateStageStop(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip ,server_url} = req.body;
-      const server = await this.getServerByIp(server_ip,server_url);
+      const { server_ip, server_url } = req.body;
+      const server = await this.getServerByIp(server_ip, server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
@@ -283,8 +288,8 @@ export class ServerApp {
   private async updateStageDestroy(req: Request, res: Response): Promise<void> {
     try {
       // finc server and update stage to ready
-      const { server_ip ,server_url} = req.body;
-      const server = await this.getServerByIp(server_ip,server_url);
+      const { server_ip, server_url } = req.body;
+      const server = await this.getServerByIp(server_ip, server_url);
       if (!server) {
         res.status(404).json({ error: "Server not found" });
         return;
@@ -302,8 +307,8 @@ export class ServerApp {
     }
   }
 
-  private async getServerByIp(ip: string,server_url: string): Promise<ServerHistory | null> {
-    try {   
+  private async getServerByIp(ip: string, server_url: string): Promise<ServerHistory | null> {
+    try {
       console.log("getServerByIp=>", ip);
       console.log("getServerByIp=>", server_url);
       const server = await this.serverHistoryRepository.findOne({
@@ -312,7 +317,7 @@ export class ServerApp {
           server_url: server_url,
         }
       });
-      
+
       if (!server) {
         return null
       }
@@ -327,23 +332,25 @@ export class ServerApp {
     try {
       console.log("req=>", req.body);
       // set deleay 5000ms
-      await new Promise(resolve => setTimeout(resolve, 30000));      
+      await new Promise(resolve => setTimeout(resolve, 30000));
       res.json({ "message": "test" });
     } catch (error) {
-      
+
     }
   }
 
   private async getServers(req: Request, res: Response): Promise<void> {
-    try {
-      const servers: ServerHisResponse[] = await this.serverHistoryRepository.find(
-        {
-          where: { stage: ServerStage.READY },
-          order: { created_at: "DESC" }
-        }
-      );
-      res.json({ server_list: servers });
+    try {     
+      const servers: ServerHisResponse[] = await this.serverHistoryRepository.find({
+        where: { 
+          stage: In(listOnlineServer) 
+        },
+        order: { created_at: "DESC" }
+      });
+      res.json({ message: "success", data: servers });
     } catch (error) {
+      console.log("error=>", error);
+      
       this.log.error("Error creating server:", error);
       res.status(500).json({ error: "Error fetching servers" });
     }
@@ -387,3 +394,4 @@ export class ServerApp {
 // Usage
 const serverApp = new ServerApp();
 serverApp.initialize();
+

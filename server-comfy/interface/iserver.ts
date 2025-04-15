@@ -27,6 +27,12 @@ export enum ServerStage {
     DESTROY = "DESTROY"
 }
 
+export const listOnlineServer = [
+    ServerStage.START,
+    ServerStage.READY,
+    ServerStage.ACTIVATE,
+]
+
 export enum ServerGPU {
     RTX_4090 = "RTX_4090",
     RTX_3090 = "RTX_3090",
