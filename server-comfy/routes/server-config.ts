@@ -2,17 +2,18 @@ import { Router, Request, Response } from 'express';
 import { Repository } from 'typeorm';
 import { ConfigServer } from '../entity/server-config';
 import Logs from '../../src/logs';
-import { IResponseData } from '../interface/iserver';
+import { IRepository, IResponseData, IServerConReload } from '../interface/iserver';
 import { IServerConfig, IUpdateServerConfigPayload } from '../interface/iconfig';
 
 export class ServerConfigRoutes {
   private router: Router;
-  private configRepository: Repository<ConfigServer>;
+  private repos: IRepository;
   private log: Logs;
-
-  constructor(configRepository: Repository<ConfigServer>, log: Logs) {
+  private configServer!: IServerConReload;
+  constructor(configRepository: IRepository, log: Logs,configServer:IServerConReload) {
+    this.configServer = configServer
     this.router = Router();
-    this.configRepository = configRepository;
+    this.repos = configRepository;
     this.log = log;
     this.initializeRoutes();
   }
@@ -25,16 +26,17 @@ export class ServerConfigRoutes {
 
   private async getConfig(req: Request, res: Response): Promise<void> {
     try {
-      let config = await this.configRepository.findOneBy({}); 
+      let config = await this.repos.serverConfigRepository.findOneBy({}); 
 
       if (!config) {
         this.log.info("Server configuration not found, creating a new default one.");
-        const newConfig = this.configRepository.create({
+        const newConfig = this.repos.serverConfigRepository.create({
           id: "default", // Or any other default ID logic you prefer
           vast_ai_api: "",
-          cloudflared_url: ""
+          cloudflared_url: "",
+          hf_token: ""
         });
-        config = await this.configRepository.save(newConfig);
+        config = await this.repos.serverConfigRepository.save(newConfig);
         this.log.info("Default server configuration created successfully.");
       }
 
@@ -44,6 +46,7 @@ export class ServerConfigRoutes {
           id: config.id,
           vast_ai_api: config.vast_ai_api,
           cloudflared_url: config.cloudflared_url,
+          hf_token: config.hf_token
         }
       };
       res.json(response);
@@ -65,7 +68,7 @@ export class ServerConfigRoutes {
         return;
       }
 
-      const config = await this.configRepository.findOneBy({});
+      const config = await this.repos.serverConfigRepository.findOneBy({});
 
       if (!config) {
         this.log.warn("Attempted to update a non-existent server configuration.");
@@ -79,7 +82,7 @@ export class ServerConfigRoutes {
       config.vast_ai_api = vast_ai_api;
       config.cloudflared_url = cloudflared_url;
 
-      const savedConfig = await this.configRepository.save(config);
+      const savedConfig = await this.repos.serverConfigRepository.save(config);
 
       const response: IResponseData<IServerConfig> = {
         message: "Successfully",
@@ -87,6 +90,7 @@ export class ServerConfigRoutes {
           id: savedConfig.id,
           vast_ai_api: savedConfig.vast_ai_api,
           cloudflared_url: savedConfig.cloudflared_url,
+          hf_token: savedConfig.hf_token // Include hf_token if needed
         }
       };
       res.json(response);
@@ -101,14 +105,13 @@ export class ServerConfigRoutes {
 
   private async updateCloudflaredUrlOnly(req: Request, res: Response): Promise<void> {
     try {
-      const { cloudflared_url } = req.body as IUpdateServerConfigPayload;
-
+      const { cloudflared_url } = req.body as IUpdateServerConfigPayload;      
       if (typeof cloudflared_url !== 'string') {
         res.status(400).json({ message: "cloudflared_url must be provided as a string." });
         return;
       }
 
-      const config = await this.configRepository.findOneBy({});
+      const config = await this.repos.serverConfigRepository.findOneBy({});
 
       if (!config) {
         this.log.warn("Attempted to update cloudflared_url for a non-existent configuration.");
@@ -118,7 +121,7 @@ export class ServerConfigRoutes {
       
       config.cloudflared_url = cloudflared_url;
 
-      const savedConfig = await this.configRepository.save(config);
+      const savedConfig = await this.repos.serverConfigRepository.save(config);
 
       const response: IResponseData<IServerConfig> = {
         message: "Successfully",
@@ -126,6 +129,7 @@ export class ServerConfigRoutes {
           id: savedConfig.id,
           vast_ai_api: savedConfig.vast_ai_api, // Return the full current state
           cloudflared_url: savedConfig.cloudflared_url,
+          hf_token: savedConfig.hf_token // Include hf_token if needed
         }
       };
       res.json(response);

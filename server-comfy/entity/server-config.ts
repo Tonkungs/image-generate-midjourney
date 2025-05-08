@@ -10,4 +10,6 @@ export class ConfigServer {
     @Column()
     cloudflared_url!: string;
 
+    @Column()
+    hf_token!: string
 }

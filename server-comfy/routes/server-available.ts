@@ -2,18 +2,20 @@ import { Router, Request, Response } from 'express';
 import { In, Repository } from 'typeorm';
 import { ServerAvailable } from '../entity/server-available';
 import Logs from '../../src/logs';
-import { ServerStage, ServerHisResponse, listOnlineServer, IQueComfy } from '../interface/iserver';
+import { ServerStage, ServerHisResponse, listOnlineServer, IQueComfy, IRepository, IServerConReload } from '../interface/iserver';
 import { VastAIApiClient } from '../function/vastai';
 import Ut from "../../src/util/util";
+import { IServerConfig } from '../interface/iconfig';
 export class ServerAvailableRoutes {
   private router: Router;
-  private serverAvailableRepository: Repository<ServerAvailable>;
+  private repo: IRepository;
   private log: Logs;
   private vastAiClient: VastAIApiClient;
-
-  constructor (serverAvailableRepository: Repository<ServerAvailable>, log: Logs, vastAIClient: VastAIApiClient) {
+  private configServer!: IServerConReload;
+  constructor (serverAvailableRepository: IRepository, log: Logs,configServer:IServerConReload, vastAIClient: VastAIApiClient) {
+    this.configServer = configServer
     this.router = Router();
-    this.serverAvailableRepository = serverAvailableRepository;
+    this.repo = serverAvailableRepository;
     this.log = log;
     this.initializeRoutes();
     this.vastAiClient = vastAIClient
@@ -45,7 +47,7 @@ export class ServerAvailableRoutes {
       server.server_url = server_url;
       server.stage = ServerStage.START;
       server.restart_round = 0;
-      const result = await this.serverAvailableRepository.save(server);
+      const result = await this.repo.serverAvailableRepository.save(server);
       res.json(result);
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
@@ -64,7 +66,7 @@ export class ServerAvailableRoutes {
         return;
       }
       server.stage = ServerStage.READY;
-      await this.serverAvailableRepository.save(server);
+      await this.repo.serverAvailableRepository.save(server);
       res.json({
         message: "Server stage updated to READY",
       });
@@ -87,7 +89,7 @@ export class ServerAvailableRoutes {
       server.stage = ServerStage.ACTIVATE;
       server.client_id = this.generateClientId();
 
-      await this.serverAvailableRepository.save(server);
+      await this.repo.serverAvailableRepository.save(server);
       res.json({
         message: "Server stage updated to Activate",
       });
@@ -108,7 +110,7 @@ export class ServerAvailableRoutes {
       }
       server.stage = ServerStage.STOP;
       console.log("server=> STOP", server);
-      await this.serverAvailableRepository.save(server);
+      await this.repo.serverAvailableRepository.save(server);
       res.json({
         message: "Server stage updated to STOP",
       });
@@ -129,7 +131,7 @@ export class ServerAvailableRoutes {
       }
       server.stage = ServerStage.DESTROY;
       console.log("server=> DESTROY", server);
-      await this.serverAvailableRepository.save(server);
+      await this.repo.serverAvailableRepository.save(server);
       res.json({
         message: "Server stage updated to Destroy",
       });
@@ -142,7 +144,7 @@ export class ServerAvailableRoutes {
 
   private async getServerByIp(ip: string, server_url: string): Promise<ServerAvailable | null> {
     try {
-      const server = await this.serverAvailableRepository.findOne({
+      const server = await this.repo.serverAvailableRepository.findOne({
         where: {
           server_ip: ip,
           server_url: server_url,
@@ -172,7 +174,7 @@ export class ServerAvailableRoutes {
 
   private async getServers(req: Request, res: Response): Promise<void> {
     try {
-      const servers: ServerHisResponse[] = await this.serverAvailableRepository.find({
+      const servers: ServerHisResponse[] = await this.repo.serverAvailableRepository.find({
         where: {
           stage: In(listOnlineServer)
         },
@@ -199,13 +201,18 @@ export class ServerAvailableRoutes {
     setInterval(async () => {
       try {
 
-        const servers: ServerHisResponse[] = await this.serverAvailableRepository.find({
+        const servers: ServerHisResponse[] = await this.repo.serverAvailableRepository.find({
           where: {
             stage: In(listOnlineServer)
           },
           order: { created_at: "DESC" }
         });
-
+        
+        if (servers.length === 0) {
+          this.log.info("No servers available for deletion.");
+          return;
+          
+        }
         const serverInstants = await this.vastAiClient.getInstances();
         if (serverInstants) {
           for (const server of serverInstants.instances) {
@@ -250,7 +257,7 @@ export class ServerAvailableRoutes {
           }
         }
       } catch (error) {
-        this.log.error("Error checking server status:", error);
+        this.log.error("Error checking server status:"+ error);
       }
     }, loopMain); // 5 minutes 5 * 60 * 1000
   }

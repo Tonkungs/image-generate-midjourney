@@ -1,3 +1,8 @@
+import { Repository } from "typeorm";
+import { ServerAvailable } from "../entity/server-available";
+import { ConfigServer } from "../entity/server-config";
+import { Server } from "../entity/server";
+import { IServerConfig } from "./iconfig";
 
 // For creating server request
 export interface CreateServerHisRequest {
@@ -104,4 +109,15 @@ export interface IServer {
 export interface IQueComfy {
     queue_pending: [],
     queue_running: [],
+}
+
+export interface IRepository {
+   serverRepository: Repository<Server>;
+   serverAvailableRepository: Repository<ServerAvailable>;
+   serverConfigRepository: Repository<ConfigServer>;
+}
+
+export interface IServerConReload {
+    reloadConfig(): Promise<void> 
+    configServer :IServerConfig
 }

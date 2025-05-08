@@ -142,5 +142,8 @@ comfy-gen/comfy07
 comfy-gen/output_comfy07
 comfy-gen/comfy08
 comfy-gen/output_comfy08
+comfy-gen/comfy09
 python-script/image-input
 python-script/venv
+image_classifier_project/newcod/input
+image_classifier_project/newcod/output

@@ -3,6 +3,7 @@ export interface IServerConfig {
     id: string;
     vast_ai_api: string;
     cloudflared_url: string;
+    hf_token: string;
 }
 
 // Interface for the request payload for update operations
@@ -10,4 +11,5 @@ export interface IUpdateServerConfigPayload {
     id: string;
     vast_ai_api?: string;
     cloudflared_url?: string;
+    hf_token?: string;
 }

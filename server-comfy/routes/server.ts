@@ -2,18 +2,20 @@ import { Router, Request, Response } from 'express';
 import { Like, Repository } from 'typeorm';
 import { Server } from '../entity/server';
 import Logs from '../../src/logs';
-import { IResponseData, IServer, ServerGPU, ServerGPU2Vast } from '../interface/iserver';
+import { IRepository, IResponseData, IServer, IServerConReload, ServerGPU, ServerGPU2Vast } from '../interface/iserver';
 import { ISearchOffers, VastAIApiClient } from '../function/vastai';
+import { IServerConfig } from '../interface/iconfig';
 
 export class ServerRoutes {
   private router: Router;
-  private serverRepository: Repository<Server>;
+  private repo: IRepository;
   private log: Logs;
   private vastAiClient: VastAIApiClient;
-
-  constructor (serverRepository: Repository<Server>, log: Logs,vastAIClient: VastAIApiClient) {
+  private configServer !: IServerConReload
+  constructor (serverRepository: IRepository, log: Logs, configServer: IServerConReload, vastAIClient: VastAIApiClient) {
+    this.configServer = configServer
     this.router = Router();
-    this.serverRepository = serverRepository;
+    this.repo = serverRepository;
     this.log = log;
     this.initializeRoutes();
     this.vastAiClient = vastAIClient
@@ -22,7 +24,6 @@ export class ServerRoutes {
   private initializeRoutes() {
     this.router.get('/', this.middlewareLogger.bind(this), this.getListServer.bind(this));
     this.router.post('/', this.middlewareLogger.bind(this), this.createServerOwn.bind(this));
-    this.router.post('/create/vastai', this.middlewareLogger.bind(this), this.createVastAIServer.bind(this));
     this.router.get('/:id', this.middlewareLogger.bind(this), this.serverByID.bind(this));
     this.router.put('/:id', this.middlewareLogger.bind(this), this.editServer.bind(this));
     this.router.delete('/:id', this.middlewareLogger.bind(this), this.deleteServer.bind(this));
@@ -40,7 +41,7 @@ export class ServerRoutes {
 
       let server = new Server();
       server = Object.assign(server, req.body);
-      const result = await this.serverRepository.save(server);
+      const result = await this.repo.serverRepository.save(server);
       res.json({
         message: "Server created successfully",
         data: {
@@ -56,7 +57,7 @@ export class ServerRoutes {
   private async serverByID(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;
-      const result = await this.serverRepository.findOne({
+      const result = await this.repo.serverRepository.findOne({
         where: {
           id: parseInt(id),
         }
@@ -86,7 +87,7 @@ export class ServerRoutes {
   private async editServer(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;
-      const result = await this.serverRepository.findOne({
+      const result = await this.repo.serverRepository.findOne({
         where: {
           id: parseInt(id),
         }
@@ -96,7 +97,7 @@ export class ServerRoutes {
         return;
       }
       const updatedResult = Object.assign(result, req.body);
-      const updatedServer = await this.serverRepository.save(updatedResult);
+      const updatedServer = await this.repo.serverRepository.save(updatedResult);
       res.json({
         message: "Server updated successfully", data: {
           id: updatedServer.id,
@@ -116,7 +117,7 @@ export class ServerRoutes {
   private async deleteServer(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;
-      const result = await this.serverRepository.findOne({
+      const result = await this.repo.serverRepository.findOne({
         where: {
           id: parseInt(id),
         }
@@ -125,7 +126,7 @@ export class ServerRoutes {
         res.status(404).json({ message: "Server not found" });
         return;
       }
-      await this.serverRepository.softRemove(result);
+      await this.repo.serverRepository.softRemove(result);
       res.json({ message: "Server deleted successfully" });
     } catch (error: any | Error) {
       this.log.error("Error creating server:" + error);
@@ -149,7 +150,7 @@ export class ServerRoutes {
         ];
       }
 
-      const servers = await this.serverRepository.find({
+      const servers = await this.repo.serverRepository.find({
         where: whereConditions,
         order: { created_at: "DESC" }
       });
@@ -187,7 +188,7 @@ export class ServerRoutes {
         newServer.push({
           ...server,
           is_rentable: result.length > 0 ? true : false,
-          ask_contract_id:result[0]?.ask_contract_id,
+          ask_contract_id: result[0]?.ask_contract_id,
         })
       }
 
@@ -195,10 +196,10 @@ export class ServerRoutes {
 
       if (results) {
         for (const server of newServer) {
-          const instance = results.instances.find((item) => 
+          const instance = results.instances.find((item) =>
             item.machine_id.toString() === server.machine_id &&
-            item.host_id.toString() === server.gpu_id )
-          if (instance) {          
+            item.host_id.toString() === server.gpu_id)
+          if (instance) {
             server.server_status = instance.actual_status;
           } else {
             server.server_status = "OFFLINE";
@@ -215,24 +216,6 @@ export class ServerRoutes {
 
       this.log.error("Error getting server list:", error);
       res.status(500).json({ error: "Error fetching server list" });
-    }
-  }
-
-  private async createVastAIServer(req: Request, res: Response): Promise<void> {
-    try {
-      console.log("req=>", req.body);
-      const response: IResponseData<any> = {
-        message: "successfully",
-        data: ""
-      };
-      res.json(response);
-    } catch (error: any | Error) {
-      this.log.error("Error creating server:" + error);
-      res.status(500).json({
-        error: true,
-        message: error.message ? error.message : 'An unknown error occurred'
-      });
-      
     }
   }
 

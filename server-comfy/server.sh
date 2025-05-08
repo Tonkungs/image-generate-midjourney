@@ -33,11 +33,25 @@ done
 
 # แสดง URL ทันที
 echo "Cloudflared generated URL: $CLOUDFLARE_URL"
+# Test if the Cloudflare URL is accessible
+echo "Testing Cloudflare URL connectivity..."
+echo "Waiting 5 seconds for the tunnel to be ready..."
+sleep 5
+RESPONSE=$(curl -s -w "%{http_code}" "$CLOUDFLARE_URL")
+HTTP_CODE=${RESPONSE: -3}
+BODY=${RESPONSE%???}
 
-# ส่งไปยัง API
-# echo "Sending URL to https://asdasd.com/api..."
-# curl -X POST "https://asdasd.com/api" \
-#   -H "Content-Type: application/json" \
-#   -d "{\"url\":\"$CLOUDFLARE_URL\"}"
+if [ "$HTTP_CODE" = "200" ] && [[ "$BODY" == *"Hello, world!"* ]]; then
+  echo "✅ Cloudflare URL is accessible and contains expected content"
+else
+  echo "❌ Cloudflare URL is not accessible or returns unexpected content"
+  exit 1
+fi
 
-# echo "URL sent successfully!"
+echo "Sending data to http://localhost:3000/config/cloudflared"
+
+curl -X PUT "http://localhost:3000/config/cloudflared" \
+         -H "Content-Type: application/json" \
+         -d "{\"cloudflared_url\":\"$CLOUDFLARE_URL\"}"
+
+echo "✅ ข้อมูลถูกส่งแล้ว"

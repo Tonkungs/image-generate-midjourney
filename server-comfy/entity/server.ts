@@ -44,6 +44,9 @@ export class Server {
     @Column('decimal', { precision: 14, scale: 4 })
     price_hdd!: number;
 
+    @Column({ nullable: true })
+    instant_id?: string;
+
     @Column({ type: 'enum', enum: listGPU, enumName: 'ServerType', default: ServerGPU.RTX_4090 })
     gpu_type!: string;
 
