@@ -21,6 +21,7 @@ interface IComfyConfig {
 interface IWS {
   ws?: WebSocket;
   url: string;
+  client_id: string;
   isAvailable: boolean;
   promtID: number;
   hashImageID: string;
@@ -66,6 +67,7 @@ class ComfyUIPromptProcessor {
     serverAddressList?.forEach(url => {
       this.wsList.push({
         url,
+        client_id: this.generateClientId(),
         isAvailable: true,
         promtID: 0,
         hashImageID: "",
@@ -87,7 +89,9 @@ class ComfyUIPromptProcessor {
       const exists = this.wsList.some(server => server.url === serverAddress.server_url);
       if (!exists) {
         this.wsList.push({
-          url: serverAddress.server_url,
+          url:Ut.RemoveHttpsPrefix(serverAddress.server_url),
+          // url: serverAddress.server_url,
+          client_id: serverAddress.client_id,
           isAvailable: true,
           promtID: 0,
           hashImageID: "",
@@ -382,7 +386,7 @@ class ComfyUIPromptProcessor {
           // await Ut.Delay(3000);
           
           // const service = this.wsList[index];
-          this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
+          this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${service.client_id}&token=${this.TOKENNN}`);
 
           if (!this.wsList[index].ws) return;
           this.processWS(this.wsList[index].ws as WebSocket, index);
@@ -598,9 +602,9 @@ class ComfyUIPromptProcessor {
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
   serverAddressList: [
-    process.env.COMFY_SERVER_ADDRESS as string,
-    process.env.COMFY_SERVER_ADDRESS_2 as string,
-    process.env.COMFY_SERVER_ADDRESS_3 as string,
+    // process.env.COMFY_SERVER_ADDRESS as string,
+    // process.env.COMFY_SERVER_ADDRESS_2 as string,
+    // process.env.COMFY_SERVER_ADDRESS_3 as string,
     // process.env.COMFY_SERVER_ADDRESS_4 as string,
     // process.env.COMFY_SERVER_ADDRESS_5 as string,
     // process.env.COMFY_SERVER_ADDRESS_6 as string

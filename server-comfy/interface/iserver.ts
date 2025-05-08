@@ -38,11 +38,25 @@ export enum ServerGPU {
     RTX_3090 = "RTX_3090",
 }
 
+export const ServerGPU2Vast = {
+    "RTX_4090": "RTX 4090",
+    "RTX_3090": "RTX 3090",
+}
+
+// export type GpuType = keyof typeof ServerGPU2Vast;
+
+// export const ServerGPU2Vast = {
+//   RTX_4090: "RTX 4090",
+//   RTX_3090: "RTX 3090",
+// } ;
+
 export enum CanGenerate {
     YES = "YES",
     YES_WITH_CONDITION = "YES_WITH_CONDITION",
     NO = "NO",
 }
+
+export const RAM_USED = 24 // 24GB
 
 export const listGPU = [ServerGPU.RTX_4090, ServerGPU.RTX_3090]
 
@@ -79,7 +93,15 @@ export interface IServer {
     price_gpu: number;
     price_hdd: number;
     gpu_type: string;
+    is_rentable?: boolean;
+    server_status?: string;
+    ask_contract_id?: number;
     created_at: Date;
     updated_at: Date;
     deleted_at: Date;
+}
+
+export interface IQueComfy {
+    queue_pending: [],
+    queue_running: [],
 }

@@ -39,6 +39,23 @@ export class Utils {
     public ToSecound(num: number = 1): number {
         return num * 1000
     }
+
+    /**
+ * Removes the "https://" prefix from a URL string if it exists.
+ *
+ * @param url The input URL string.
+ * @returns The URL string without the "https://" prefix,
+ *          or the original string if the prefix is not found.
+ */
+    public RemoveHttpsPrefix(url: string): string {
+    const prefix = 'https://';
+    if (url.startsWith(prefix)) {
+      // If the string starts with "https://", return the rest of the string
+      return url.slice(prefix.length);
+    }
+    // Otherwise, return the original string
+    return url;
+  }
 }
 
 export default new Utils()

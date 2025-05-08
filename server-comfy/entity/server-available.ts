@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, DeleteDateColumn, UpdateDateCol
 import { ServerStage } from "../interface/iserver";
 @Entity()
 @Unique(['server_ip', 'server_url']) // กำหนดคีย์รวมให้ไม่ซ้ำกัน
-export class ServerHistory {
+export class ServerAvailable {
     @PrimaryGeneratedColumn('increment')
     id!: number;
 

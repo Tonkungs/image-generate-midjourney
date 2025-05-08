@@ -1,19 +1,26 @@
 import express, { Application } from 'express';
 import { DataSource, Repository } from 'typeorm';
 import { Server } from './entity/server';
-import { ServerHistory } from "./entity/server-history";
+import { ServerAvailable } from "./entity/server-available";
 import Logs from '../src/logs';
 import { ServerRoutes } from './routes/server';
-import { ServerHistoryRoutes } from './routes/server-history';
+import { ServerAvailableRoutes } from './routes/server-available';
+import { VastAIApiClient } from './function/vastai';
+import { ConfigServer } from './entity/server-config';
+import { IServerConfig } from './interface/iconfig';
+import { config } from 'dotenv';
+import { ServerConfigRoutes } from './routes/server-config';
 var cors = require('cors')
 
 export class ServerApp {
     private app: Application;
     private dataSource: DataSource;
     private serverRepository!: Repository<Server>;
-    private serverHistoryRepository!: Repository<ServerHistory>;
+    private serverAvailableRepository!: Repository<ServerAvailable>;
+    private serverConfigRepository!: Repository<ConfigServer>;
     private log!: Logs;
-
+  private vastAiClient!: VastAIApiClient;
+  
     constructor() {
         this.app = express();
         this.registerShutdownHandlers();
@@ -28,7 +35,7 @@ export class ServerApp {
             username: "tonkung",
             password: "yourpassword",
             database: "images",
-            entities: [Server, ServerHistory],
+            entities: [Server, ServerAvailable,ConfigServer],
             synchronize: true,
             logging: false
         });
@@ -39,10 +46,15 @@ export class ServerApp {
             await this.dataSource.initialize();
             this.log.info("Data Source has been initialized!");
             this.serverRepository = this.dataSource.getRepository(Server);
-            this.serverHistoryRepository = this.dataSource.getRepository(ServerHistory);
+            this.serverAvailableRepository = this.dataSource.getRepository(ServerAvailable);
+            this.serverConfigRepository = this.dataSource.getRepository(ConfigServer);
             this.setupRoutes();
             this.log.info("Routes have been set up!");
             this.startServer();
+            const config = await this.getConfigServer();
+            this.log.info("Server configuration retrieved successfully:")
+            this.vastAiClient = new VastAIApiClient(config.vast_ai_api);
+
         } catch (err) {
             console.log(err);
             this.log.error("Error during Data Source initialization:", err);
@@ -55,14 +67,31 @@ export class ServerApp {
         this.app.listen(PORT, () => {
           this.log.info(`Server is running on http://localhost:${PORT}`);
         });
-      }
+    }
+
+    private async getConfigServer(): Promise<IServerConfig> {
+       try {
+         const config = await this.serverConfigRepository.findOneBy({});
+         return config || this.serverConfigRepository.create({
+           id: "default",
+           vast_ai_api: "",
+           cloudflared_url: ""
+         });
+       } catch (error: any) {
+          this.log.error(`Error getting server configuration: ${error.message || error}`);
+          throw new Error("Failed to retrieve server configuration.");
+       }
+    } 
 
     private setupRoutes(): void {
-        const serverRoutes = new ServerRoutes(this.serverRepository, this.log);
-        const serverHistoryRoutes = new ServerHistoryRoutes(this.serverHistoryRepository, this.log);
-        
+      
+        const serverRoutes = new ServerRoutes(this.serverRepository, this.log,this.vastAiClient);
+        const serverAvailableRoutes = new ServerAvailableRoutes(this.serverAvailableRepository, this.log,this.vastAiClient);
+        const serverConfigRoutes = new ServerConfigRoutes(this.serverConfigRepository, this.log);
+       
         this.app.use('/servers', serverRoutes.getRouter());
-        this.app.use('/server-history', serverHistoryRoutes.getRouter());
+        this.app.use('/server-available', serverAvailableRoutes.getRouter());
+        this.app.use('/config', serverConfigRoutes.getRouter());
     }
 
     private registerShutdownHandlers(): void {
@@ -96,3 +125,6 @@ export class ServerApp {
 // Usage
 const serverApp = new ServerApp();
 serverApp.initialize();
+
+
+// mem_usage  ใช้แรม

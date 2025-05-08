@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # ติดตั้ง cloudflared
-# echo "Downloading cloudflared if not already downloaded..."
-# wget -nc -P ~ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+echo "Downloading cloudflared if not already downloaded..."
+wget -nc -P ~ https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 
-# echo "Installing cloudflared..."
-# dpkg -i ~/cloudflared-linux-amd64.deb
+echo "Installing cloudflared..."
+dpkg -i ~/cloudflared-linux-amd64.deb
 
 # ฟังก์ชันเช็คการรัน ComfyUI และเปิด cloudflared
 echo "Waiting for ComfyUI to start..."

@@ -1,0 +1,54 @@
+FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
+
+# ติดตั้ง system dependencies
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    git \
+    curl \
+    wget \
+    libgl1-mesa-glx \
+    tesseract-ocr \
+    tesseract-ocr-eng \
+    tesseract-ocr-jpn \
+    tesseract-ocr-chi-sim \
+    python3.10 \
+    python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# ตั้งค่า python และ pip ให้ใช้ python3.10 เป็นค่าเริ่มต้น
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+
+# อัปเกรด pip
+RUN pip install --upgrade pip
+
+# ติดตั้ง Python packages ทั่วไป
+RUN pip install --no-cache-dir \
+    Pillow \
+    opencv-python \
+    pytesseract \
+    tqdm \
+    pandas
+
+# ติดตั้ง PyTorch + CUDA 12.4
+RUN pip install --no-cache-dir \
+    torch==2.4.1+cu124 \
+    torchvision==0.19.1+cu124 \
+    torchaudio==2.4.1+cu124 \
+    --index-url https://download.pytorch.org/whl/cu124
+
+# ติดตั้ง PaddleOCR (ใช้ CPU)
+RUN pip install --no-cache-dir paddlepaddle -f https://www.paddlepaddle.org.cn/whl/cpu.html && \
+    pip install --no-cache-dir paddleocr
+
+# คัดลอกโปรเจกต์เข้า container
+WORKDIR /app
+COPY . /app
+
+# รัน script หลัก
+ENTRYPOINT ["python", "run_classifier.py"]
+
+
+# docker build -t image-classifier .
+# docker run --gpus all --rm -v ./input:/input -v ./output:/output image-classifier --input /input --output /output

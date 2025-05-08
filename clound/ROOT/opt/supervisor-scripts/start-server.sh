@@ -11,7 +11,7 @@ CLOUDFLARE_URL=""
 CLOUDFLARE_DOWNLOAD_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb"
 PUBLIC_IP=""
 COMFYUI_URL="http://127.0.0.1:18188"
-JSON_URL="https://raw.githubusercontent.com/Tonkungs/docker-comfy/refs/heads/main/flux_dev_promt.json"
+# JSON_URL="https://raw.githubusercontent.com/Tonkungs/docker-comfy/refs/heads/main/flux_dev_promt.json"
 JSON_FILE="flux_payload.json"
 PROMPT_ID=""
 LOG_FILE="/var/log/portal/comfyui.log"
@@ -45,6 +45,13 @@ function provisioning_url_clound_flare() {
     sleep 0.5
     done
 
+    generate_cloudflare_url
+}
+
+function generate_cloudflare_url() {
+    # Kill any existing cloudflared process
+    pkill cloudflared
+    # ฟังก์ชันนี้จะสร้าง URL ของ Cloudflare
     echo -e "\nComfyUI finished loading, trying to launch cloudflared...\n"
 
     # รัน cloudflared แบบ background (&)
@@ -83,19 +90,30 @@ function provisioning_get_public_ip() {
 }
 
 function provisioning_save_server(){
-    echo "Sending URL to ${MAIN_SERVER}/server-history"
+    echo "Sending URL to ${MAIN_SERVER}/server-available"
     MAX_RETRIES=5
     ATTEMPT=1
     SUCCESS=false
+    if [ -z "$MAIN_SERVER" ]; then
+        echo "❌ MAIN_SERVER is not set, exiting..."
+        exit 0
+    fi
 
     while [ $ATTEMPT -le $MAX_RETRIES ]; do
     echo "Attempt $ATTEMPT of $MAX_RETRIES..."
     
-    curl -X POST "${MAIN_SERVER}/server-history" \
+    RESPONSE=$(curl -X POST "${MAIN_SERVER}/server-available" \
         -H "Content-Type: application/json" \
-        -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}"
+        -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}")
+
+    if [[ "$RESPONSE" == *"duplicate key value violates unique constraint"* ]]; then
+        echo "Duplicate URL detected, regenerating cloudflare URL..."
+        generate_cloudflare_url
+        continue
+    fi
 
     if [ $? -eq 0 ]; then
+        echo "Response: $RESPONSE"
         echo "✅ URL sent successfully!"
         SUCCESS=true
         break
@@ -113,7 +131,7 @@ function provisioning_save_server(){
 }
 
 function provisioning_ready_activate() {
-    echo "Sending URL to ${MAIN_SERVER}/server-history/${PUBLIC_IP}/activate"
+    echo "Sending URL to ${MAIN_SERVER}/server-available/${PUBLIC_IP}/activate"
     MAX_RETRIES=5
     ATTEMPT=1
     SUCCESS=false
@@ -121,7 +139,7 @@ function provisioning_ready_activate() {
     while [ $ATTEMPT -le $MAX_RETRIES ]; do
     echo "Attempt $ATTEMPT of $MAX_RETRIES..."
     
-    curl -X POST "${MAIN_SERVER}/server-history/${PUBLIC_IP}/activate" \
+    curl -X POST "${MAIN_SERVER}/server-available/${PUBLIC_IP}/activate" \
         -H "Content-Type: application/json" \
         -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}"
 
@@ -144,6 +162,10 @@ function provisioning_ready_activate() {
 
 function provisioning_run_comfyui(){
 
+    if [ -z "$JSON_URL" ]; then
+        echo "❌ JSON_URL is not set, exiting..."
+        exit 0
+    fi
     echo "📥 Downloading JSON payload..."
     curl -s -o "$JSON_FILE" "$JSON_URL"
 
@@ -226,11 +248,11 @@ function provisioning_shutdown() {
         echo "❌ ไม่พบ CLOUDFLARE_URL"
         CLOUDFLARE_URL="UNKNOWN"
     fi
-    echo "Sending data to ${MAIN_SERVER}/server-history/${PUBLIC_IP}/destroy"
+    echo "Sending data to ${MAIN_SERVER}/server-available/${PUBLIC_IP}/destroy"
     echo "Public IP: $PUBLIC_IP"
     echo "Cloudflare URL: $CLOUDFLARE_URL"
 
-    curl -X POST "${MAIN_SERVER}/server-history/${PUBLIC_IP}/destroy" \
+    curl -X POST "${MAIN_SERVER}/server-available/${PUBLIC_IP}/destroy" \
          -H "Content-Type: application/json" \
          -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}"
 

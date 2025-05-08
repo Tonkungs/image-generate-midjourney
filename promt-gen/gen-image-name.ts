@@ -133,7 +133,7 @@ if (!apiKeys.length) {
 
 new GenImageName({
   apiKeys,
-  folderPath: "/home/tonkung/work/upscayl/auto-bot-midjourney-discord/comfy-gen/output_comfy07/folder_007",
-  outputCsvPath: "./2025-03-30-comfy-07-007.csv",
+  folderPath: "/home/tonkung/work/upscayl/auto-bot-midjourney-discord/comfy-gen/output_comfy08/folder_004",
+  outputCsvPath: "./2025-04-16-comfy-08-004.csv",
   log: new Logs()
 }).run();
