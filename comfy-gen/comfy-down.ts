@@ -9,7 +9,7 @@ import axios from 'axios';
 import Ut from "../src/util/util";
 import Logs from "../src/logs";
 
-const DIR_COMFYUI = 'comfy09';
+const DIR_COMFYUI = 'comfy10';
 
 interface IServer {
   serverAddress: string;

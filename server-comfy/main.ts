@@ -53,15 +53,16 @@ export class ServerApp {
         serverAvailableRepository:this.dataSource.getRepository(ServerAvailable),
         serverConfigRepository:this.dataSource.getRepository(ConfigServer)
       };
-
-      this.setupRoutes();
-      this.log.info("Routes have been set up!");
-      this.startServer();
       this.configServerFun = {
         reloadConfig: this.reloadConfig.bind(this),
         configServer: {} as IServerConfig
       }
       await this.reloadConfig()
+      
+      this.setupRoutes();
+      this.log.info("Routes have been set up!");
+      this.startServer();
+      
 
     } catch (err) {
       console.log(err);

@@ -38,6 +38,10 @@ export const listOnlineServer = [
     ServerStage.ACTIVATE,
 ]
 
+export const listACtiveServer = [
+    ServerStage.ACTIVATE,
+]
+
 export enum ServerGPU {
     RTX_4090 = "RTX_4090",
     RTX_3090 = "RTX_3090",
@@ -100,6 +104,7 @@ export interface IServer {
     gpu_type: string;
     is_rentable?: boolean;
     server_status?: string;
+    instant_id?: number;
     ask_contract_id?: number;
     created_at: Date;
     updated_at: Date;

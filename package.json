@@ -19,7 +19,8 @@
     "gen_name": "ts-node ./promt-gen/gen-image-name.ts",
     "genurl": "./clound/server.sh",
     "dev": "nodemon",
-    "serve": "nodemon ./server-comfy/main.ts"
+    "serve": "nodemon ./server-comfy/main.ts",
+    "get_url": "./server-comfy/server.sh"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

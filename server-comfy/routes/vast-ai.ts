@@ -15,17 +15,18 @@ export class VastAIRoutes {
   private configTemplate: any
   private configServer !: IServerConReload
   constructor (serverRepository: IRepository, log: Logs, configServer: IServerConReload, vastAiClient: VastAIApiClient) {
+    this.configServer = configServer
     this.router = Router();
     this.repo = serverRepository;
     this.log = log;
     this.initializeRoutes();
     this.vastAiClient = vastAiClient
     this.configTemplate = {
-      // "template_id": 231909,
-      "template_hash_id": "4f02fd9b19d0b0d5937b0964060faeb9", // comfyui custom by tons
-      // "image": "tonkung/comfy-tonkung", ComfyUI + FLUX.1 Ton2 Custom
+      "template_id": 231909,
+      // "template_hash_id": "4f02fd9b19d0b0d5937b0964060faeb9", // comfyui custom by tons
+      // "image": "tonkung/comfy-tonkung", //ComfyUI + FLUX.1 Ton2 Custom
       "disk": 50,
-      "extra_env": {
+      "env": {
         "OPEN_BUTTON_PORT": "1111",
         "OPEN_BUTTON_TOKEN": "055924cd931577f8ab440a3a713d68c2",
         "JUPYTER_DIR": "/",
@@ -50,17 +51,14 @@ export class VastAIRoutes {
 
   private initializeRoutes() {
     this.router.post('/', this.createVastAIServer.bind(this));
-    this.router.delete('/', this.deleteVastAIServer.bind(this));
+    this.router.delete('/:instant_id', this.deleteVastAIServer.bind(this));
   }
 
   private async createVastAIServer(req: Request, res: Response): Promise<void> {
     try {
-      const { instant_id, server_id } = req.body
-      this.configTemplate["extra_env"]["MAIN_SERVER"] = this.configServer.configServer.cloudflared_url
-      this.configTemplate["extra_env"]["HF_TOKEN"] = this.configServer.configServer.hf_token
-      const resultCont = await this.vastAiClient.createInstance(instant_id, this.configTemplate);
-      this.log.info("Create instance result:", resultCont);
-
+      const { ask_contract_id, server_id } = req.body;
+      // throw new Error("123");
+      
       // Update server instant_id
       const server = await this.repo.serverRepository.findOne({
         where: {
@@ -75,10 +73,18 @@ export class VastAIRoutes {
         });
         return
       }
+      // console.log("this.configServer", this.configServer);
 
-      server.instant_id = instant_id
+      this.configTemplate["env"]["MAIN_SERVER"] = this.configServer.configServer.cloudflared_url
+      this.configTemplate["env"]["HF_TOKEN"] = this.configServer.configServer.hf_token
+
+      console.log("this.configTemplate", this.configTemplate);
+
+      const resultCont = await this.vastAiClient.createInstance(ask_contract_id, this.configTemplate);
+      this.log.info("Create instance result:", resultCont);
+
+      server.instant_id = ask_contract_id
       await this.repo.serverRepository.save(server);
-
 
       const response: IResponseData<any> = {
         message: "successfully",
@@ -97,7 +103,7 @@ export class VastAIRoutes {
 
   private async deleteVastAIServer(req: Request, res: Response): Promise<void> {
     try {
-      const { instant_id, server_id } = req.body
+      const { instant_id } = req.params
       if (instant_id === undefined || instant_id === null) {
         this.log.error("instant_id is required");
         res.status(400).json({
@@ -107,27 +113,28 @@ export class VastAIRoutes {
         return
 
       }
+      console.log("instant_id", instant_id);
       const result = await this.vastAiClient.deleteInstance(instant_id);
       this.log.info("Delete instance result:", result);
 
 
       // Update server instant_id
-      const server = await this.repo.serverRepository.findOne({
-        where: {
-          id: server_id
-        }
-      });
-      if (server === undefined || server === null) {
-        this.log.error("Server not found");
-        res.status(404).json({
-          error: true,
-          message: "Server not found"
-        });
-        return
-      }
+      // const server = await this.repo.serverRepository.findOne({
+      //   where: {
+      //     id: server_id
+      //   }
+      // });
+      // if (server === undefined || server === null) {
+      //   this.log.error("Server not found");
+      //   res.status(404).json({
+      //     error: true,
+      //     message: "Server not found"
+      //   });
+      //   return
+      // }
 
-      server.instant_id = undefined
-      await this.repo.serverRepository.save(server);
+      // server.instant_id = undefined
+      // await this.repo.serverRepository.save(server);
 
       const response: IResponseData<any> = {
         message: "successfully",
@@ -175,7 +182,7 @@ export class VastAIRoutes {
 //       "target_state": "running",
 //       "cancel_unavail": true,
 //       "client_id": "me"
-
+// use_jupyter_lab
 //     }
 
 //     const queryParams :ISearchOffers = {

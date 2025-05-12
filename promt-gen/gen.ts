@@ -42,7 +42,7 @@ class PromtGen {
   private keywords: string[] = []
   private bots: IBotConfig[] = [];
   private DB: typeof DataDBHandler;
-  private MAX_ROUND_PER_KEYWORD = 3;
+  private MAX_ROUND_PER_KEYWORD = 2;
   private MAX_ROUND_PER_PROMT = 10;
   private log: Logs;
   private Category: string;
@@ -196,6 +196,8 @@ class PromtGen {
 
 // Initialize keywords
 let loveSymbols = readKeywords();
+console.log("loveSymbols", loveSymbols[loveSymbols.length - 1]);
+console.log("loveSymbols", loveSymbols.length);
 
 // Filter out completed keywords
 const completedKeywords = readCompletedKeywords();

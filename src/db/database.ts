@@ -3,7 +3,7 @@ import { IDataPromt, ImageEntity } from './entities/image';
 import { Category } from '../../find-keyword/interface';
 import { Server } from '../../server-comfy/entity/server';
 import { ServerStage } from '../../server-comfy/interface/iserver';
-import { ServerHistory } from '../../server-comfy/entity/server-history';
+import { ServerAvailable} from '../../server-comfy/entity/server-available'
 
 export class Database {
   private dataSource: DataSource;
@@ -16,7 +16,7 @@ export class Database {
       username: 'tonkung',
       password: 'yourpassword',
       database: 'images',
-      entities: [ImageEntity, Server,ServerHistory],
+      entities: [ImageEntity, Server,ServerAvailable],
       synchronize: true,
     });
   }
@@ -127,16 +127,16 @@ export class Database {
     return image;
   }
 
-  async getAllServers(stage: string = ServerStage.ACTIVATE): Promise<ServerHistory[]> {
-    const serverRepo = this.dataSource.getRepository(ServerHistory);
+  async getAllServers(stage: string = ServerStage.ACTIVATE): Promise<ServerAvailable[]> {
+    const serverRepo = this.dataSource.getRepository(ServerAvailable);
     return await serverRepo.find({
       where: { stage: stage },
       select: ['id', 'server_ip', 'server_url', 'stage', 'restart_round', 'created_at', 'updated_at'],
-    }) as ServerHistory[];
+    }) as ServerAvailable[];
   }
 
-  async updateServer(data: Partial<ServerHistory>): Promise<UpdateResult | null> {
-    const serverRepo = this.dataSource.getRepository(ServerHistory);
+  async updateServer(data: Partial<ServerAvailable>): Promise<UpdateResult | null> {
+    const serverRepo = this.dataSource.getRepository(ServerAvailable);
     return await serverRepo.update(data.id as number, {
       ...data,
       updated_at: new Date(),

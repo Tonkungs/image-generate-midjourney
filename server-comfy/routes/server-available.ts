@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { In, Repository } from 'typeorm';
 import { ServerAvailable } from '../entity/server-available';
 import Logs from '../../src/logs';
-import { ServerStage, ServerHisResponse, listOnlineServer, IQueComfy, IRepository, IServerConReload } from '../interface/iserver';
+import { ServerStage, ServerHisResponse, listOnlineServer, IQueComfy, IRepository, IServerConReload, listACtiveServer } from '../interface/iserver';
 import { VastAIApiClient } from '../function/vastai';
 import Ut from "../../src/util/util";
 import { IServerConfig } from '../interface/iconfig';
@@ -203,7 +203,7 @@ export class ServerAvailableRoutes {
 
         const servers: ServerHisResponse[] = await this.repo.serverAvailableRepository.find({
           where: {
-            stage: In(listOnlineServer)
+            stage: In(listACtiveServer)
           },
           order: { created_at: "DESC" }
         });

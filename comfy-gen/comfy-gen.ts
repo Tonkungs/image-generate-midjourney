@@ -8,7 +8,8 @@ import Ut from "../src/util/util";
 import DataDBHandler, { Database } from "../src/db/database";
 import { ImageEntity } from '../src/db/entities/image';
 import { Server } from '../server-comfy/entity/server';
-import { ServerHistory } from '../server-comfy/entity/server-history';
+import { ServerAvailable } from '../server-comfy/entity/server-available';
+import { ServerStage } from '../server-comfy/interface/iserver';
 
 interface IComfyConfig {
   serverAddress: string;
@@ -28,7 +29,7 @@ interface IWS {
   reconnectAttempts: number;
   inactivityTimeout: NodeJS.Timeout | null;
   ImageEntity: ImageEntity;
-  ServerEntity?: ServerHistory;
+  ServerEntity?: ServerAvailable;
 }
 
 interface IServerUrl {
@@ -78,15 +79,16 @@ class ComfyUIPromptProcessor {
     });
   }
 
-  private initializeWebSocketListwithDB(serverAddressList: ServerHistory[]): void {
+  private initializeWebSocketListwithDB(serverAddressList: ServerAvailable[]): void {
     // 1. กรองเฉพาะ server ที่ยังอยู่ใน serverAddressList
     this.wsList = this.wsList.filter(server => {
-      return serverAddressList.some(serverAddress => serverAddress.server_url === server.url);
+      return serverAddressList.some(serverAddress =>serverAddress.client_id === server.client_id);
     });
 
     // 2. เพิ่ม server ใหม่ที่ยังไม่มีใน wsList
     serverAddressList.forEach(serverAddress => {
-      const exists = this.wsList.some(server => server.url === serverAddress.server_url);
+      const exists = this.wsList.some(server => server.client_id === serverAddress.client_id);
+      
       if (!exists) {
         this.wsList.push({
           url:Ut.RemoveHttpsPrefix(serverAddress.server_url),
@@ -345,63 +347,57 @@ class ComfyUIPromptProcessor {
   }
 
 
-  public async starts(): Promise<void> {
-    try {
-      this.logs.info("Starting Db...");
-      await this.db.initialize();
-      for (let index = 0; index < this.wsList.length; index++) {
-        if (this.wsList[index].ws) return;
-        const service = this.wsList[index];
-        this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
+  // public async starts(): Promise<void> {
+  //   try {
+  //     this.logs.info("Starting Db...");
+  //     await this.db.initialize();
+  //     for (let index = 0; index < this.wsList.length; index++) {
+  //       if (this.wsList[index].ws) return;
+  //       const service = this.wsList[index];
+  //       this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
 
-        if (!this.wsList[index].ws) return;
-        this.processWS(this.wsList[index].ws as WebSocket, index);
-      }
-    } catch (error) {
+  //       if (!this.wsList[index].ws) return;
+  //       this.processWS(this.wsList[index].ws as WebSocket, index);
+  //     }
+  //   } catch (error) {
 
-      this.logs.error(`Error starting processor ${error}`, { error });
-    }
+  //     this.logs.error(`Error starting processor ${error}`, { error });
+  //   }
 
-  }
+  // }
   public async startDB(): Promise<void> {
     try {
       this.logs.info("Starting Db...");
       await this.db.initialize();
 
       while (true) {
-        const serverList = await this.db.getAllServers();
+        const serverList = await this.db.getAllServers(ServerStage.ACTIVATE);
+        
         if (serverList.length === 0) {
-          this.logs.error("No server found, Waiting for 1 second for activate server");
-          await Ut.Delay(1000);
+          this.logs.error("No server found, Waiting for 10 second for activate server");
+          await Ut.Delay(10000);
           continue;
         }
 
         this.initializeWebSocketListwithDB(serverList);
+        // console.log("this.wsList Before", this.wsList[0]);
+        // 
+        // await Ut.Delay(5000);
         // console.log("New Loop =============================");
 
         for (let index = 0; index < this.wsList.length; index++) {
           if (this.wsList[index].ws) return;
-          const service = this.wsList[index];
-          // console.log("service.url", service.url);
-          // await Ut.Delay(3000);
+          // console.log("this.wsList[index].ws",this.wsList[index].ws === undefined ,'index => ',index);
+          // console.log("มาใส่");
           
-          // const service = this.wsList[index];
-          this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${service.client_id}&token=${this.TOKENNN}`);
-
+          this.wsList[index].ws = new WebSocket(`wss://${this.wsList[index].url}/ws?clientId=${this.wsList[index].client_id}&token=${this.TOKENNN}`);
+          // console.log("this.wsList[index].ws",this.wsList[index].ws === undefined ,'index => ',index);
           if (!this.wsList[index].ws) return;
           this.processWS(this.wsList[index].ws as WebSocket, index);
         }
-        // console.log("serverList =>", serverList);
-        // await Ut.Delay(1000);
-      }
-      // for (let index = 0; index < this.wsList.length; index++) {
-      //   if (this.wsList[index].ws) return;
-      //   const service = this.wsList[index];
-      //   this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
 
-      //   if (!this.wsList[index].ws) return;
-      //   this.processWS(this.wsList[index].ws as WebSocket, index);
-      // }
+        // console.log("this.wsList After", this.wsList[0]);
+      }
     } catch (error) {
       console.log("error =>", error);
       this.logs.error(`Error starting processor ${error}`, { error });
@@ -466,9 +462,7 @@ class ComfyUIPromptProcessor {
           }
           this.wsList[serverNo].promtID = result.id;
         }
-        // await this.updateStageByID
         await this.updateStageByID(this.wsList[serverNo].ImageEntity as ImageEntity, "WAITING_DOWNLOAD", message.data.prompt_id);
-        // await this.db.updateStageByID(this.wsList[serverNo].promtID, "WAITING_DOWNLOAD", "", message.data.prompt_id);
         this.logs.info(`Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD from server no ${serverNo}`);
       } catch (error) {
         console.log("error =>", error);
@@ -507,7 +501,8 @@ class ComfyUIPromptProcessor {
       }
 
       const noise = this.generateRandomNoise();
-      const promptText = this.getPrompt(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
+      // const promptText = this.getPrompt(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
+      const promptText = this.getPromptcolab(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
       this.wsList[serverNo].promtID = promtText.id;
       this.wsList[serverNo].ImageEntity = promtText;
       this.logs.info(`Starting new round ${promtText.id} from server no ${serverNo}`, { promtText });
@@ -515,12 +510,10 @@ class ComfyUIPromptProcessor {
       const hashImageID = promptResponse.prompt_id;
       this.wsList[serverNo].hashImageID = hashImageID;
       await this.updateStageByID(promtText, "WAITING", hashImageID);
-      // await this.db.updateStageByID(promtText.ID, "WAITING", "", hashImageID);
 
     } catch (error) {
       if (this.wsList[serverNo].hashImageID && promtText && promtText?.id) {
         await this.updateStageByID(promtText, "START", this.wsList[serverNo].hashImageID);
-        // await this.db.updateStageByID(promtText.ID, "START", "", this.wsList[serverNo].hashImageID);
         this.logs.error(`Error updating stage from server no ${serverNo}`, { promtText, error });
       }
     } finally {
@@ -591,6 +584,7 @@ class ComfyUIPromptProcessor {
   }
 
   private async updateStageByID(data: ImageEntity, stage: string, promptId: string): Promise<void> {
+    // return ;
     await this.db.update(data.id, {
       ...data,
       promt_id: promptId,
@@ -609,7 +603,7 @@ const processor = new ComfyUIPromptProcessor({
     // process.env.COMFY_SERVER_ADDRESS_5 as string,
     // process.env.COMFY_SERVER_ADDRESS_6 as string
   ],
-  STEP: 25,
+  STEP: 4,
   db: new Database(),
   logs: new Logs()
 });

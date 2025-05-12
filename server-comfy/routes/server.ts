@@ -70,7 +70,10 @@ export class ServerRoutes {
       const response: IResponseData<IServer> = {
         message: "successfully",
         data: {
-          ...result
+          ...result,
+          is_rentable: false,
+          instant_id: undefined,
+          ask_contract_id: undefined,
         }
       };
       res.json(response);
@@ -175,6 +178,8 @@ export class ServerRoutes {
           newServer.push({
             ...server,
             is_rentable: false,
+            instant_id: undefined,
+            ask_contract_id: undefined,
           })
           continue
         }
@@ -183,16 +188,20 @@ export class ServerRoutes {
           gpu_name: gpu,
           machine_id: server.machine_id
         }
-
+        // console.log("this.vastAiClient", this.vastAiClient);
         const result = await this.vastAiClient.searchOffers(queryParams);
+        // console.log("result",result);
+
         newServer.push({
           ...server,
           is_rentable: result.length > 0 ? true : false,
           ask_contract_id: result[0]?.ask_contract_id,
+          instant_id: undefined,
         })
       }
 
       const results = await this.vastAiClient.getInstances();
+      console.log("results", results);
 
       if (results) {
         for (const server of newServer) {
@@ -200,6 +209,7 @@ export class ServerRoutes {
             item.machine_id.toString() === server.machine_id &&
             item.host_id.toString() === server.gpu_id)
           if (instance) {
+            server.instant_id = instance.id
             server.server_status = instance.actual_status;
           } else {
             server.server_status = "OFFLINE";
