@@ -1,5 +1,9 @@
 import { Epoch, Snowyflake } from "snowyflake";
-
+export interface TimeInstant {
+        hrs : number // ชั่วโมง
+        mins :number // นาที
+        secs :number // วินาที
+}
 export class Utils {
     private snowflake
     constructor () {
@@ -56,6 +60,21 @@ export class Utils {
     // Otherwise, return the original string
     return url;
   }
+
+  public ConvertTimeSince (startDateUnix: number): TimeInstant  {
+      const now = Date.now() / 1000; // ปัจจุบันในวินาที (Unix timestamp)
+      const seconds = now - startDateUnix;
+
+      const hrs = Math.floor(seconds / 3600);
+      const mins = Math.floor((seconds % 3600) / 60);
+      const secs = Math.floor(seconds % 60);
+
+      return {
+        hrs, // ชั่วโมง
+        mins,// นาที
+        secs // วินาที
+      }
+    };
 }
 
 export default new Utils()

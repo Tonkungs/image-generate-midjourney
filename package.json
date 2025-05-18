@@ -16,6 +16,7 @@
     "gen_comfy": "ts-node ./comfy-gen/comfy-gen.ts",
     "down_comfy": "ts-node ./comfy-gen/comfy-down.ts",
     "pm2_comfy": "pm2 start ./ecosystem.config.js",
+    "pm2_comfy_stop": "pm2 del ./ecosystem.config.js",
     "gen_name": "ts-node ./promt-gen/gen-image-name.ts",
     "genurl": "./clound/server.sh",
     "dev": "nodemon",

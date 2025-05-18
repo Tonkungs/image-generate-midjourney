@@ -9,6 +9,9 @@ export class ServerAvailable {
     @Column()
     server_ip!: string;
 
+    @Column({ default: null })
+    instant_id!: number;
+
     @Column()
     server_url!: string;
 

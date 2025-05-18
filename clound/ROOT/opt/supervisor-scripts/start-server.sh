@@ -22,7 +22,7 @@ shutdown_triggered=false
 function provisioning_start() {
     provisioning_check_comfyui_running
     provisioning_url_clound_flare
-    provisioning_get_public_ip
+    # provisioning_get_public_ip
     provisioning_save_server
 
     # provisioning_run_comfyui
@@ -74,20 +74,20 @@ function generate_cloudflare_url() {
     echo "✅ Cloudflared generated URL: $CLOUDFLARE_URL"
 }
 
-function provisioning_get_public_ip() {
-    # ดึง public IP
-    PUBLIC_IP=$(curl -s --max-time 5 ifconfig.me)
-    if [ -z "$PUBLIC_IP" ]; then
-        PUBLIC_IP=$(curl -s --max-time 5 https://ipinfo.io/ip)
-    fi
+# function provisioning_get_public_ip() {
+#     # ดึง public IP
+#     PUBLIC_IP=$(curl -s --max-time 5 ifconfig.me)
+#     if [ -z "$PUBLIC_IP" ]; then
+#         PUBLIC_IP=$(curl -s --max-time 5 https://ipinfo.io/ip)
+#     fi
 
-    if [ -z "$PUBLIC_IP" ]; then
-        echo "❌ ไม่สามารถดึง Public IP ได้"
-    else
-        export PUBLIC_IP
-        echo "✅ Public IP: $PUBLIC_IP"
-    fi
-}
+#     if [ -z "$PUBLIC_IP" ]; then
+#         echo "❌ ไม่สามารถดึง Public IP ได้"
+#     else
+#         export PUBLIC_IP
+#         echo "✅ Public IP: $PUBLIC_IP"
+#     fi
+# }
 
 function provisioning_save_server(){
     echo "Sending URL to ${MAIN_SERVER}/server-available"
@@ -131,7 +131,7 @@ function provisioning_save_server(){
 }
 
 function provisioning_ready_activate() {
-    echo "Sending URL to ${MAIN_SERVER}/server-available/${PUBLIC_IP}/activate"
+    echo "Sending URL to ${MAIN_SERVER}/server-available/activate"
     MAX_RETRIES=5
     ATTEMPT=1
     SUCCESS=false
@@ -139,7 +139,7 @@ function provisioning_ready_activate() {
     while [ $ATTEMPT -le $MAX_RETRIES ]; do
     echo "Attempt $ATTEMPT of $MAX_RETRIES..."
     
-    curl -X POST "${MAIN_SERVER}/server-available/${PUBLIC_IP}/activate" \
+    curl -X POST "${MAIN_SERVER}/server-available/activate" \
         -H "Content-Type: application/json" \
         -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}"
 
@@ -248,11 +248,11 @@ function provisioning_shutdown() {
         echo "❌ ไม่พบ CLOUDFLARE_URL"
         CLOUDFLARE_URL="UNKNOWN"
     fi
-    echo "Sending data to ${MAIN_SERVER}/server-available/${PUBLIC_IP}/destroy"
+    echo "Sending data to ${MAIN_SERVER}/server-available/destroy"
     echo "Public IP: $PUBLIC_IP"
     echo "Cloudflare URL: $CLOUDFLARE_URL"
 
-    curl -X POST "${MAIN_SERVER}/server-available/${PUBLIC_IP}/destroy" \
+    curl -X POST "${MAIN_SERVER}/server-available/destroy" \
          -H "Content-Type: application/json" \
          -d "{\"server_url\":\"$CLOUDFLARE_URL\",\"server_ip\":\"$PUBLIC_IP\"}"
 

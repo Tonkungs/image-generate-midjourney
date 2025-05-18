@@ -20,8 +20,10 @@ interface IComfyConfig {
 }
 
 interface IWS {
+  ServerAvailableID: number;
   ws?: WebSocket;
   url: string;
+  cloudflare_url?: string;
   client_id: string;
   isAvailable: boolean;
   promtID: number;
@@ -30,6 +32,9 @@ interface IWS {
   inactivityTimeout: NodeJS.Timeout | null;
   ImageEntity: ImageEntity;
   ServerEntity?: ServerAvailable;
+}
+interface IWSMap {
+  [url: string]: IWS;
 }
 
 interface IServerUrl {
@@ -40,6 +45,7 @@ class ComfyUIPromptProcessor {
   private STEP: number;
   private db: Database;
   private wsList: IWS[] = [];
+  private wsMAP: IWSMap = {};
   private logs: Logs;
   private isWait: boolean = false;
   private readonly maxReconnectAttempts = 10;
@@ -54,7 +60,6 @@ class ComfyUIPromptProcessor {
     this.STEP = config.STEP;
     this.db = config.db;
     this.logs = config.logs as Logs;
-    // this.initializeWebSocketList(config.serverAddressList);
     this.registerShutdownHandlers();
 
   }
@@ -64,35 +69,21 @@ class ComfyUIPromptProcessor {
     if (!config.logs) throw new Error("Logs is required");
   }
 
-  private initializeWebSocketList(serverAddressList?: string[]): void {
-    serverAddressList?.forEach(url => {
-      this.wsList.push({
-        url,
-        client_id: this.generateClientId(),
-        isAvailable: true,
-        promtID: 0,
-        hashImageID: "",
-        reconnectAttempts: 0,
-        inactivityTimeout: null,
-        ImageEntity: new ImageEntity()
-      });
-    });
-  }
-
   private initializeWebSocketListwithDB(serverAddressList: ServerAvailable[]): void {
     // 1. กรองเฉพาะ server ที่ยังอยู่ใน serverAddressList
     this.wsList = this.wsList.filter(server => {
-      return serverAddressList.some(serverAddress =>serverAddress.client_id === server.client_id);
+      return serverAddressList.some(serverAddress => serverAddress.server_url === server.cloudflare_url);
     });
 
     // 2. เพิ่ม server ใหม่ที่ยังไม่มีใน wsList
     serverAddressList.forEach(serverAddress => {
-      const exists = this.wsList.some(server => server.client_id === serverAddress.client_id);
-      
+      const exists = this.wsList.some(server => server.cloudflare_url === serverAddress.server_url);
+
       if (!exists) {
         this.wsList.push({
-          url:Ut.RemoveHttpsPrefix(serverAddress.server_url),
-          // url: serverAddress.server_url,
+          ServerAvailableID: serverAddress.id,
+          url: Ut.RemoveHttpsPrefix(serverAddress.server_url),
+          cloudflare_url: serverAddress.server_url,
           client_id: serverAddress.client_id,
           isAvailable: true,
           promtID: 0,
@@ -102,6 +93,31 @@ class ComfyUIPromptProcessor {
           ImageEntity: new ImageEntity(),
           ServerEntity: serverAddress
         });
+      }
+    });
+  }
+
+  private initialWebSockerMap(serverAddressList: ServerAvailable[]): void {
+    serverAddressList.forEach(serverAddress => {
+      const exists = this.wsMAP[serverAddress.server_url];
+      if (!exists) {
+        this.logs.info("New Server", serverAddress.server_url)
+        this.wsMAP[serverAddress.server_url] = {
+          ServerAvailableID: serverAddress.id,
+          url: Ut.RemoveHttpsPrefix(serverAddress.server_url),
+          cloudflare_url: serverAddress.server_url,
+          client_id: serverAddress.client_id,
+          isAvailable: true,
+          promtID: 0,
+          hashImageID: "",
+          reconnectAttempts: 0,
+          inactivityTimeout: null,
+          ImageEntity: new ImageEntity(),
+          ServerEntity: serverAddress
+        };
+      } else {
+        // console.log('มีแล้ว')
+        // delete this.wsMAP[serverAddress.server_url]
       }
     });
   }
@@ -346,25 +362,22 @@ class ComfyUIPromptProcessor {
     };
   }
 
+  public mockDBGetServer():ServerAvailable[] {
+    return [
+      {
+        id: 74,
+        server_url: "https://sheet-marriage-principle-lace.trycloudflare.com",
+        server_ip: '',
+        restart_round: 0,
+        stage: '',
+        client_id: '',
+        instant_id: 0,
+        created_at: new Date(),
+        updated_at: new Date(),
+        deleted_at: new Date(),
+      }]
+  }
 
-  // public async starts(): Promise<void> {
-  //   try {
-  //     this.logs.info("Starting Db...");
-  //     await this.db.initialize();
-  //     for (let index = 0; index < this.wsList.length; index++) {
-  //       if (this.wsList[index].ws) return;
-  //       const service = this.wsList[index];
-  //       this.wsList[index].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.generateClientId()}&token=${this.TOKENNN}`);
-
-  //       if (!this.wsList[index].ws) return;
-  //       this.processWS(this.wsList[index].ws as WebSocket, index);
-  //     }
-  //   } catch (error) {
-
-  //     this.logs.error(`Error starting processor ${error}`, { error });
-  //   }
-
-  // }
   public async startDB(): Promise<void> {
     try {
       this.logs.info("Starting Db...");
@@ -372,31 +385,36 @@ class ComfyUIPromptProcessor {
 
       while (true) {
         const serverList = await this.db.getAllServers(ServerStage.ACTIVATE);
-        
+        // const serverList = this.mockDBGetServer()
         if (serverList.length === 0) {
-          this.logs.error("No server found, Waiting for 10 second for activate server");
+          this.logs.info("No server found, Waiting for 10 second for activate server");
           await Ut.Delay(10000);
           continue;
         }
 
-        this.initializeWebSocketListwithDB(serverList);
-        // console.log("this.wsList Before", this.wsList[0]);
-        // 
-        // await Ut.Delay(5000);
+        // this.initializeWebSocketListwithDB(serverList);
+        this.initialWebSockerMap(serverList);
         // console.log("New Loop =============================");
+        // await this.db.updateServerAva(74, ServerStage.STOP);
+        for (const serverURL in this.wsMAP) {
+          // console.log('วนก่อนนนนนน')
+          if (Object.prototype.hasOwnProperty.call(this.wsMAP, serverURL)) {
+            if (this.wsMAP[serverURL].ws) continue;
+            if (!this.wsMAP[serverURL].isAvailable) continue;
+            // console.log(this.wsMAP[serverURL].url)
+            try {
+              const ws = new WebSocket(`wss://${this.wsMAP[serverURL].url}/ws?clientId=${this.wsMAP[serverURL].client_id}&token=${this.TOKENNN}`);
+              this.wsMAP[serverURL].ws = ws
+            } catch (err) {
+              this.wsMAP[serverURL].ws = undefined;
+            }
 
-        for (let index = 0; index < this.wsList.length; index++) {
-          if (this.wsList[index].ws) return;
-          // console.log("this.wsList[index].ws",this.wsList[index].ws === undefined ,'index => ',index);
-          // console.log("มาใส่");
-          
-          this.wsList[index].ws = new WebSocket(`wss://${this.wsList[index].url}/ws?clientId=${this.wsList[index].client_id}&token=${this.TOKENNN}`);
-          // console.log("this.wsList[index].ws",this.wsList[index].ws === undefined ,'index => ',index);
-          if (!this.wsList[index].ws) return;
-          this.processWS(this.wsList[index].ws as WebSocket, index);
+            if (!this.wsMAP[serverURL].ws) continue;
+            this.processWS(this.wsMAP[serverURL].ws as WebSocket, serverURL);
+          }
         }
-
-        // console.log("this.wsList After", this.wsList[0]);
+        // this.logs.info("Wait for 10 seconds to check server again");
+        await Ut.Delay(3000);
       }
     } catch (error) {
       console.log("error =>", error);
@@ -405,12 +423,12 @@ class ComfyUIPromptProcessor {
 
   }
 
-  private async processWS(ws: WebSocket, serverNo: number): Promise<void> {
+  private async processWS(ws: WebSocket, serverNo: string): Promise<void> {
     const resetInactivityTimer = () => {
-      if (this.wsList[serverNo].inactivityTimeout) clearTimeout(this.wsList[serverNo].inactivityTimeout);
-      this.wsList[serverNo].inactivityTimeout = setTimeout(() => {
-        this.logs.info(`No message received from server ${serverNo} for 30 seconds. Reconnecting...`);
-        this.wsList[serverNo].isAvailable = false;
+      if (this.wsMAP[serverNo].inactivityTimeout) clearTimeout(this.wsMAP[serverNo].inactivityTimeout);
+      this.wsMAP[serverNo].inactivityTimeout = setTimeout(() => {
+        this.logs.info(`No message received from server ${serverNo} for 1 minute. Reconnecting...`);
+        this.wsMAP[serverNo].isAvailable = false;
         ws.terminate();
       }, 1 * 60 * 1000);
     };
@@ -419,16 +437,14 @@ class ComfyUIPromptProcessor {
 
     ws.on('open', async () => {
       this.logs.info(`WebSocket connected from server no ${serverNo}`);
-      this.wsList[serverNo].reconnectAttempts = 0;
-      this.wsList[serverNo].isAvailable = true;
+      this.wsMAP[serverNo].reconnectAttempts = 0;
+      this.wsMAP[serverNo].isAvailable = true;
       resetInactivityTimer();
     });
 
     ws.on('message', async (data: WebSocket.Data) => {
-
       resetInactivityTimer();
       const message = JSON.parse(data.toString());
-
       if (message.type === "progress") {
         this.handleProgressMessage(message, serverNo);
       }
@@ -438,52 +454,56 @@ class ComfyUIPromptProcessor {
       }
     });
 
-    ws.on('error', (error) => {
+    ws.on('error',async (error) => {
       // resetInactivityTimer();
-      this.handleWebSocketClose('error', serverNo);
+      console.log("error =>", error);
+      await this.handleWebSocketClose('error', serverNo);
     });
 
     ws.on('close', async (event) => {
       // resetInactivityTimer();
-      this.handleWebSocketClose(event, serverNo);
+      console.log("close =>", event);
+      await this.handleWebSocketClose(event, serverNo);
     });
   }
 
-  private async handleProgressMessage(message: any, serverNo: number): Promise<void> {
+  private async handleProgressMessage(message: any, serverNo: string): Promise<void> {
     this.logs.info(`Progress: ${message.data.value}/${message.data.max} from server no ${serverNo}`);
 
     if (message.data.value === message.data.max) {
       try {
-        if (!this.wsList[serverNo].promtID) {
+        if (!this.wsMAP[serverNo].promtID) {
           const result = await this.db.findByPromtId(message.data.prompt_id);
           if (!result) {
             this.logs.error(`Error finding prompt text from server no ${serverNo} promtID is ${message.data.prompt_id} To Next Round`, { result, serverNo });
             return;
           }
-          this.wsList[serverNo].promtID = result.id;
+          this.wsMAP[serverNo].promtID = result.id;
+          this.wsMAP[serverNo].ImageEntity = result;
         }
-        await this.updateStageByID(this.wsList[serverNo].ImageEntity as ImageEntity, "WAITING_DOWNLOAD", message.data.prompt_id);
-        this.logs.info(`Updating prompt ${this.wsList[serverNo].promtID} to WAITING_DOWNLOAD from server no ${serverNo}`);
+        if (this.wsMAP[serverNo].ImageEntity) {
+          await this.updateStageByID(this.wsMAP[serverNo].ImageEntity as ImageEntity, "WAITING_DOWNLOAD", message.data.prompt_id);
+          this.logs.info(`Updating prompt ${this.wsMAP[serverNo].promtID} to WAITING_DOWNLOAD from server no ${serverNo}`);
+        }
       } catch (error) {
         console.log("error =>", error);
         // await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
         this.logs.error(`Error updating stage from server no ${serverNo}`, { message, error });
-        throw new Error(`Error updating stage from server no ${serverNo}`);
+        // throw new Error(`Error updating stage from server no ${serverNo}`);
       }
     }
   }
 
-  private async handleStatusMessage(serverNo: number): Promise<void> {
+  private async handleStatusMessage(serverNo: string): Promise<void> {
     const maxWaitTime = 300 * 1000; // ตั้ง timeout ไว้ที่ 30 วินาที
     const startTime = Date.now();
-
     while (this.isWait) {
       this.logs.info(`Waiting from server no ${serverNo} 1 second`);
       await Ut.Delay(1000);
 
       if (Date.now() - startTime > maxWaitTime) {
         this.logs.error(`Timeout waiting for server no ${serverNo}, continuing process...`);
-        this.wsList[serverNo].ws?.terminate();
+        this.wsMAP[serverNo].ws?.terminate();
         return;
       }
     }
@@ -493,27 +513,27 @@ class ComfyUIPromptProcessor {
     try {
       // const promtText = await this.db.findFirstStart('business')
       promtText = await this.db.findFirstStart('Spring 2025')
-
+      // promtText = await this.db.findFirstStart('travel_and_business_2025')
+      
       if (!promtText?.id) {
         this.logs.error(`Error finding prompt text from server no ${serverNo}`, { promtText, serverNo });
-        // throw new Error(`Error finding prompt text from server no ${serverNo}`);
         return;
       }
 
       const noise = this.generateRandomNoise();
-      // const promptText = this.getPrompt(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
-      const promptText = this.getPromptcolab(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
-      this.wsList[serverNo].promtID = promtText.id;
-      this.wsList[serverNo].ImageEntity = promtText;
+      const promptText = this.getPrompt(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
+      // const promptText = this.getPromptcolab(`${promtText.title} high detail 8k not have low quality, not have  worst quality, not have bad anatomy,not have extra limbs,not blurry, not have watermark,not have  cropped`, noise);
+      this.wsMAP[serverNo].promtID = promtText.id;
+      this.wsMAP[serverNo].ImageEntity = promtText;
       this.logs.info(`Starting new round ${promtText.id} from server no ${serverNo}`, { promtText });
-      const promptResponse = await this.queuePrompt(this.wsList[serverNo].url, promptText);
+      const promptResponse = await this.queuePrompt(this.wsMAP[serverNo].url, promptText);
       const hashImageID = promptResponse.prompt_id;
-      this.wsList[serverNo].hashImageID = hashImageID;
+      this.wsMAP[serverNo].hashImageID = hashImageID;
       await this.updateStageByID(promtText, "WAITING", hashImageID);
 
     } catch (error) {
-      if (this.wsList[serverNo].hashImageID && promtText && promtText?.id) {
-        await this.updateStageByID(promtText, "START", this.wsList[serverNo].hashImageID);
+      if (this.wsMAP[serverNo].hashImageID && promtText && promtText?.id) {
+        await this.updateStageByID(promtText, "START", this.wsMAP[serverNo].hashImageID);
         this.logs.error(`Error updating stage from server no ${serverNo}`, { promtText, error });
       }
     } finally {
@@ -521,36 +541,44 @@ class ComfyUIPromptProcessor {
     }
   }
 
-  private handleWebSocketClose(event: any, serverNo: number): void {
-    this.logs.info(`WebSocket closed from server no ${this.wsList[serverNo].url} when event is ${event}`);
-    if (this.wsList[serverNo].inactivityTimeout) {
-      clearTimeout(this.wsList[serverNo].inactivityTimeout);
+  private async handleWebSocketClose(event: any, serverNo: string): Promise<void> {
+    // ไม่พบข้อมูล
+    // if (!!this.wsMAP[serverNo]?.url) {
+    //   return;
+    // }
+
+    this.logs.info(`WebSocket closed from server no ${this.wsMAP[serverNo]?.url} when event is ${event}`);
+    if (this.wsMAP[serverNo].inactivityTimeout) {
+      clearTimeout(this.wsMAP[serverNo].inactivityTimeout);
     }
 
-    if (this.wsList[serverNo].reconnectAttempts <= this.maxReconnectAttempts) {
-      const timeout = this.reconnectDelay * Math.pow(2, this.wsList[serverNo].reconnectAttempts);
+    if (this.wsMAP[serverNo].reconnectAttempts <= this.maxReconnectAttempts) {
+      const timeout = this.reconnectDelay * Math.pow(2, this.wsMAP[serverNo].reconnectAttempts);
       this.logs.info(`Reconnecting server ${serverNo} in ${timeout / 1000} seconds...`);
       setTimeout(() => this.reconnect(serverNo), timeout);
-      this.wsList[serverNo].reconnectAttempts++;
+      this.wsMAP[serverNo].reconnectAttempts++;
     } else {
-      this.logs.error(`Max reconnect attempts reached for server no ${this.wsList[serverNo].url}. Closing connection permanently.`);
-      this.wsList[serverNo].ws?.terminate();
-      this.wsList[serverNo].ws = undefined;
-      this.wsList[serverNo].isAvailable = false;
+      this.logs.error(`Max reconnect attempts reached for server no ${this.wsMAP[serverNo].url}. Closing connection permanently.`);
+      // this.wsMAP[serverNo].ws?.terminate();
+      // this.wsMAP[serverNo].ws = undefined;
+      // this.wsMAP[serverNo].isAvailable = false;
+      await this.db.updateServerAva(this.wsMAP[serverNo].ServerAvailableID, ServerStage.DESTROY);
+      delete this.wsMAP[serverNo];
     }
   }
 
-  private reconnect(serverNo: number): void {
-    // if (!this.wsList[serverNo].isAvailable) return;
+  private reconnect(serverNo: string): void {
+    if (this.wsMAP[serverNo] &&!this.wsMAP[serverNo].isAvailable) return;
 
-    this.logs.info(`Reconnecting WebSocket for server no ${this.wsList[serverNo].url}...`);
-    const service = this.wsList[serverNo];
+    if (!this.wsMAP[serverNo]?.url) return
+    this.logs.info(`Reconnecting WebSocket for server no ${this.wsMAP[serverNo].url}...`);
+    const service = this.wsMAP[serverNo];
 
     try {
-      this.wsList[serverNo].ws = new WebSocket(`ws://${service.url}/ws?clientId=${this.generateClientId()}`);
-      this.processWS(this.wsList[serverNo].ws as WebSocket, serverNo);
+      this.wsMAP[serverNo].ws = new WebSocket(`wss://${service.url}/ws?clientId=${this.wsMAP[serverNo].client_id}&token=${this.TOKENNN}`);
+      this.processWS(this.wsMAP[serverNo].ws as WebSocket, serverNo);
     } catch (error) {
-      this.logs.error(`Reconnect failed for server no ${this.wsList[serverNo].url}`, { error });
+      this.logs.error(`Reconnect failed for server no ${this.wsMAP[serverNo].url}`, { error });
     }
   }
 
@@ -559,15 +587,17 @@ class ComfyUIPromptProcessor {
     const safeShutdown = async () => {
       this.logs.info("Shutting down gracefully...");
       try {
-        for (let index = 0; index < this.wsList.length; index++) {
-          const server = this.wsList[index];
-          server.ws?.terminate();
-          if (server.promtID) {
-            this.logs.info(`Updating prompt ${server.promtID} to START`);
-            await this.updateStageByID(server.ImageEntity as ImageEntity, "START", server.hashImageID);
-            // await this.db.updateStageByID(server.promtID, "START", "", server.hashImageID);
+        for (const key in this.wsMAP) {
+          if (Object.prototype.hasOwnProperty.call(this.wsMAP, key)) {
+            const element = this.wsMAP[key];
+            element.ws?.terminate();
+            delete this.wsMAP[key];
+            if (element.promtID) {
+              this.logs.info(`Updating prompt ${element.promtID} to START`);
+              await this.updateStageByID(element.ImageEntity as ImageEntity, "START", element.hashImageID);
+            }
+            this.logs.info(`Closing connection to server ${element.url}`);
           }
-          this.logs.info(`Closing connection to server ${server.url}`);
         }
       } catch (error) {
         this.logs.error("Error during safe shutdown", { error });
@@ -596,14 +626,8 @@ class ComfyUIPromptProcessor {
 const processor = new ComfyUIPromptProcessor({
   serverAddress: process.env.COMFY_SERVER_ADDRESS as string,
   serverAddressList: [
-    // process.env.COMFY_SERVER_ADDRESS as string,
-    // process.env.COMFY_SERVER_ADDRESS_2 as string,
-    // process.env.COMFY_SERVER_ADDRESS_3 as string,
-    // process.env.COMFY_SERVER_ADDRESS_4 as string,
-    // process.env.COMFY_SERVER_ADDRESS_5 as string,
-    // process.env.COMFY_SERVER_ADDRESS_6 as string
   ],
-  STEP: 4,
+  STEP: 25,
   db: new Database(),
   logs: new Logs()
 });
@@ -611,3 +635,6 @@ const processor = new ComfyUIPromptProcessor({
 processor.startDB().catch((error) => {
   console.error('Error in processor:', error);
 });
+// 13799 4090
+// 13863 4090
+// 28715 4090

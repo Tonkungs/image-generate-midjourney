@@ -135,6 +135,14 @@ export class Database {
     }) as ServerAvailable[];
   }
 
+  async updateServerAva(id:number,stage: string = ServerStage.ACTIVATE): Promise<UpdateResult | null> {
+    const serverRepo = this.dataSource.getRepository(ServerAvailable);
+    return await serverRepo.update(id, {
+      stage,
+      updated_at: new Date(),
+    });
+  }
+
   async updateServer(data: Partial<ServerAvailable>): Promise<UpdateResult | null> {
     const serverRepo = this.dataSource.getRepository(ServerAvailable);
     return await serverRepo.update(data.id as number, {

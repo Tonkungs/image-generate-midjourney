@@ -319,9 +319,9 @@ export class VastAIApiClient {
     }
   }
 
-  async getInstance(instanceId: string): Promise<any> {
+  async getInstance(instanceId: string): Promise<Instance> {
     try {
-      const response: AxiosResponse<any> = await this.apiClient.get(`/instances/${instanceId}/`);
+      const response: AxiosResponse<Instance> = await this.apiClient.get(`/instances/${instanceId}/`);
       return response.data;
     } catch (error) {
       console.error('Error getting VastAI instance:', error);

@@ -9,7 +9,7 @@ import axios from 'axios';
 import Ut from "../src/util/util";
 import Logs from "../src/logs";
 
-const DIR_COMFYUI = 'comfy10';
+const DIR_COMFYUI = 'comfy11';
 
 interface IServer {
   serverAddress: string;
@@ -27,6 +27,7 @@ class ImageDownloader {
   private db: Database;
   // private serverList: IServer[];
   private logs: Logs;
+  // private NODE_IMAGE_PATH: string = "9";
   private NODE_IMAGE_PATH: string = "9";
   private MAX_RETRIES = 3; // จำกัดจำนวนครั้งที่ลองโหลดภาพใหม่
   private TOKEN = `?token=`;
@@ -38,72 +39,61 @@ class ImageDownloader {
     this.db = config.db;
     this.logs = config.logs;
 
-    // this.serverList = config.serverAddressList.map(server => ({
-    //   serverAddress: server,
-    //   isAvailable: true,
-    //   reconnectAttempts: 0
-    // }));
   }
 
-  public async starts(): Promise<void> {
-    while (true) {
-      try {
-        const promptData: ImageEntity | null = await this.db.findFirstWait();
-      await this.db.initialize()
-        // const promptDatas:IDataPromt[] | null = await this.db.findTopWait();
+  // public async starts(): Promise<void> {
+  //   while (true) {
+  //     try {
+  //       const promptData: ImageEntity | null = await this.db.findFirstWait();
+  //       await this.db.initialize()
 
-        // console.log("promptDatas =>",promptDatas);
+  //       // await Ut.Delay(5000);
+  //       if (!promptData) {
+  //         this.logs.info("No pending prompts. Retrying in 5 seconds...");
+  //         await Ut.Delay(5000);
+  //         continue;
+  //       }
 
-        // await Ut.Delay(5000);
-        if (!promptData) {
-          this.logs.info("No pending prompts. Retrying in 5 seconds...");
-          await Ut.Delay(5000);
-          continue;
-        }
+  //       const promptId = promptData?.promt_id as string;
+  //       if (!promptId) continue;
 
-        const promptId = promptData?.promt_id as string;
-        if (!promptId) continue;
+  //       try {
+  //         const imageBuffers = await this.downloadImages(promptId);
+  //         if (!imageBuffers || !imageBuffers[this.NODE_IMAGE_PATH]) {
+  //           this.logs.info(`No valid images found in node ${this.NODE_IMAGE_PATH}`);
+  //           await this.updateStageByID(promptData, "START", promptId);
+  //           continue;
+  //         }
 
-        try {
-          const imageBuffers = await this.downloadImages(promptId);
-          if (!imageBuffers || !imageBuffers[this.NODE_IMAGE_PATH]) {
-            this.logs.info(`No valid images found in node ${this.NODE_IMAGE_PATH}`);
-            await this.updateStageByID(promptData, "START", promptId);
-            // await this.db.updateStageByID(promptData?.id as string, "START", "", promptId);
-            continue;
-          }
+  //         const directoryPath = path.join(__dirname, DIR_COMFYUI);
+  //         await this.ensureDirectoryExistence(directoryPath);
+  //         const fileName = `${promptData?.id}_${promptId}.jpg`;
+  //         const outputPath = path.join(directoryPath, fileName);
+  //         await this.saveImage(imageBuffers[this.NODE_IMAGE_PATH][0], outputPath, fileName);
+  //         await this.updateStageByID(promptData, "DONE", promptId);
+  //       } catch (error) {
+  //         this.logs.error(`Error downloading image: ${error}`);
+  //         await this.updateStageByID(promptData, "START", promptId);
+  //       }
+  //     } catch (error) {
+  //       console.log("error =>", error);
 
-          const directoryPath = path.join(__dirname, DIR_COMFYUI);
-          await this.ensureDirectoryExistence(directoryPath);
-          const fileName = `${promptData?.id}_${promptId}.jpg`;
-          const outputPath = path.join(directoryPath, fileName);
-          await this.saveImage(imageBuffers[this.NODE_IMAGE_PATH][0], outputPath, fileName);
-          await this.updateStageByID(promptData, "DONE", promptId);
-          // await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
-        } catch (error) {
-          this.logs.error(`Error downloading image: ${error}`);
-          await this.updateStageByID(promptData, "START", promptId);
-          // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
-        }
-      } catch (error) {
-        console.log("error =>", error);
-
-        this.logs.error(`Unexpected error in starts(): ${error}`);
-        await Ut.Delay(5000);
-      }
-    }
-  }
+  //       this.logs.error(`Unexpected error in starts(): ${error}`);
+  //       await Ut.Delay(5000);
+  //     }
+  //   }
+  // }
 
   /**
    * name
    */
   public async startss(): Promise<void> {
     await this.db.initialize()
-    
+
     while (true) {
       try {
 
-        const promptDatas: ImageEntity[] | null = await this.db.findTopWait('WAITING_DOWNLOAD',10);
+        const promptDatas: ImageEntity[] | null = await this.db.findTopWait('WAITING_DOWNLOAD', 10);
         if (!promptDatas || promptDatas.length === 0) {
           this.logs.info("No pending prompts. Retrying in 5 seconds...");
           await Ut.Delay(5000);
@@ -133,7 +123,6 @@ class ImageDownloader {
       if (!imageBuffers || !imageBuffers[this.NODE_IMAGE_PATH]) {
         this.logs.info(`No valid images found in node ${this.NODE_IMAGE_PATH}`);
         await this.updateStageByID(promptData, "START", promptId);
-        // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
         return;
       }
 
@@ -143,11 +132,9 @@ class ImageDownloader {
       const outputPath = path.join(directoryPath, fileName);
       await this.saveImage(imageBuffers[this.NODE_IMAGE_PATH][0], outputPath, fileName);
       await this.updateStageByID(promptData, "DONE", promptId);
-      // await this.db.updateStageByID(promptData?.ID as string, "DONE", "", promptId);
     } catch (error) {
       this.logs.error(`Error downloading image: ${error}`);
       this.updateStageByID(promptData, "START", promptId);
-      // await this.db.updateStageByID(promptData?.ID as string, "START", "", promptId);
     }
 
     return;
@@ -159,22 +146,25 @@ class ImageDownloader {
     for (const server of serverList) {
       // if (!server.isAvailable) continue;s
       try {
-        const history = await this.getHistory(server.server_url, promptId);
+        const history = await this.getHistory(Ut.RemoveHttpsPrefix(server.server_url), promptId);
         if (!history || !history[promptId]) continue;
 
         this.logs.info(`Downloading images from ${server.server_url}`);
 
         for (const nodeId in history[promptId].outputs) {
+          // Ut.Delay(10000);
           const nodeOutput = history[promptId].outputs[nodeId];
           if (!nodeOutput.images) continue;
 
           outputImages[nodeId] = await Promise.all(
             nodeOutput.images.map(async (image: { filename: string; subfolder: string; type: string; }) => {
-              return this.getImageWithRetry(server.server_url, image.filename, image.subfolder, image.type);
+              return this.getImageWithRetry(Ut.RemoveHttpsPrefix(server.server_url), image.filename, image.subfolder, image.type);
             })
           );
         }
       } catch (error) {
+        console.log('error', error);
+
         // server.isAvailable = false;
         this.logs.info(`Server ${server.server_url} is unavailable`);
       }
@@ -207,7 +197,7 @@ class ImageDownloader {
 
   private async getImage(server: string, filename: string, subfolder: string, type: string): Promise<Buffer> {
     try {
-      const response = await axios.get(`http://${server}/view${this.TOKEN}`, {
+      const response = await axios.get(`http://${Ut.RemoveHttpsPrefix(server)}/view${this.TOKEN}`, {
         params: { filename, subfolder, type },
         responseType: 'arraybuffer',
       });
@@ -220,6 +210,8 @@ class ImageDownloader {
 
   private async getHistory(server: string, promptId: string): Promise<any> {
     try {
+      // console.log('url',`http://${server}/history/${promptId}${this.TOKEN}`);
+
       const response = await axios.get(`http://${server}/history/${promptId}${this.TOKEN}`);
       return response.data;
     } catch (error) {
@@ -242,7 +234,8 @@ class ImageDownloader {
     }
   }
 
-  private async updateStageByID( data: ImageEntity, stage: string, promptId: string): Promise<void> {
+  private async updateStageByID(data: ImageEntity, stage: string, promptId: string): Promise<void> {
+    // return;
     await this.db.update(data.id, {
       ...data,
       promt_id: promptId,
@@ -256,14 +249,6 @@ class ImageDownloader {
     const downloader = new ImageDownloader({
       db: new Database(),
       logs: new Logs(),
-      // serverAddressList: [
-      //   process.env.COMFY_SERVER_ADDRESS as string,
-      //   process.env.COMFY_SERVER_ADDRESS_2 as string,
-      //   process.env.COMFY_SERVER_ADDRESS_3 as string,
-      //   // process.env.COMFY_SERVER_ADDRESS_4 as string,
-      //   // process.env.COMFY_SERVER_ADDRESS_5 as string,
-      //   // process.env.COMFY_SERVER_ADDRESS_6 as string
-      // ],
     });
 
     await downloader.startss();
@@ -271,3 +256,4 @@ class ImageDownloader {
     console.error("Fatal Error:", error);
   }
 })();
+// max ดาวโหลดที่ 3090 5  server ที่ 25 step

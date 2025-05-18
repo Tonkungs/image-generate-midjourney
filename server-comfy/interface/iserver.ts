@@ -74,6 +74,7 @@ export interface ServerHisResponse {
     id: number;
     server_url: string;
     server_ip: string;
+    instant_id: number;
     stage: string;
     restart_round: number;
     created_at: Date;

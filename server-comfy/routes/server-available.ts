@@ -12,7 +12,7 @@ export class ServerAvailableRoutes {
   private log: Logs;
   private vastAiClient: VastAIApiClient;
   private configServer!: IServerConReload;
-  constructor (serverAvailableRepository: IRepository, log: Logs,configServer:IServerConReload, vastAIClient: VastAIApiClient) {
+  constructor (serverAvailableRepository: IRepository, log: Logs, configServer: IServerConReload, vastAIClient: VastAIApiClient) {
     this.configServer = configServer
     this.router = Router();
     this.repo = serverAvailableRepository;
@@ -25,10 +25,10 @@ export class ServerAvailableRoutes {
   private initializeRoutes() {
     this.router.post('/', this.createServer.bind(this));
     this.router.get('/', this.middlewareLogger.bind(this), this.getServers.bind(this));
-    this.router.post('/:server_ip/ready', this.middlewareLogger.bind(this), this.updateStageReady.bind(this));
-    this.router.post('/:server_ip/activate', this.middlewareLogger.bind(this), this.updateStageActivate.bind(this));
-    this.router.post('/:server_ip/stop', this.middlewareLogger.bind(this), this.updateStageStop.bind(this));
-    this.router.post('/:server_ip/destroy', this.middlewareLogger.bind(this), this.updateStageDestroy.bind(this));
+    this.router.post('/ready', this.middlewareLogger.bind(this), this.updateStageReady.bind(this));
+    this.router.post('/activate', this.middlewareLogger.bind(this), this.updateStageActivate.bind(this));
+    this.router.post('/stop', this.middlewareLogger.bind(this), this.updateStageStop.bind(this));
+    this.router.post('/destroy', this.middlewareLogger.bind(this), this.updateStageDestroy.bind(this));
     this.router.post('/promt', this.middlewareLogger.bind(this), this.promtTest.bind(this));
   }
 
@@ -195,9 +195,12 @@ export class ServerAvailableRoutes {
   private async checkServerStatus() {
     this.log.info("Checking server status...");
     // loop every 5 minutes
-    const loopMain = 1 * 60 * 1000; // 5 minutes
-    const loopSubQueMain = 5000;  // 10 seconds
+    const loopMain = 5 * 60 * 1000; // 5 minutes
+    // const loopMain = 10000
+    const loopSubQueMain = 5000;  // 5 seconds
     const roundCheck = 10; // 10 times
+    const timeTODeleteInstant = 15 // mins
+
     setInterval(async () => {
       try {
 
@@ -207,65 +210,111 @@ export class ServerAvailableRoutes {
           },
           order: { created_at: "DESC" }
         });
-        
+
         if (servers.length === 0) {
           this.log.info("No servers available for deletion.");
-          return;
-          
+          // return;
         }
+        // const queSub = await this.getQueComfy(isHaveServer.server_url);
+        //                 console.log("queSub", queSub);
+
+        //                 if (!queSub) {
+        //                   this.log.error("Error getting queue from Comfy:", queSub);
+        //                   isDelete = true;
+        //                   break;
+        //                 }
+        //                 // console.log("queSub?.queue_running.length", queSub?.queue_running.length);
+
+        //                 if (queSub?.queue_running.length === 0) {
+        //                   isDelete = true;
+        //                 } else {
+        //                   isDelete = false;
+        //                   break;
+        //                 }
+
+        // เช็คจากการทำงาน
         const serverInstants = await this.vastAiClient.getInstances();
+        this.log.info("Instant available for detection: " + serverInstants.instances.length + ' Server available: ' + servers.length);
         if (serverInstants) {
           for (const server of serverInstants.instances) {
-            const isHaveServer = servers.find((item) => item.server_ip === server.public_ipaddr);
-            if (!isHaveServer) {
-              this.log.info(`No server found with IP: ${server.public_ipaddr}`);
+            if (server.intended_status === 'stopped') {
+              this.log.error("Delete Instant :" + server.id.toString());
+              await this.vastAiClient.deleteInstance(server.id.toString());
+              const serverFind = servers.find((serverIN) => serverIN.instant_id === server.id);
+
+              if (serverFind) {
+                const server = await this.repo.serverAvailableRepository.findOne({
+                  where: {
+                    id: serverFind.id,
+                  }
+                });
+
+                if (!server) {
+                  this.log.error("Server not found for deletion:", serverFind.id);
+                  continue;
+                }
+
+                server.stage = ServerStage.DESTROY;
+                await this.repo.serverAvailableRepository.save(server);
+              }
+
+              continue;
+            }
+
+            if (!server.start_date) {
+              continue;
+            }
+
+            if (server.gpu_util > 2) {
+              continue;
+            }
+            
+            const times = Ut.ConvertTimeSince(server.start_date);
+
+            if (times.mins < timeTODeleteInstant) {
               continue;
             }
 
             let isDelete = false;
-            const que = await this.getQueComfy(isHaveServer.server_url);
-            if (que?.queue_running.length === 0) {
-              for (const _ of new Array(roundCheck)) {
-                await Ut.Delay(loopSubQueMain);
-                const queSub = await this.getQueComfy(isHaveServer.server_url);
-                console.log("queSub", queSub);
-                
-                if (!queSub) {
-                  this.log.error("Error getting queue from Comfy:", queSub);
-                  isDelete = true;
-                  break;
-                }
-                // console.log("queSub?.queue_running.length", queSub?.queue_running.length);
-                
-                if (queSub?.queue_running.length === 0) {
-                  isDelete = true;
-                } else {
-                  isDelete = false;
-                  break;
+            try {
+              if (server.intended_status === 'running' && server.gpu_util < 2) {
+                for (const _ of new Array(roundCheck)) {
+                  await Ut.Delay(loopSubQueMain);
+                  const queSub = await this.vastAiClient.getInstance(server.id.toString());
+                  if (queSub.intended_status === 'stopped') {
+                    isDelete = true;
+                    break;
+                  }
+
+                  if (queSub.gpu_util < 2) {
+                    this.log.error("Error getting cpu runtime from : ", queSub);
+                    isDelete = true;
+                  } else {
+                    isDelete = false
+                    break;
+                  }
                 }
               }
+            } catch (error) {
+              isDelete = true;
             }
 
-
-            if (server.gpu_util < 1 && isDelete) {
-              // ไปดึงข้อมูลจาก server ว่ามี ค่าการรันอยู่ไหม
-              // await this.vastAiClient.deleteInstance(server.id.toString());
-              this.log.info(`Deleted with Machine id: ${server.machine_id} and GPU used: ${server.gpu_util} and id : ${server.id}`);
-            } else {
-              this.log.info(`No need to delete instance with Machine id: ${server.machine_id} and GPU used: ${server.gpu_util}`);
+            if (isDelete) {
+              await this.vastAiClient.deleteInstance(server.id.toString());
+              this.log.error("Delete :" + server.id.toString());
             }
           }
         }
       } catch (error) {
-        this.log.error("Error checking server status:"+ error);
+        this.log.error("Error checking server status:" + error);
       }
-    }, loopMain); // 5 minutes 5 * 60 * 1000
+    }, loopMain);
   }
 
 
   private async getQueComfy(serverUrl: string): Promise<IQueComfy | null> {
     try {
-      const url = `https://${serverUrl}/api/queue`;
+      const url = `${serverUrl}/api/queue`;
       const response = await fetch(url, {
         method: 'GET',
       });
@@ -288,3 +337,8 @@ export class ServerAvailableRoutes {
     return this.router;
   }
 }
+
+
+// บ้าง server ดู ip ไม่ได้
+// m:34337
+// host:148689
