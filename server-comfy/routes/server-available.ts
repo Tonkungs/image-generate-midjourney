@@ -199,7 +199,7 @@ export class ServerAvailableRoutes {
     // const loopMain = 10000
     const loopSubQueMain = 5000;  // 5 seconds
     const roundCheck = 10; // 10 times
-    const timeTODeleteInstant = 15 // mins
+    const timeTODeleteInstant = 20 // mins
 
     setInterval(async () => {
       try {
@@ -268,7 +268,7 @@ export class ServerAvailableRoutes {
             if (server.gpu_util > 2) {
               continue;
             }
-            
+
             const times = Ut.ConvertTimeSince(server.start_date);
 
             if (times.mins < timeTODeleteInstant) {

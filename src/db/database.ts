@@ -66,7 +66,7 @@ export class Database {
     return await imageRepo.findOne({
       where: {
         stage: 'START',
-        // category: Csategory,
+        category: Category,
       },
       order: { created_at: 'ASC' },
       select: ['id', 'image_url', 'title', 'stage', 'seed_id', 'round', 'category', 'created_at', 'updated_at', 'image_start', 'image_end', 'promt_id'],

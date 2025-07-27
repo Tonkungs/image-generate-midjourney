@@ -23,7 +23,7 @@ export class VastAIRoutes {
     this.vastAiClient = vastAiClient
     this.configTemplate = {
       "template_id": 231909,
-      // "template_hash_id": "4f02fd9b19d0b0d5937b0964060faeb9", // comfyui custom by tons
+      // "template_hash_id": "d15bc035f6940c3c5f0ec5417e324339", // comfyui custom by tons
       // "image": "tonkung/comfy-tonkung", //ComfyUI + FLUX.1 Ton2 Custom
       "disk": 50,
       "env": {

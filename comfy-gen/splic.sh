@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ตั้งค่าโฟลเดอร์ที่มีภาพอยู่
-IMAGE_FOLDER="./comfy08"
-TARGET_FOLDER="./output_comfy08"
+IMAGE_FOLDER="./comfy11"
+TARGET_FOLDER="./output_comfy11"
 IMAGES_PER_FOLDER=2500
 
 # สร้างโฟลเดอร์ปลายทางถ้ายังไม่มี

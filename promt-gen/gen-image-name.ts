@@ -33,7 +33,7 @@ class GenImageName {
   private outputCsvPath: string;
   private readfile: ReadFile;
 
-  constructor (config: Config) {
+  constructor(config: Config) {
     this.apiKeys = config.apiKeys;
     this.log = config.log;
     this.outputCsvPath = config.outputCsvPath;
@@ -67,25 +67,32 @@ class GenImageName {
       return;
     }
 
-    for (let round = 0; round < filesToProcess.length; round++) {
-      const file = filesToProcess[round];
-      this.log.info(`Processing round ${round + 1} / ${filesToProcess.length}`);
+    let fileIndex = 0;
+    const getNextIndex = () => fileIndex++;
 
-      let bot = this.bots.find(bot => bot.isAvailable);
-      let waitingLogged = false;
+    const workerTasks = this.bots.map((bot) => this.runBotWorker(bot, filesToProcess, getNextIndex));
 
-      while (!bot) {
-        if (!waitingLogged) {
-          this.log.info("Waiting for an available bot...");
-          waitingLogged = true;
-        }
-        await Ut.Delay(1);
-        bot = this.bots.find(bot => bot.isAvailable);
+    await Promise.all(workerTasks);
+
+    this.log.info("All files processed.");
+  }
+
+  private async runBotWorker(bot: IBotConfig, files: IFileData[], getNextIndex: () => number): Promise<void> {
+    while (true) {
+      const index = getNextIndex();
+      if (index >= files.length) break;
+
+      const file = files[index];
+      this.log.info(`Bot ${bot.no} processing file ${index + 1}/${files.length}: ${file.filepath}`);
+
+      try {
+        const result = await this.processFile(bot, file);
+        if (result) await this.writeCompletedKeyword(result);
+      } catch (err) {
+        this.log.error(`Bot ${bot.no} error: ${err}`);
       }
 
-      this.processFile(bot, file).then(result => {
-        if (result) this.writeCompletedKeyword(result);
-      });
+      await Ut.Delay(2000); // delay เพื่อหลีกเลี่ยง rate limit
     }
   }
 
@@ -103,7 +110,7 @@ class GenImageName {
         release: new Date().toISOString().split("T")[0]
       };
     } catch (error) {
-      this.log.error("Error processing file", error);
+      this.log.error("Error processing file: " + error);
       return null;
     } finally {
       bot.isAvailable = true;
@@ -117,14 +124,13 @@ class GenImageName {
 
 // Load API keys from environment variables
 const apiKeys = [
-  process.env.GEMINI_KEY as string,
-  process.env.GEMINI_KEY_2 as string,
-  process.env.GEMINI_KEY_3 as string,
-  process.env.GEMINI_KEY_4 as string,
-  process.env.GEMINI_KEY_5 as string,
-  process.env.GEMINI_KEY_6 as string,
-]
-  .filter(Boolean);
+  process.env.GEMINI_KEY,
+  process.env.GEMINI_KEY_2,
+  process.env.GEMINI_KEY_3,
+  process.env.GEMINI_KEY_4,
+  process.env.GEMINI_KEY_5,
+  process.env.GEMINI_KEY_6,
+].filter(Boolean) as string[];
 
 if (!apiKeys.length) {
   console.error("No API keys provided in environment variables.");
@@ -133,7 +139,7 @@ if (!apiKeys.length) {
 
 new GenImageName({
   apiKeys,
-  folderPath: "/home/tonkung/work/upscayl/auto-bot-midjourney-discord/comfy-gen/output_comfy08/folder_004",
-  outputCsvPath: "./2025-04-16-comfy-08-004.csv",
+  folderPath: "/home/tonkung/work/upscayl/auto-bot-midjourney-discord/image_classifier_project/newcod/output/for_use_1",
+  outputCsvPath: "./2025-05-18-comfy-08-001.csv",
   log: new Logs()
 }).run();

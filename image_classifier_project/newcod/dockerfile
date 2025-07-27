@@ -7,6 +7,11 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
     tesseract-ocr \
     tesseract-ocr-eng \
     tesseract-ocr-jpn \
@@ -29,7 +34,10 @@ RUN pip install --no-cache-dir \
     opencv-python \
     pytesseract \
     tqdm \
-    pandas
+    pandas \
+    numpy \
+    matplotlib \
+    seaborn
 
 # ติดตั้ง PyTorch + CUDA 12.4
 RUN pip install --no-cache-dir \
@@ -38,9 +46,17 @@ RUN pip install --no-cache-dir \
     torchaudio==2.4.1+cu124 \
     --index-url https://download.pytorch.org/whl/cu124
 
+# ติดตั้ง YOLOv5 และ ultralytics dependencies
+RUN pip install --no-cache-dir \
+    ultralytics \
+    yolov5
+
 # ติดตั้ง PaddleOCR (ใช้ CPU)
 RUN pip install --no-cache-dir paddlepaddle -f https://www.paddlepaddle.org.cn/whl/cpu.html && \
     pip install --no-cache-dir paddleocr
+
+# Pre-download YOLOv5 model เพื่อไม่ให้ต้อง download ทุกครั้งที่รัน
+RUN python -c "import torch; torch.hub.load('ultralytics/yolov5', 'yolov5s', trust_repo=True)"
 
 # คัดลอกโปรเจกต์เข้า container
 WORKDIR /app

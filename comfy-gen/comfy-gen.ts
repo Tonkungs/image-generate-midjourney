@@ -516,7 +516,7 @@ class ComfyUIPromptProcessor {
       // promtText = await this.db.findFirstStart('travel_and_business_2025')
       
       if (!promtText?.id) {
-        this.logs.error(`Error finding prompt text from server no ${serverNo}`, { promtText, serverNo });
+        this.logs.info(`Prompt text from server no ${serverNo} is empty`, { promtText, serverNo });
         return;
       }
 

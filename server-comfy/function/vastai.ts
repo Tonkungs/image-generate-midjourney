@@ -399,4 +399,20 @@ export class VastAIApiClient {
       throw error;
     }
   }
+
+  async changeBid(instanceId: string, price: number): Promise<any> {
+    try {
+      const response: AxiosResponse<any> = await this.apiClient.put(
+        `/instances/${instanceId}/`,
+        {
+          client_id:'me',
+          price: price
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error('Error changing bid:', error);
+      throw error;
+    }
+  }
 }
